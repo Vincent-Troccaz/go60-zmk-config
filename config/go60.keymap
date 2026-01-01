@@ -153,7 +153,7 @@
         a_circ: a_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp CARET &kp Q>;
+            bindings = <&kp LEFT_BRACE &kp Q>;
             label = "â";
         };
 
@@ -171,7 +171,7 @@
         layer_Base {
             bindings = <
 &kp ESC               &kp N1      &kp N2     &kp N3        &kp N4    &kp N5                                                                           &kp N6      &kp N7    &kp N8    &kp N9       &kp N0  &kp MINUS
-&kp TAB               &q_or_circ  &kp C      &kp O         &kp P     &kp Z                                                                            &kp J       &kp M     &kp D     &sl 5        &kp Y   &kp BSLH
+&kp TAB               &q_or_circ  &kp C      &kp O         &kp P     &kp Z                                                                            &kp J       &kp SEMI  &kp D     &sl 5        &kp Y   &kp BSLH
 &kp LEFT_SHIFT        &kp Q       &kp S      &kp E         &kp N     &kp F                                                                            &kp L       &kp R     &kp T     &kp I        &kp U   &kp SQT
 &magic LAYER_Magic 0  &kp W       &kp X      &minus_qmark  &kp V     &kp B                                                                            &dot_colon  &kp H     &kp G     &comma_semi  &kp K   &keypad_td
                                   &kp GRAVE  &kp DEL       &kp BSPC                                                                                               &kp LGUI  &kp LBKT  &kp RBKT
