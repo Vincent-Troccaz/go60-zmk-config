@@ -153,7 +153,7 @@
         a_circ: a_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE &kp Q>;
+            bindings = <&kp LBKT &kp Q>;
             label = "â";
         };
 
