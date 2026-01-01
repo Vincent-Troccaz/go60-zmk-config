@@ -112,10 +112,17 @@
         q_or_circ: q_or_circ {
             compatible = "zmk,behavior-mod-morph";
             label = "q / ^";
-            bindings = <&kp A>, <&kp CARET>;
+            bindings = <&kp A>, <&kp LBKT>;
 
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
+        };
+
+        td_accent_layer: td_accent_layer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Layer 5/6";
+            #binding-cells = <0>;
+            bindings = <&sl 5>, <&sl 6>;
         };
     };
 
@@ -199,6 +206,106 @@
             label = "I_DIAE";
             wait-ms = <0>;
         };
+
+        u_diae: u_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp U>;
+            label = "U_DIAE";
+            wait-ms = <0>;
+        };
+
+        e_diae: e_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp E>;
+            label = "E_DIAE";
+            wait-ms = <0>;
+        };
+
+        oe_liga: oe_liga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(O)>;
+            label = "OE_LIGA";
+        };
+
+        ae_liga: ae_liga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(A)>;
+            label = "AE_LIGA";
+        };
+
+        mu: mu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(BSLH)>;
+            label = "MU";
+        };
+
+        ellipsis_unicode: ellipsis_unicode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(U)) &kp N2 &kp N0 &kp N2 &kp N6 &kp RETURN>;
+            label = "ELLIPSIS_UNICODE";
+        };
+
+        a_diae: a_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp Q>;
+            label = "A_DIAE";
+            wait-ms = <0>;
+        };
+
+        o_diae: o_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp O>;
+            label = "O_DIAE";
+            wait-ms = <0>;
+        };
+
+        x_diae: x_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp X>;
+            label = "X_DIAE";
+            wait-ms = <0>;
+        };
+
+        w_diae: w_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp Z>;
+            label = "W_DIAE";
+            wait-ms = <0>;
+        };
+
+        y_diae: y_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp Y>;
+            label = "Y_DIAE";
+            wait-ms = <0>;
+        };
+
+        t_diae: t_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp T>;
+            label = "T_DIAE";
+            wait-ms = <0>;
+        };
+
+        h_diae: h_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp H>;
+            label = "H_DIAE";
+            wait-ms = <0>;
+        };
     };
 
     keymap {
@@ -206,10 +313,10 @@
 
         layer_Base {
             bindings = <
-&kp ESC               &kp N1      &kp N2     &kp N3        &kp N4    &kp N5                                                                           &kp N6      &kp N7    &kp N8    &kp N9       &kp N0  &kp MINUS
-&kp TAB               &q_or_circ  &kp C      &kp O         &kp P     &kp Z                                                                            &kp J       &kp SEMI  &kp D     &sl 5        &kp Y   &kp BSLH
-&kp LEFT_SHIFT        &kp Q       &kp S      &kp E         &kp N     &kp F                                                                            &kp L       &kp R     &kp T     &kp I        &kp U   &kp SQT
-&magic LAYER_Magic 0  &kp W       &kp X      &minus_qmark  &kp V     &kp B                                                                            &dot_colon  &kp H     &kp G     &comma_semi  &kp K   &keypad_td
+&kp ESC               &kp N1      &kp N2     &kp N3        &kp N4    &kp N5                                                                           &kp N6      &kp N7    &kp N8    &kp N9            &kp N0  &kp MINUS
+&kp TAB               &q_or_circ  &kp C      &kp O         &kp P     &kp Z                                                                            &kp J       &kp SEMI  &kp D     &td_accent_layer  &kp Y   &kp BSLH
+&kp LEFT_SHIFT        &kp Q       &kp S      &kp E         &kp N     &kp F                                                                            &kp L       &kp R     &kp T     &kp I             &kp U   &kp SQT
+&magic LAYER_Magic 0  &kp W       &kp X      &minus_qmark  &kp V     &kp B                                                                            &dot_colon  &kp H     &kp G     &comma_semi       &kp K   &keypad_td
                                   &kp GRAVE  &kp DEL       &kp BSPC                                                                                               &kp LGUI  &kp LBKT  &kp RBKT
                                                                              &symbol_nav_td  &kp LSHFT  &kp LCTRL  &kp LALT  &kp SPACE  &mt RALT RET
             >;
@@ -261,12 +368,23 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans   &trans   &trans   &trans
-&trans  &a_circ  &kp N9  &trans  &o_circ  &trans                                                  &trans  &trans  &trans   &trans   &u_circ  &trans
-&trans  &kp N0   &kp N2  &kp N7  &e_circ  &trans                                                  &trans  &trans  &i_circ  &i_diae  &kp SQT  &trans
-&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans   &trans   &trans   &trans
-                 &trans  &trans  &trans                                                                   &trans  &trans   &trans
-                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans     &trans    &trans   &trans                                                  &trans             &trans     &trans   &trans   &trans   &trans
+&trans  &a_circ   &kp N9     &oe_liga  &o_circ  &trans                                                  &trans             &mu        &kp N8   &trans   &u_circ  &trans
+&trans  &kp N0    &kp N2     &kp N7    &e_circ  &trans                                                  &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
+&trans  &ae_liga  &kp RA(S)  &trans    &trans   &trans                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
+                  &trans     &trans    &trans                                                                              &trans     &trans   &trans
+                                                        &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_Diae_Supplement {
+            bindings = <
+&trans  &trans   &trans   &trans   &trans  &trans                                                   &trans  &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &o_diae  &trans  &w_diae                                                  &trans  &trans   &trans   &trans   &y_diae  &trans
+&trans  &a_diae  &trans   &e_diae  &trans  &trans                                                   &trans  &trans   &t_diae  &i_diae  &u_diae  &trans
+&trans  &trans   &x_diae  &trans   &trans  &trans                                                   &trans  &h_diae  &trans   &trans   &trans   &trans
+                 &trans   &trans   &trans                                                                   &trans   &trans   &trans
+                                                    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
