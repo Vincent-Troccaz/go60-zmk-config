@@ -108,6 +108,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        q_or_circ: q_or_circ {
+            compatible = "zmk,behavior-mod-morph";
+            label = "q / ^";
+            bindings = <&kp Q>, <&kp CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
     };
 
     macros {
@@ -140,6 +149,20 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
+        a_circ: a_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp CARET &kp A>;
+            label = "â";
+        };
+
+        c_cedil: c_cedil {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N9>;
+            label = "C_CEDIL";
+        };
     };
 
     keymap {
@@ -147,12 +170,12 @@
 
         layer_Base {
             bindings = <
-&kp ESC               &kp N1  &kp N2     &kp N3        &kp N4    &kp N5                                                                           &kp N6      &kp N7    &kp N8    &kp N9       &kp N0  &kp MINUS
-&kp TAB               &kp Q   &kp C      &kp O         &kp P     &kp W                                                                            &kp J       &kp M     &kp D     &kp O        &kp Y   &kp BSLH
-&kp LEFT_SHIFT        &kp A   &kp S      &kp E         &kp N     &kp F                                                                            &kp L       &kp R     &kp T     &kp I        &kp U   &kp SQT
-&magic LAYER_Magic 0  &kp Z   &kp X      &minus_qmark  &kp V     &kp B                                                                            &dot_colon  &kp H     &kp G     &comma_semi  &kp K   &keypad_td
-                              &kp GRAVE  &kp DEL       &kp BSPC                                                                                               &kp LGUI  &kp LBKT  &kp RBKT
-                                                                         &symbol_nav_td  &kp LSHFT  &kp LCTRL  &kp LALT  &kp SPACE  &mt RALT RET
+&kp ESC               &kp N1      &kp N2     &kp N3        &kp N4    &kp N5                                                                           &kp N6      &kp N7    &kp N8    &kp N9       &kp N0  &kp MINUS
+&kp TAB               &q_or_circ  &kp C      &kp O         &kp P     &kp W                                                                            &kp J       &kp M     &kp D     &sl 5        &kp Y   &kp BSLH
+&kp LEFT_SHIFT        &kp A       &kp S      &kp E         &kp N     &kp F                                                                            &kp L       &kp R     &kp T     &kp I        &kp U   &kp SQT
+&magic LAYER_Magic 0  &kp Z       &kp X      &minus_qmark  &kp V     &kp B                                                                            &dot_colon  &kp H     &kp G     &comma_semi  &kp K   &keypad_td
+                                  &kp GRAVE  &kp DEL       &kp BSPC                                                                                               &kp LGUI  &kp LBKT  &kp RBKT
+                                                                             &symbol_nav_td  &kp LSHFT  &kp LCTRL  &kp LALT  &kp SPACE  &mt RALT RET
             >;
         };
 
@@ -200,14 +223,14 @@
             >;
         };
 
-        ACCENTED_CHARACTER {
+        layer_Accented {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans     &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &a_circ  &kp KP_N9  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans     &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans     &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+                 &trans     &trans  &trans                                                                  &trans  &trans  &trans
+                                                    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
