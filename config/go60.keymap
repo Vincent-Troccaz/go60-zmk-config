@@ -191,6 +191,14 @@
             bindings = <&kp LBKT &kp U>;
             label = "U_CIRC";
         };
+
+        i_diae: i_diae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp I>;
+            label = "I_DIAE";
+            wait-ms = <0>;
+        };
     };
 
     keymap {
@@ -253,11 +261,11 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &a_circ  &kp N9  &trans  &o_circ  &trans                                                  &trans  &trans  &trans  &trans   &u_circ  &trans
-&trans  &trans   &trans  &trans  &e_circ  &trans                                                  &trans  &trans  &trans  &i_circ  &trans   &trans
-&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans  &trans   &trans   &trans
-                 &trans  &trans  &trans                                                                   &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &a_circ  &kp N9  &trans  &o_circ  &trans                                                  &trans  &trans  &trans   &trans   &u_circ  &trans
+&trans  &kp N0   &kp N2  &kp N7  &e_circ  &trans                                                  &trans  &trans  &i_circ  &i_diae  &kp SQT  &trans
+&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans   &trans   &trans   &trans
+                 &trans  &trans  &trans                                                                   &trans  &trans   &trans
                                                   &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
