@@ -163,6 +163,34 @@
             bindings = <&kp KP_N9>;
             label = "C_CEDIL";
         };
+
+        e_circ: e_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp E>;
+            label = "E_CIRC";
+        };
+
+        i_circ: i_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp I>;
+            label = "I_CIRC";
+        };
+
+        o_circ: o_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp O>;
+            label = "O_CIRC";
+        };
+
+        u_circ: u_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp U>;
+            label = "U_CIRC";
+        };
     };
 
     keymap {
@@ -225,12 +253,12 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans   &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &a_circ  &kp N9  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &a_circ  &kp N9  &trans  &o_circ  &trans                                                  &trans  &trans  &trans  &trans   &u_circ  &trans
+&trans  &trans   &trans  &trans  &e_circ  &trans                                                  &trans  &trans  &trans  &i_circ  &trans   &trans
+&trans  &trans   &trans  &trans  &trans   &trans                                                  &trans  &trans  &trans  &trans   &trans   &trans
+                 &trans  &trans  &trans                                                                   &trans  &trans  &trans
+                                                  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
