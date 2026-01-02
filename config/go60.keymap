@@ -160,46 +160,52 @@
         };
 
         // Accent circonflexe : â (^ + a)
+
         a_circ: a_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp Q>;
             label = "â";
         };
-        
+
         // Accent circonflexe : ê (^ + e)
+
         e_circ: e_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp E>;
             label = "ê";
         };
-        
+
         // Accent circonflexe : î (^ + i)
+
         i_circ: i_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp I>;
             label = "î";
         };
-        
+
         // Accent circonflexe : ô (^ + o)
+
         o_circ: o_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp O>;
             label = "ô";
         };
-        
+
         // Accent circonflexe : û (^ + u)
+
         u_circ: u_circ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp U>;
             label = "û";
         };
-        
+
         // Tréma : ï (¨ + i)
+
         i_diae: i_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -207,8 +213,9 @@
             label = "ï";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ü (¨ + u)
+
         u_diae: u_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -216,8 +223,9 @@
             label = "ü";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ë (¨ + e)
+
         e_diae: e_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -225,8 +233,9 @@
             label = "ë";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ä (¨ + a)
+
         a_diae: a_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -234,8 +243,9 @@
             label = "ä";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ö (¨ + o)
+
         o_diae: o_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -243,8 +253,9 @@
             label = "ö";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ẍ (¨ + x) - rare
+
         x_diae: x_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -252,8 +263,9 @@
             label = "ẍ";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ẅ (¨ + w) - rare
+
         w_diae: w_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -261,8 +273,9 @@
             label = "ẅ";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ÿ (¨ + y)
+
         y_diae: y_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -270,8 +283,9 @@
             label = "ÿ";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ẗ (¨ + t) - rare
+
         t_diae: t_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -279,8 +293,9 @@
             label = "ẗ";
             wait-ms = <0>;
         };
-        
+
         // Tréma : ḧ (¨ + h) - rare
+
         h_diae: h_diae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -288,32 +303,36 @@
             label = "ḧ";
             wait-ms = <0>;
         };
-        
+
         // Ligature : œ (AltGr + o)
+
         oe_liga: oe_liga {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RA(O)>;
             label = "œ";
         };
-        
+
         // Ligature : æ (AltGr + a)
+
         ae_liga: ae_liga {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RA(Q)>;
             label = "æ";
         };
-        
+
         // Cédille : ç (touche 9 en FR)
+
         c_cedil: c_cedil {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp KP_N9>;
             label = "ç";
         };
-        
+
         // Caractère spécial : µ (micro/mu)
+
         mu: mu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -322,6 +341,7 @@
         };
 
         // … (ellipsis) U+2026
+
         ellipsis_unicode: ellipsis_unicode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -354,6 +374,7 @@
         };
 
         // ‑ (tiret insécable) U+2011
+
         nbsp_hyphen: nbsp_hyphen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -381,10 +402,12 @@
                 <&kp KP_N1>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "‑";
         };
-        
+
         // — (em dash) U+2014
+
         em_dash: em_dash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -417,6 +440,7 @@
         };
 
         // – (en dash) U+2013
+
         en_dash: en_dash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -449,6 +473,7 @@
         };
 
         // • (bullet) U+2022
+
         bullet: bullet {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -481,6 +506,7 @@
         };
 
         // · (middle dot) U+00B7
+
         middot: middot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -513,6 +539,7 @@
         };
 
         // « (guillemet ouvrant) U+00AB
+
         guil_open: guil_open {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -545,6 +572,7 @@
         };
 
         // » (guillemet fermant) U+00BB
+
         guil_close: guil_close {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -577,6 +605,7 @@
         };
 
         // ñ (n tilde) U+00F1
+
         n_tilde: n_tilde {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -683,12 +712,12 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans    &trans     &trans    &trans            &trans                                                            &trans             &trans     &trans   &trans   &trans   &trans
-&trans  &a_circ   &kp N9     &oe_liga  &o_circ           &trans                                                            &trans             &mu        &kp N8   &trans   &u_circ  &trans
-&trans  &kp N0    &kp N2     &kp N7    &e_circ           &trans                                                            &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
-&trans  &ae_liga  &kp RA(S)  &trans    &en_dash_unicode  &em_dash_unicode                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
-                  &trans     &trans    &trans                                                                                                 &trans     &trans   &trans
-                                                                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans     &trans        &trans            &trans                                                            &trans             &trans     &trans   &trans   &trans   &trans
+&trans  &a_circ   &kp N9     &oe_liga      &o_circ           &trans                                                            &trans             &mu        &kp N8   &trans   &u_circ  &trans
+&trans  &kp N0    &kp N2     &kp N7        &e_circ           &trans                                                            &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
+&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen  &en_dash_unicode  &em_dash_unicode                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
+                  &trans     &trans        &trans                                                                                                 &trans     &trans   &trans
+                                                                               &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
