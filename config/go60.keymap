@@ -247,6 +247,7 @@
         };
 
         // … (ellipsis) U+2026
+
         ellipsis_unicode: ellipsis_unicode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -279,6 +280,7 @@
         };
 
         // — (em dash) U+2014
+
         em_dash: em_dash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -306,10 +308,12 @@
                 <&kp KP_N4>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "—";
         };
-        
+
         // – (en dash) U+2013
+
         en_dash: en_dash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -337,10 +341,12 @@
                 <&kp KP_N3>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "–";
         };
 
         // • (bullet) U+2022
+
         bullet: bullet {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -368,10 +374,12 @@
                 <&kp KP_N2>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "•";
         };
 
         // · (middle dot) U+00B7
+
         middot: middot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -399,10 +407,12 @@
                 <&kp KP_N7>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "·";
         };
 
         // « (guillemet ouvrant) U+00AB
+
         guil_open: guil_open {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -425,15 +435,17 @@
                 <&macro_tap>,
                 <&kp KP_N0>,
                 <&macro_tap>,
-                <&kp Q>,           // ← CHANGÉ : Q au lieu de A !
+                <&kp Q>,
                 <&macro_tap>,
                 <&kp B>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "«";
         };
 
         // » (guillemet fermant) U+00BB
+
         guil_close: guil_close {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -461,10 +473,12 @@
                 <&kp B>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "»";
         };
 
         // ñ (n tilde) U+00F1
+
         n_tilde: n_tilde {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -492,6 +506,7 @@
                 <&kp KP_N1>,
                 <&macro_tap>,
                 <&kp ENTER>;
+
             label = "ñ";
         };
 
@@ -549,13 +564,6 @@
             bindings = <&kp LS(LBKT) &kp H>;
             label = "H_DIAE";
             wait-ms = <0>;
-        };
-
-        non_breaking_hyphen_unicode: non_breaking_hyphen_unicode {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N1 &kp RETURN>;
-            label = "NON_BREAKING_HYPHEN_UNICODE";
         };
 
         en_dash_unicode: en_dash_unicode {
@@ -633,12 +641,12 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans    &trans     &trans                        &trans            &trans                                                            &trans             &trans     &trans   &trans   &trans   &trans
-&trans  &a_circ   &kp N9     &oe_liga                      &o_circ           &trans                                                            &trans             &mu        &kp N8   &trans   &u_circ  &trans
-&trans  &kp N0    &kp N2     &kp N7                        &e_circ           &trans                                                            &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
-&trans  &ae_liga  &kp RA(S)  &non_breaking_hyphen_unicode  &en_dash_unicode  &em_dash_unicode                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
-                  &trans     &trans                        &trans                                                                                                 &trans     &trans   &trans
-                                                                                               &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans     &trans    &trans            &trans                                                            &trans             &trans     &trans   &trans   &trans   &trans
+&trans  &a_circ   &kp N9     &oe_liga  &o_circ           &trans                                                            &trans             &mu        &kp N8   &trans   &u_circ  &trans
+&trans  &kp N0    &kp N2     &kp N7    &e_circ           &trans                                                            &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
+&trans  &ae_liga  &kp RA(S)  &trans    &en_dash_unicode  &em_dash_unicode                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
+                  &trans     &trans    &trans                                                                                                 &trans     &trans   &trans
+                                                                           &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
