@@ -250,11 +250,20 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(LS(U))>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LSHIFT>,
+                <&macro_press>,
+                <&kp U>,
                 <&macro_release>,
-                <&kp N6 &kp N2 &kp N0 &kp N2 &kp RETURN>;
+                <&kp LCTRL>,
+                <&macro_release>,
+                <&kp LSHIFT>,
+                <&macro_press>,
+                <&kp N2 &kp N2 &kp N6 &kp N6 &kp RETURN>;
 
-            label = "ELLIPSIS_UNICODE";
+            label = "...";
         };
 
         a_diae: a_diae {
