@@ -253,36 +253,22 @@
             tap-ms = <50>;
             bindings = 
                 // Ctrl+Shift+U
-                <&macro_press &kp LCTRL>,
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &kp U>,
-                <&macro_release &kp LSHIFT>,
-                <&macro_release &kp LCTRL>,
-                
-                // Pause pour que le mode Unicode s'active
-                <&macro_wait_time 200>,
-                
-                // Chiffre 2 (avec Shift explicite)
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &kp N2>,
-                <&macro_release &kp LSHIFT>,
-                
-                // Chiffre 0 (avec Shift explicite)
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &kp N0>,
-                <&macro_release &kp LSHIFT>,
-                
-                // Chiffre 2 (avec Shift explicite)
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &kp N2>,
-                <&macro_release &kp LSHIFT>,
-                
-                // Chiffre 6 (avec Shift explicite)
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &kp N6>,
-                <&macro_release &kp LSHIFT>,
-                
-                // Enter
+                <&macro_press &kp LCTRL>
+                <&macro_press &kp LSHIFT>
+                <&macro_tap   &kp U>
+                <&macro_release &kp LSHIFT>
+                <&macro_release &kp LCTRL>
+        
+                // Petite pause
+                <&macro_wait_time 100>
+        
+                // 2026 (SANS SHIFT)
+                <&macro_tap &kp N2>
+                <&macro_tap &kp N0>
+                <&macro_tap &kp N2>
+                <&macro_tap &kp N6>
+        
+                // Valider
                 <&macro_tap &kp ENTER>;
             label = "...";
         };
