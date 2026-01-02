@@ -251,25 +251,29 @@
             #binding-cells = <0>;
             wait-ms = <50>;
             tap-ms = <50>;
-            bindings = 
-                // Ctrl+Shift+U
-                <&macro_press &kp LCTRL>,
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap   &kp U>,
-                <&macro_release &kp LSHIFT>,
-                <&macro_release &kp LCTRL>,
-        
-                // Petite pause
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LSHIFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LSHIFT>,
+                <&macro_release>,
+                <&kp LCTRL>,
                 <&macro_wait_time 100>,
-        
-                // 2026 (SANS SHIFT)
-                <&macro_tap &kp N2>,
-                <&macro_tap &kp N0>,
-                <&macro_tap &kp N2>,
-                <&macro_tap &kp N6>,
-        
-                // Valider
-                <&macro_tap &kp ENTER>;
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N6>,
+                <&macro_tap>,
+                <&kp ENTER>;
+
             label = "...";
         };
 
