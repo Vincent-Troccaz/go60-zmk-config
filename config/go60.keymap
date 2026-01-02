@@ -643,12 +643,12 @@
 
         layer_Base {
             bindings = <
-&kp ESC           &kp KP_N1   &kp KP_N2   &kp KP_N3       &kp KP_N4   &kp KP_N5                                                                           &kp KP_N6   &kp KP_N7  &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
-&kp TAB           &q_or_circ  &kp C       &kp O           &kp P       &kp Z                                                                               &kp J       &kp SEMI   &kp D      &sl 5        &kp Y      &kp RETURN
-&kp LEFT_SHIFT    &kp Q       &kp S       &kp E           &kp N       &kp F                                                                               &kp L       &kp R      &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp W       &kp X       &minus_qmark    &kp V       &kp B                                                                               &dot_colon  &kp H      &kp G      &comma_semi  &kp K      &kp RIGHT_CONTROL
-                              &keypad_td  &symbol_nav_td  &magic 3 0                                                                                                  &kp LGUI   &kp LBKT   &kp RBKT
-                                                                                 &symbol_nav_td  &kp LSHFT  &kp LCTRL  &kp LALT  &kp SPACE  &mt RALT RET
+&kp ESC           &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_N4  &kp KP_N5                                                                                 &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
+&kp TAB           &q_or_circ  &kp C       &kp O         &kp P      &kp Z                                                                                     &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
+&kp LEFT_SHIFT    &kp Q       &kp S       &kp E         &kp N      &kp F                                                                                     &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp W       &kp X       &minus_qmark  &kp V      &kp B                                                                                     &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
+                              &magic 3 0  &trans        &trans                                                                                                           &symbol_nav_td  &kp LBKT   &kp RBKT
+                                                                              &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
             >;
         };
 
