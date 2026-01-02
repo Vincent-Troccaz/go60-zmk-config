@@ -636,20 +636,6 @@
 
             label = "ñ";
         };
-
-        en_dash_unicode: en_dash_unicode {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N3 &kp RETURN>;
-            label = "EN_DASH_UNICODE";
-        };
-
-        em_dash_unicode: em_dash_unicode {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(U)) &kp N2 &kp N0 &kp N1 &kp N4 &kp RETURN>;
-            label = "EM_DASH_UNICODE";
-        };
     };
 
     keymap {
@@ -712,12 +698,12 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans    &trans     &trans        &trans            &trans                                                            &trans             &trans     &trans   &trans   &trans   &trans
-&trans  &a_circ   &kp N9     &oe_liga      &o_circ           &trans                                                            &trans             &mu        &kp N8   &trans   &u_circ  &trans
-&trans  &kp N0    &kp N2     &kp N7        &e_circ           &trans                                                            &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
-&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen  &en_dash_unicode  &em_dash_unicode                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
-                  &trans     &trans        &trans                                                                                                 &trans     &trans   &trans
-                                                                               &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans     &trans        &trans    &trans                                                    &trans             &trans     &trans   &trans   &trans   &trans
+&trans  &a_circ   &kp N9     &oe_liga      &o_circ   &trans                                                    &trans             &mu        &kp N8   &trans   &u_circ  &trans
+&trans  &kp N0    &kp N2     &kp N7        &e_circ   &trans                                                    &kp N5             &kp MINUS  &i_circ  &i_diae  &kp SQT  &trans
+&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen  &en_dash  &em_dash                                                  &ellipsis_unicode  &trans     &trans   &trans   &trans   &trans
+                  &trans     &trans        &trans                                                                                 &trans     &trans   &trans
+                                                               &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
