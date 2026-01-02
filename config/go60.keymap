@@ -342,90 +342,100 @@
 
         // … (ellipsis) U+2026
         // Ellipsis : … (Compose + . + .)
+
         ellipsis_compose: ellipsis_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp DOT>, <&kp DOT>;
+            bindings = <&kp RCTRL &kp DOT &kp DOT>;
             label = "…";
         };
 
         // ‑ (tiret insécable) U+2011
         // Tiret insécable : ‑ (Compose + - + , + -)
+
         nbsp_hyphen_compose: nbsp_hyphen_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp COMMA>, <&kp MINUS>;
+            bindings = <&kp RCTRL &kp MINUS &kp COMMA &kp MINUS>;
             label = "‑";
         };
 
         // – (en dash) U+2013
         // En dash : – (Compose + - + -)
+
         en_dash_compose: en_dash_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp MINUS>;
+            bindings = <&kp RCTRL &kp MINUS &kp MINUS>;
             label = "–";
         };
 
         // — (em dash) U+2014
         // Em dash : — (Compose + - + - + -)
+
         em_dash_compose: em_dash_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp MINUS>, <&kp MINUS>;
+            bindings = <&kp RCTRL &kp MINUS &kp MINUS &kp MINUS>;
             label = "—";
         };
 
         // • (bullet) U+2022
         // Bullet : • (Compose + . + =)
+
         bullet_compose: bullet_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp DOT>, <&kp EQUAL>;
+            bindings = <&kp RCTRL &kp DOT &kp EQUAL>;
             label = "•";
         };
 
         // · (middle dot) U+00B7
         // Middle dot : · (Compose + . + ^)
+
         middot_compose: middot_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp DOT>, <&kp LBKT>;  // ^ = LBKT en FR
+            bindings = <&kp RCTRL &kp DOT &kp LBKT>;  // ^ = LBKT en FR
             label = "·";
         };
 
         // « (guillemet ouvrant) U+00AB
         // Guillemet ouvrant : « (Compose + < + <)
+
         guil_open_compose: guil_open_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp LS(COMMA)>, <&kp LS(COMMA)>;  // < = Shift+,
+            bindings = <&kp RCTRL &kp LS(COMMA) &kp LS(COMMA)>;  // < = Shift+,
             label = "«";
         };
 
         // » (guillemet fermant) U+00BB
         // Guillemet fermant : » (Compose + > + >)
+
         guil_close_compose: guil_close_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp LS(DOT)>, <&kp LS(DOT)>;  // > = Shift+.
+            bindings = <&kp RCTRL &kp LS(DOT) &kp LS(DOT)>;  // > = Shift+.
             label = "»";
         };
 
         // ñ (n tilde) U+00F1
         // N tilde : ñ (Compose + ~ + n)
+
         n_tilde_compose: n_tilde_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RA(N2)>, <&kp N>;  // ~ = AltGr+2 en FR
+            bindings = <&kp RCTRL &kp RA(N2) &kp N>;  // ~ = AltGr+2 en FR
             label = "ñ";
         };
 
         // Pilcrow : ¶ (Compose + P + !)
+
         pilcrow_compose: pilcrow_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp P>, <&kp LS(RBKT)>;  // ! = Shift+§ en FR
+            bindings = <&kp RCTRL &kp P &kp LS(RBKT)>;  // ! = Shift+§ en FR
             label = "¶";
         };
     };
@@ -439,7 +449,7 @@
 &kp TAB           &q_or_circ  &kp C       &kp O         &kp P      &kp Z                                                                                     &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
 &kp LEFT_SHIFT    &kp Q       &kp S       &kp E         &kp N      &kp F                                                                                     &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &kp W       &kp X       &minus_qmark  &kp V      &kp B                                                                                     &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
-                              &magic 3 0  &trans        &trans                                                                                                           &symbol_nav_td  &kp LBKT   &kp RBKT
+                              &magic 3 0  &kp N5        &kp MINUS                                                                                                        &symbol_nav_td  &kp LBKT   &kp RBKT
                                                                               &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
             >;
         };
@@ -490,12 +500,12 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans    &trans     &trans        &trans    &trans                                                    &trans             &trans     &kp LS(FSLH)  &trans   &trans   &trans
-&trans  &a_circ   &kp N9     &oe_liga      &o_circ   &trans                                                    &trans             &mu        &kp N8        &sl 6    &u_circ  &trans
-&trans  &kp N0    &kp N2     &kp N7        &e_circ   &n_tilde_compose                                          &kp N5             &kp MINUS  &i_circ       &i_diae  &kp SQT  &trans
-&trans  &ae_liga  &kp RA(S)  &trans        &trans    &em_dash_compose                                          &ellipsis_compose  &trans     &sl 7         &trans   &trans   &trans
-                  &trans     &trans        &trans                                                                                 &trans     &trans        &trans
-                                                               &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans     &trans                &trans            &trans                                                            &trans             &trans     &kp LS(FSLH)  &pilcrow_compose  &trans   &trans
+&trans  &a_circ   &kp N9     &oe_liga              &o_circ           &trans                                                            &trans             &mu        &kp N8        &sl 6             &u_circ  &trans
+&trans  &kp N0    &kp N2     &kp N7                &e_circ           &n_tilde_compose                                                  &kp N5             &kp MINUS  &i_circ       &i_diae           &kp SQT  &trans
+&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen_compose  &en_dash_compose  &em_dash_compose                                                  &ellipsis_compose  &trans     &sl 7         &trans            &trans   &trans
+                  &trans     &trans                &trans                                                                                                 &trans     &trans        &trans
+                                                                                       &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
