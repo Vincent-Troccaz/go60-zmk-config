@@ -255,7 +255,7 @@
                 <&macro_tap &kp U>,
                 <&macro_release &kp LSHIFT>,
                 <&macro_release &kp LCTRL>,
-                <&macro_wait_time 50>,
+                <&macro_wait_time 200>,
                 <&macro_tap &kp LS(N2)>,
                 <&macro_tap &kp LS(N0)>,
                 <&macro_tap &kp LS(N2)>,
