@@ -126,6 +126,28 @@
 
             tapping-term-ms = <400>;
         };
+
+        // ------------------------- touche 2 ----------------------------
+        key2_main: key2_main {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&key2_no_altgr>, <&key2_with_altgr>;
+        mods = <(MOD_RALT)>;
+        };
+        
+        key2_no_altgr: key2_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N2>, <&guil_open_compose>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        key2_with_altgr: key2_with_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&subscript2>, <&superscript2_compose>;  // Indice Unicode, Exposant Compose
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -437,6 +459,36 @@
             #binding-cells = <0>;
             bindings = <&kp RCTRL &kp P &kp LS(RBKT)>;  // ! = Shift+§ en FR
             label = "¶";
+        };
+
+        // Indice (Unicode obligatoire)
+        // Indice 2 : ₂ (U+2082)
+        subscript2: subscript2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            tap-ms = <50>;
+            bindings =
+                <&macro_press>, <&kp LCTRL>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_tap>, <&kp U>,
+                <&macro_release>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LCTRL>,
+                <&macro_wait_time 100>,
+                <&macro_tap>, <&kp KP_N2>,
+                <&macro_tap>, <&kp KP_N0>,
+                <&macro_tap>, <&kp KP_N8>,
+                <&macro_tap>, <&kp KP_N2>,
+                <&macro_tap>, <&kp ENTER>;
+            label = "₂";
+        };
+        
+        // Exposant (Compose - simple !)
+        superscript2_compose: superscript2_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL>, <&kp LBKT>, <&kp KP_N2>;
+            label = "²";
         };
     };
 
