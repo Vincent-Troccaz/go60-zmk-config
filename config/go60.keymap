@@ -341,300 +341,92 @@
         };
 
         // … (ellipsis) U+2026
-
-        ellipsis_unicode: ellipsis_unicode {
+        // Ellipsis : … (Compose + . + .)
+        ellipsis_compose: ellipsis_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N6>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
-            label = "...";
+            bindings = <&kp RCTRL>, <&kp DOT>, <&kp DOT>;
+            label = "…";
         };
 
         // ‑ (tiret insécable) U+2011
-
-        nbsp_hyphen: nbsp_hyphen {
+        // Tiret insécable : ‑ (Compose + - + , + -)
+        nbsp_hyphen_compose: nbsp_hyphen_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N1>,
-                <&macro_tap>,
-                <&kp KP_N1>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
+            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp COMMA>, <&kp MINUS>;
             label = "‑";
         };
 
-        // — (em dash) U+2014
-
-        em_dash: em_dash {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N1>,
-                <&macro_tap>,
-                <&kp KP_N4>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
-            label = "—";
-        };
-
         // – (en dash) U+2013
-
-        en_dash: en_dash {
+        // En dash : – (Compose + - + -)
+        en_dash_compose: en_dash_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N1>,
-                <&macro_tap>,
-                <&kp KP_N3>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
+            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp MINUS>;
             label = "–";
         };
 
-        // • (bullet) U+2022
-
-        bullet: bullet {
+        // — (em dash) U+2014
+        // Em dash : — (Compose + - + - + -)
+        em_dash_compose: em_dash_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp KP_N2>,
-                <&macro_tap>,
-                <&kp ENTER>;
+            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp MINUS>, <&kp MINUS>;
+            label = "—";
+        };
 
+        // • (bullet) U+2022
+        // Bullet : • (Compose + . + =)
+        bullet_compose: bullet_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL>, <&kp DOT>, <&kp EQUAL>;
             label = "•";
         };
 
         // · (middle dot) U+00B7
-
-        middot: middot {
+        // Middle dot : · (Compose + . + ^)
+        middot_compose: middot_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp B>,
-                <&macro_tap>,
-                <&kp KP_N7>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
+            bindings = <&kp RCTRL>, <&kp DOT>, <&kp LBKT>;  // ^ = LBKT en FR
             label = "·";
         };
 
         // « (guillemet ouvrant) U+00AB
-
-        guil_open: guil_open {
+        // Guillemet ouvrant : « (Compose + < + <)
+        guil_open_compose: guil_open_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp Q>,
-                <&macro_tap>,
-                <&kp B>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
+            bindings = <&kp RCTRL>, <&kp LS(COMMA)>, <&kp LS(COMMA)>;  // < = Shift+,
             label = "«";
         };
 
         // » (guillemet fermant) U+00BB
-
-        guil_close: guil_close {
+        // Guillemet fermant : » (Compose + > + >)
+        guil_close_compose: guil_close_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp B>,
-                <&macro_tap>,
-                <&kp B>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
+            bindings = <&kp RCTRL>, <&kp LS(DOT)>, <&kp LS(DOT)>;  // > = Shift+.
             label = "»";
         };
 
         // ñ (n tilde) U+00F1
-
-        n_tilde: n_tilde {
+        // N tilde : ñ (Compose + ~ + n)
+        n_tilde_compose: n_tilde_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 100>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp KP_N0>,
-                <&macro_tap>,
-                <&kp F>,
-                <&macro_tap>,
-                <&kp KP_N1>,
-                <&macro_tap>,
-                <&kp ENTER>;
-
+            bindings = <&kp RCTRL>, <&kp RA(N2)>, <&kp N>;  // ~ = AltGr+2 en FR
             label = "ñ";
+        };
+
+        // Pilcrow : ¶ (Compose + P + !)
+        pilcrow_compose: pilcrow_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL>, <&kp P>, <&kp LS(RBKT)>;  // ! = Shift+§ en FR
+            label = "¶";
         };
     };
 
