@@ -149,7 +149,9 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&subscript2>, <&superscript2_compose>;
-  // Indice Unicode, Exposant Compose
+
+            // Indice Unicode, Exposant Compose
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -374,7 +376,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL>, <&kp KP_DOT>, <&kp KP_DOT>;
+            bindings = <&kp RCTRL &kp KP_DOT &kp KP_DOT>;
             label = "…";
         };
 
@@ -384,11 +386,8 @@
         nbsp_hyphen_compose: nbsp_hyphen_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>,
-            <&kp KP_MINUS>,
-            <&kp COMMA>,
-            <&kp KP_MINUS>;
-        label = "‑";
+            bindings = <&kp RCTRL &kp KP_MINUS &kp COMMA &kp KP_MINUS>;
+            label = "‑";
         };
 
         // – (en dash) U+2013
@@ -399,10 +398,8 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL>,
-                <&kp KP_MINUS>,
-                <&kp KP_MINUS>;
-        label = "–";
+            bindings = <&kp RCTRL &kp KP_MINUS &kp KP_MINUS>;
+            label = "–";
         };
 
         // — (em dash) U+2014
@@ -413,7 +410,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL>, <&kp KP_MINUS>, <&kp KP_MINUS>, <&kp KP_MINUS>;
+            bindings = <&kp RCTRL &kp KP_MINUS &kp KP_MINUS &kp KP_MINUS>;
             label = "—";
         };
 
@@ -803,7 +800,7 @@
 &trans  &trans    &trans     &trans                &trans            &trans                                                            &trans             &trans     &kp LS(FSLH)  &pilcrow_compose  &trans   &trans
 &trans  &a_circ   &kp N9     &oe_liga              &o_circ           &trans                                                            &trans             &mu        &kp N8        &sl 6             &u_circ  &trans
 &trans  &kp N0    &kp N2     &kp N7                &e_circ           &n_tilde_compose                                                  &kp N5             &kp MINUS  &i_circ       &i_diae           &kp SQT  &trans
-&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen_compose  &en_dash_compose  &em_dash_compose                                                  &ellipsis_compose  &trans     &sl 7         &trans            &trans   &trans
+&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen_compose  &en_dash_compose  &em_dash_compose                                                  &ellipsis_compose  &trans     &sl 7         &bullet_compose   &trans   &trans
                   &trans     &trans                &trans                                                                                                 &trans     &trans        &trans
                                                                                        &trans  &trans  &trans  &trans  &trans  &trans
             >;
