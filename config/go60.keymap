@@ -374,7 +374,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL>, <&kp DOT>, <&kp DOT>;
+            bindings = <&kp RCTRL>, <&kp KP_DOT>, <&kp KP_DOT>;
             label = "…";
         };
 
@@ -384,7 +384,7 @@
         nbsp_hyphen_compose: nbsp_hyphen_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp MINUS &kp COMMA &kp MINUS>;
+            bindings = <&kp RCTRL &kp KP_MINUS &kp COMMA &kp KP_MINUS>;
             label = "‑";
         };
 
@@ -396,7 +396,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL &kp MINUS &kp MINUS>;
+            bindings = <&kp RCTRL &kp KP_MINUS &kp KP_MINUS>;
             label = "–";
         };
 
@@ -408,7 +408,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp MINUS>, <&kp MINUS>;
+            bindings = <&kp RCTRL>, <&kp KP_MINUS>, <&kp KP_MINUS>, <&kp KP_MINUS>;
             label = "—";
         };
 
