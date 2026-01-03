@@ -128,24 +128,28 @@
         };
 
         // ------------------------- touche 2 ----------------------------
+
         key2_main: key2_main {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&key2_no_altgr>, <&key2_with_altgr>;
-        mods = <(MOD_RALT)>;
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&key2_no_altgr>, <&key2_with_altgr>;
+
+            mods = <(MOD_RALT)>;
         };
-        
+
         key2_no_altgr: key2_no_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_N2>, <&guil_open_compose>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        
+
         key2_with_altgr: key2_with_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&subscript2>, <&superscript2_compose>;  // Indice Unicode, Exposant Compose
+            bindings = <&subscript2>, <&superscript2_compose>;
+  // Indice Unicode, Exposant Compose
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -463,223 +467,260 @@
 
         // Indice (Unicode obligatoire)
         // Indice 2 : ₂ (U+2082)
+
         subscript2: subscript2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <50>;
             tap-ms = <50>;
             bindings =
-                <&macro_press>, <&kp LCTRL>,
-                <&macro_press>, <&kp LSHIFT>,
-                <&macro_tap>, <&kp U>,
-                <&macro_release>, <&kp LSHIFT>,
-                <&macro_release>, <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LSHIFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LSHIFT>,
+                <&macro_release>,
+                <&kp LCTRL>,
                 <&macro_wait_time 100>,
-                <&macro_tap>, <&kp KP_N2>,
-                <&macro_tap>, <&kp KP_N0>,
-                <&macro_tap>, <&kp KP_N8>,
-                <&macro_tap>, <&kp KP_N2>,
-                <&macro_tap>, <&kp ENTER>;
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_tap>,
+                <&kp KP_N8>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp ENTER>;
+
             label = "₂";
         };
-        
+
         // Exposant 2 : ² (Compose + [ + 2)
+
         superscript2_compose: superscript2_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp LBKT>, <&kp KP_N2>;
+            bindings = <&kp RCTRL &kp LBKT &kp KP_N2>;
             label = "²";
         };
 
         // Alpha : α (Compose + * + a)
+
         alpha: alpha {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp Q>;  // A en FR = Q
+            bindings = <&kp RCTRL &kp RBKT &kp Q>;  // A en FR = Q
             label = "α";
         };
-        
+
         // Beta : β (Compose + * + b)
+
         beta: beta {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp B>;
+            bindings = <&kp RCTRL &kp RBKT &kp B>;
             label = "β";
         };
-        
+
         // Gamma : γ (Compose + * + g)
+
         gamma: gamma {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp G>;
+            bindings = <&kp RCTRL &kp RBKT &kp G>;
             label = "γ";
         };
-        
+
         // Delta : δ (Compose + * + d)
+
         delta: delta {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp D>;
+            bindings = <&kp RCTRL &kp RBKT &kp D>;
             label = "δ";
         };
-        
+
         // Epsilon : ε (Compose + * + e)
+
         epsilon: epsilon {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp E>;
+            bindings = <&kp RCTRL &kp RBKT &kp E>;
             label = "ε";
         };
-        
+
         // Zeta : ζ (Compose + * + z)
+
         zeta: zeta {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp Z>;  // Z en FR = W, mais pour zeta c'est la lettre latine z qui correspond
+            bindings = <&kp RCTRL &kp RBKT &kp Z>;  // Z en FR = W, mais pour zeta c'est la lettre latine z qui correspond
             label = "ζ";
         };
-        
+
         // Eta : η (Compose + * + y)
+
         eta: eta {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp Y>;
+            bindings = <&kp RCTRL &kp RBKT &kp Y>;
             label = "η";
         };
-        
+
         // Theta : θ (Compose + * + h)
+
         theta: theta {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp H>;
+            bindings = <&kp RCTRL &kp RBKT &kp H>;
             label = "θ";
         };
-        
+
         // Iota : ι (Compose + * + i)
+
         iota: iota {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp I>;
+            bindings = <&kp RCTRL &kp RBKT &kp I>;
             label = "ι";
         };
-        
+
         // Kappa : κ (Compose + * + k)
+
         kappa: kappa {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp K>;
+            bindings = <&kp RCTRL &kp RBKT &kp K>;
             label = "κ";
         };
-        
+
         // Lambda : λ (Compose + * + l)
+
         lambda: lambda {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp L>;
+            bindings = <&kp RCTRL &kp RBKT &kp L>;
             label = "λ";
         };
-        
+
         // Mu : μ (Compose + * + m)
+
         mu_greek: mu_greek {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp SEMICOLON>;  // M en FR = SEMICOLON (touche M physique)
+            bindings = <&kp RCTRL &kp RBKT &kp SEMICOLON>;  // M en FR = SEMICOLON (touche M physique)
             label = "μ";
         };
-        
+
         // Nu : ν (Compose + * + n)
+
         nu: nu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp N>;
+            bindings = <&kp RCTRL &kp RBKT &kp N>;
             label = "ν";
         };
-        
+
         // Xi : ξ (Compose + * + j)
+
         xi: xi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp J>;
+            bindings = <&kp RCTRL &kp RBKT &kp J>;
             label = "ξ";
         };
-        
+
         // Omicron : ο (Compose + * + o)
+
         omicron: omicron {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp O>;
+            bindings = <&kp RCTRL &kp RBKT &kp O>;
             label = "ο";
         };
-        
+
         // Pi : π (Compose + * + p)
+
         pi: pi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp P>;
+            bindings = <&kp RCTRL &kp RBKT &kp P>;
             label = "π";
         };
-        
+
         // Rho : ρ (Compose + * + r)
+
         rho: rho {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp R>;
+            bindings = <&kp RCTRL &kp RBKT &kp R>;
             label = "ρ";
         };
-        
+
         // Sigma : σ (Compose + * + s)
+
         sigma: sigma {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp S>;
+            bindings = <&kp RCTRL &kp RBKT &kp S>;
             label = "σ";
         };
-        
+
         // Tau : τ (Compose + * + t)
+
         tau: tau {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp T>;
+            bindings = <&kp RCTRL &kp RBKT &kp T>;
             label = "τ";
         };
-        
+
         // Upsilon : υ (Compose + * + u)
+
         upsilon: upsilon {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp U>;
+            bindings = <&kp RCTRL &kp RBKT &kp U>;
             label = "υ";
         };
-        
+
         // Phi : φ (Compose + * + f)
+
         phi: phi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp F>;
+            bindings = <&kp RCTRL &kp RBKT &kp F>;
             label = "φ";
         };
-        
+
         // Chi : χ (Compose + * + x)
+
         chi: chi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp X>;
+            bindings = <&kp RCTRL &kp RBKT &kp X>;
             label = "χ";
         };
-        
+
         // Psi : ψ (Compose + * + q)
+
         psi: psi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp A>;  // Q en FR = A
+            bindings = <&kp RCTRL &kp RBKT &kp A>;  // Q en FR = A
             label = "ψ";
         };
-        
+
         // Omega : ω (Compose + * + w)
+
         omega: omega {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL>, <&kp RBKT>, <&kp Z>;  // W en FR = Z
+            bindings = <&kp RCTRL &kp RBKT &kp Z>;  // W en FR = Z
             label = "ω";
         };
     };
@@ -766,11 +807,11 @@
 
         layer_Greek_symbols {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &omega                                                  &trans  &trans  &trans  &trans  &psi    &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans                                                                  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &omega                                                  &trans  &mu     &mu_greek  &trans  &psi    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans     &trans  &trans  &trans
+                &trans  &trans  &trans                                                                  &trans  &trans     &trans
                                                 &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
