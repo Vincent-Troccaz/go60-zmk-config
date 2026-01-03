@@ -372,7 +372,9 @@
         ellipsis_compose: ellipsis_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp DOT &kp DOT>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp RCTRL>, <&kp DOT>, <&kp DOT>;
             label = "…";
         };
 
@@ -392,6 +394,8 @@
         en_dash_compose: en_dash_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings = <&kp RCTRL &kp MINUS &kp MINUS>;
             label = "–";
         };
@@ -402,7 +406,9 @@
         em_dash_compose: em_dash_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp MINUS &kp MINUS &kp MINUS>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp RCTRL>, <&kp MINUS>, <&kp MINUS>, <&kp MINUS>;
             label = "—";
         };
 
@@ -432,6 +438,8 @@
         guil_open_compose: guil_open_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings = <&kp RCTRL &kp LS(COMMA) &kp LS(COMMA)>;  // < = Shift+,
             label = "«";
         };
@@ -442,6 +450,8 @@
         guil_close_compose: guil_close_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings = <&kp RCTRL &kp LS(DOT) &kp LS(DOT)>;  // > = Shift+.
             label = "»";
         };
