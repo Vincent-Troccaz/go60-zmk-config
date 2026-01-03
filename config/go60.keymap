@@ -384,8 +384,11 @@
         nbsp_hyphen_compose: nbsp_hyphen_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp KP_MINUS &kp COMMA &kp KP_MINUS>;
-            label = "‑";
+            bindings = <&kp RCTRL>,
+            <&kp KP_MINUS>,
+            <&kp COMMA>,
+            <&kp KP_MINUS>;
+        label = "‑";
         };
 
         // – (en dash) U+2013
@@ -396,8 +399,10 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL &kp KP_MINUS &kp KP_MINUS>;
-            label = "–";
+            bindings = <&kp RCTRL>,
+                <&kp KP_MINUS>,
+                <&kp KP_MINUS>;
+        label = "–";
         };
 
         // — (em dash) U+2014
