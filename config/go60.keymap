@@ -82,6 +82,131 @@
             bindings = <&bt_select_3>, <&bt BT_DISC 3>;
         };
 
+        /* =========
+         * LH R1 C1 : 5 / % / ₅ / ⁵
+         * ========= */
+
+        lhr1c1_shift: lhr1c1_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_5 &kp PERCENT>;
+        };
+
+        lhr1c1_altgr_shift: lhr1c1_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_5 &sup_5>;
+        };
+
+        lhr1c1: lhr1c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr1c1_shift &lhr1c1_altgr_shift>;
+        };
+
+        /* =========
+         * LH R1 C2 : 4 / $ / ₄ / ⁴
+         * ========= */
+
+        lhr1c2_shift: lhr1c2_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_4 &kp DOLLAR>;
+        };
+
+        lhr1c2_altgr_shift: lhr1c2_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_4 &sup_4>;
+        };
+
+        lhr1c2: lhr1c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr1c2_shift &lhr1c2_altgr_shift>;
+        };
+
+        /* =========
+         * LH R1 C3 : 3 / » / ₃ / ³
+         * ========= */
+
+        lhr1c3_shift: lhr1c3_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_3 &guillemotright_compose>;
+        };
+
+        lhr1c3_altgr_shift: lhr1c3_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_3 &sup_3>;
+        };
+
+        lhr1c3: lhr1c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr1c3_shift &lhr1c3_altgr_shift>;
+        };
+
+        /* =========
+         * LH R1 C4 : 2 / « / ₂ / ²
+         * ========= */
+
+        lhr1c4_shift: lhr1c4_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_2 &guillemotleft_compose>;
+        };
+
+        lhr1c4_altgr_shift: lhr1c4_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_2 &sup_2>;
+        };
+
+        lhr1c4: lhr1c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr1c4_shift &lhr1c4_altgr_shift>;
+        };
+
+        /* =========
+         * LH R1 C5 : 1 / € / ₁ / ¹
+         * ========= */
+
+        lhr1c5_shift: lhr1c5_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_1 &euro_compose>;
+        };
+
+        lhr1c5_altgr_shift: lhr1c5_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_1 &sup_1>;
+        };
+
+        lhr1c5: lhr1c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr1c5_shift &lhr1c5_altgr_shift>;
+        };
+
         /* LH R2 C5
          * Base        : q
          * Shift       : Q
@@ -287,6 +412,156 @@
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
 
+        /* -----------------------------
+         *  Compose helpers (RCTRL = Compose)
+         * ----------------------------- */
+
+        euro_compose: euro_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp E>,
+                <&macro_tap &kp EQUAL>;
+        };
+
+        guillemotleft_compose: guillemotleft_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp NON_US_BSLH>,
+                <&macro_tap &kp NON_US_BSLH>;
+        };
+
+        guillemotright_compose: guillemotright_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_press &kp RSHFT>,
+                <&macro_tap &kp NON_US_BSLH>,
+                <&macro_tap &kp NON_US_BSLH>,
+                <&macro_release &kp RSHFT>;
+        };
+
+        /* Subscripts: Compose + _ + digit => ₁..₅ */
+        sub_1: sub_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp UNDER>,
+                <&macro_tap &kp KP_1>;
+        };
+
+        sub_2: sub_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp UNDER>,
+                <&macro_tap &kp KP_2>;
+        };
+
+        sub_3: sub_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp UNDER>,
+                <&macro_tap &kp KP_3>;
+        };
+
+        sub_4: sub_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp UNDER>,
+                <&macro_tap &kp KP_4>;
+        };
+
+        sub_5: sub_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp UNDER>,
+                <&macro_tap &kp KP_5>;
+        };
+
+        /* Superscripts */
+        sup_1: sup_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp CARET>,
+                <&macro_tap &kp KP_1>;
+        };
+
+        sup_2: sup_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp CARET>,
+                <&macro_tap &kp KP_2>;
+        };
+
+        sup_3: sup_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp CARET>,
+                <&macro_tap &kp KP_3>;
+        };
+
+        sup_4: sup_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp CARET>,
+                <&macro_tap &kp KP_4>;
+        };
+
+        sup_5: sup_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp CARET>,
+                <&macro_tap &kp KP_5>;
+        };
 
         // LH R2 C5
         caret_literal: caret_literal {
@@ -937,7 +1212,7 @@
 
         layer_Base {
             bindings = <
-&kp ESC           &kp KP_N1      &kp KP_N2      &kp KP_N3      &kp KP_N4      &kp KP_N5                                                                                     &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
+&kp ESC           &lhr1c1        &lhr1c2        &lhr1c3        &lhr1c4        &lhr1c5                                                                                     &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
 &kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &lhr2c3_altgr  &lhr2c2_altgr  &lhr2c1_altgr                                                                                 &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
 &kp LEFT_SHIFT    &kp Q          &kp S          &kp E          &kp N          &kp F                                                                                         &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark   &kp V          &kp B                                                                                         &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
