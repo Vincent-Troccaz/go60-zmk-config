@@ -434,7 +434,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp UNDER>,
-                <&macro_tap &kp KP_1>;
+                <&macro_tap &kp KP_N1>;
         };
 
         sub_2: sub_2 {
@@ -445,7 +445,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp UNDER>,
-                <&macro_tap &kp KP_2>;
+                <&macro_tap &kp KP_N2>;
         };
 
         sub_3: sub_3 {
@@ -456,7 +456,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp UNDER>,
-                <&macro_tap &kp KP_3>;
+                <&macro_tap &kp KP_N3>;
         };
 
         sub_4: sub_4 {
@@ -467,7 +467,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp UNDER>,
-                <&macro_tap &kp KP_4>;
+                <&macro_tap &kp KP_N4>;
         };
 
         sub_5: sub_5 {
@@ -478,7 +478,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp UNDER>,
-                <&macro_tap &kp KP_5>;
+                <&macro_tap &kp KP_N5>;
         };
 
         /* Superscripts */
@@ -490,7 +490,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp CARET>,
-                <&macro_tap &kp KP_1>;
+                <&macro_tap &kp KP_N1>;
         };
 
         sup_2: sup_2 {
@@ -501,7 +501,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp CARET>,
-                <&macro_tap &kp KP_2>;
+                <&macro_tap &kp KP_N2>;
         };
 
         sup_3: sup_3 {
@@ -512,7 +512,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp CARET>,
-                <&macro_tap &kp KP_3>;
+                <&macro_tap &kp KP_N3>;
         };
 
         sup_4: sup_4 {
@@ -523,7 +523,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp CARET>,
-                <&macro_tap &kp KP_4>;
+                <&macro_tap &kp KP_N4>;
         };
 
         sup_5: sup_5 {
@@ -534,7 +534,7 @@
             bindings =
                 <&macro_tap &kp RCTRL>,
                 <&macro_tap &kp CARET>,
-                <&macro_tap &kp KP_5>;
+                <&macro_tap &kp KP_N5>;
         };
 
         // LH R2 C5
