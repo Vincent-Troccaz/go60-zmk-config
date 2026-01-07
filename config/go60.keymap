@@ -104,7 +104,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp NON_US_BSLH &leq_literal>;
+            bindings = <&kp NON_US_BSLH &leq_unicode>;
         };
 
         /* LHR2C4
@@ -236,12 +236,26 @@
         };
 
         // LHR2C4
-        leq_literal: leq_literal {
+        // Inférieur ou égual : ≤ (U+2264)
+        leq_unicode: leq_unicode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp RCTRL &kp NON_US_BSLH &kp EQUAL>;
+            bindings =
+                <&macro_release &kp RALT>,          /* évite que AltGr modifie ce qu’on tape */
+                <&macro_press   &kp LCTRL>,
+                <&macro_press   &kp LSHFT>,
+                <&macro_tap     &kp U>,           /* Ctrl+Shift+U */
+                <&macro_tap     &kp N2>,
+                <&macro_tap     &kp N2>,
+                <&macro_tap     &kp N6>,
+                <&macro_tap     &kp N4>,          /* 2264 */
+                <&macro_tap     &kp SPACE>,       /* valide */
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp LCTRL>,
+                <&macro_press   &kp RALT>;        /* remet AltGr (optionnel, mais confortable) */
+            label = "≤";
         };
 
 
