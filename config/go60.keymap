@@ -359,7 +359,7 @@
                 <&macro_release &kp LSHFT>,    /* neutralise Shift */
                 <&macro_release &kp RSHFT>,
                 <&macro_press   &kp RSHFT>,    /* % = Shift + COMMA (sur OS FR) */
-                <&macro_tap     &kp COMMA>,
+                <&macro_tap     &kp SQT>,
                 <&macro_release &kp RSHFT>;
           label = "%";
         };
@@ -376,7 +376,7 @@
                 <&macro_release &kp RSHFT>,
                 <&macro_tap     &kp RCTRL>,    /* Compose */
                 <&macro_press   &kp RSHFT>,    /* % */
-                <&macro_tap     &kp COMMA>,
+                <&macro_tap     &kp SQT>,
                 <&macro_release &kp RSHFT>,
                 <&macro_tap     &kp O>;        /* o => ‰ */
             label = "‰";
