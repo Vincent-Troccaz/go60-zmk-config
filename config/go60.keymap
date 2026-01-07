@@ -120,17 +120,7 @@
             bindings = <&kp C &lhr2c4_altgr_shift>;
         };
 
-        /* LH R2 C3 — AltGr niveau 2
-         * sans Shift : >
-         * avec Shift : ≥
-         */
-        lhr2c3_altgr_shift: lhr2c3_altgr_shift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp NON_US_BSLH &geq_compose>;
-        };
-
+        
         /* LH R2 C3 — AltGr niveau
          * sans Shift : >
          * avec Shift : ≥
