@@ -96,6 +96,30 @@
              bindings = <&kp A &caret_literal>;
         };
 
+        /* LHR2C4 — AltGr niveau 2
+         * sans Shift : <
+         * avec Shift : ≤
+         */
+        lhr2c4_altgr_shift: lhr2c4_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp NON_US_BSLH &leq_literal>;
+        };
+
+        /* LHR2C4
+         * Base        : c
+         * Shift       : C
+         * AltGr       : <
+         * Shift+AltGr : ≤
+         */
+        lhr2c4_altgr: lhr2c4_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp C &lhr2c4_altgr_shift>;
+        };
+
         minus_qmark: minus_qmark {
             compatible = "zmk,behavior-mod-morph";
             label = "- / ?";
@@ -210,6 +234,16 @@
             tap-ms = <30>;
             bindings = <&kp LBKT &kp SPACE>;
         };
+
+        // LHR2C4
+        leq_literal: leq_literal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp RCTRL &kp NON_US_BSLH &kp EQUAL>;
+        };
+
 
         // Accent circonflexe : â (^ + a)
 
@@ -766,12 +800,12 @@
 
         layer_Base {
             bindings = <
-&kp ESC           &kp KP_N1      &kp KP_N2   &kp KP_N3     &kp KP_N4  &kp KP_N5                                                                                 &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
-&kp TAB           &lhr2c5_altgr  &kp C       &kp O         &kp P      &kp Z                                                                                     &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
-&kp LEFT_SHIFT    &kp Q          &kp S       &kp E         &kp N      &kp F                                                                                     &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp W          &kp X       &minus_qmark  &kp V      &kp B                                                                                     &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
-                                 &magic 3 0  &kp N5        &kp MINUS                                                                                                        &symbol_nav_td  &kp LBKT   &kp RBKT
-                                                                                 &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
+&kp ESC           &kp KP_N1      &kp KP_N2      &kp KP_N3     &kp KP_N4  &kp KP_N5                                                                                 &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
+&kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &kp O         &kp P      &kp Z                                                                                     &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
+&kp LEFT_SHIFT    &kp Q          &kp S          &kp E         &kp N      &kp F                                                                                     &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark  &kp V      &kp B                                                                                     &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
+                                 &magic 3 0     &kp N5        &kp MINUS                                                                                                        &symbol_nav_td  &kp LBKT   &kp RBKT
+                                                                                    &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
             >;
         };
 
