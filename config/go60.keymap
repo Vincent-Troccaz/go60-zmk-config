@@ -82,7 +82,7 @@
             bindings = <&bt_select_3>, <&bt BT_DISC 3>;
         };
 
-        /* LHR2C5
+        /* LH R2 C5
          * Base        : q
          * Shift       : Q
          * AltGr       : ^ (affiché immédiatement)
@@ -96,7 +96,7 @@
              bindings = <&kp A &caret_literal>;
         };
 
-        /* LHR2C4 — AltGr niveau 2
+        /* LH R2 C4 — AltGr niveau 2
          * sans Shift : <
          * avec Shift : ≤
          */
@@ -107,7 +107,7 @@
             bindings = <&kp NON_US_BSLH &leq_compose>;
         };
 
-        /* LHR2C4
+        /* LH R2 C4
          * Base        : c
          * Shift       : C
          * AltGr       : <
@@ -118,6 +118,41 @@
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
             bindings = <&kp C &lhr2c4_altgr_shift>;
+        };
+
+        /* LH R2 C3 — AltGr niveau 2
+         * sans Shift : >
+         * avec Shift : ≥
+         */
+        lhr2c3_altgr_shift: lhr2c3_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp NON_US_BSLH &geq_compose>;
+        };
+
+        /* LH R2 C3 — AltGr niveau
+         * sans Shift : >
+         * avec Shift : ≥
+         */
+        lhr2c3_altgr_shift: lhr2c3_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&gt_literal &geq_compose>;
+        };
+    
+        /* LH R2 C3
+         * Base        : o
+         * Shift       : O
+         * AltGr       : >
+         * Shift+AltGr : ≥
+         */
+        lhr2c3_altgr: lhr2c3_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp O &lhr2c3_altgr_shift>;
         };
 
         minus_qmark: minus_qmark {
@@ -226,7 +261,7 @@
         };
 
 
-        // LHR2C5
+        // LH R2 C5
         caret_literal: caret_literal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -235,7 +270,7 @@
             bindings = <&kp LBKT &kp SPACE>;
         };
 
-        // LHR2C4
+        // LH R2 C4
         // Inférieur ou égal : ≤ (Compose + < + =)
         leq_compose: leq_compose {
             compatible = "zmk,behavior-macro";
@@ -250,6 +285,60 @@
                 <&macro_tap     &kp NON_US_BSLH>,  /* < sur FR */
                 <&macro_tap     &kp EQUAL>;       /* = */
             label = "≤";
+        };
+
+        // LH R2 C3
+        // Supérieur ou égal : ≥ (Compose + > + =)
+        geq_compose: geq_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,         /* neutralise AltGr */
+                <&macro_release &kp LSHFT>,        /* neutralise Shift */
+                <&macro_release &kp RSHFT>,
+                <&macro_tap     &kp RCTRL>,        /* Compose */
+                <&macro_tap     &kp NON_US_BSLH>,  /* < */
+                <&macro_tap     &kp RSHFT>,        /* Shift pour > */
+                <&macro_tap     &kp NON_US_BSLH>,  /* > */
+                <&macro_release &kp RSHFT>,
+                <&macro_tap     &kp EQUAL>;        /* = */
+            label = "≥";
+        };
+
+        // LH R2 C3 — '>' direct (sans dead-key / sans dépendre des mods tenus)
+        gt_literal: gt_literal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings =
+                <&macro_release &kp RALT>,          /* neutralise AltGr */
+                <&macro_release &kp LSHFT>,         /* neutralise Shift */
+                <&macro_release &kp RSHFT>,
+                <&macro_press   &kp RSHFT>,         /* fabrique '>' = Shift + NON_US_BSLH */
+                <&macro_tap     &kp NON_US_BSLH>,
+                <&macro_release &kp RSHFT>;
+          label = ">";
+        };
+
+        // LH R2 C3 — '≥' via Compose : Compose + '>' + '='
+        geq_compose: geq_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,          /* neutralise AltGr */
+                <&macro_release &kp LSHFT>,         /* neutralise Shift */
+                <&macro_release &kp RSHFT>,
+                <&macro_tap     &kp RCTRL>,         /* Compose */
+                <&macro_press   &kp RSHFT>,         /* '>' = Shift + NON_US_BSLH */
+                <&macro_tap     &kp NON_US_BSLH>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap     &kp EQUAL>;
+          label = "≥";
         };
 
         // Accent circonflexe : â (^ + a)
@@ -807,12 +896,12 @@
 
         layer_Base {
             bindings = <
-&kp ESC           &kp KP_N1      &kp KP_N2      &kp KP_N3     &kp KP_N4  &kp KP_N5                                                                                 &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
-&kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &kp O         &kp P      &kp Z                                                                                     &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
-&kp LEFT_SHIFT    &kp Q          &kp S          &kp E         &kp N      &kp F                                                                                     &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark  &kp V      &kp B                                                                                     &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
-                                 &magic 3 0     &kp N5        &kp MINUS                                                                                                        &symbol_nav_td  &kp LBKT   &kp RBKT
-                                                                                    &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
+&kp ESC           &kp KP_N1      &kp KP_N2      &kp KP_N3      &kp KP_N4  &kp KP_N5                                                                                 &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
+&kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &lhr2c3_altgr  &kp P      &kp Z                                                                                     &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
+&kp LEFT_SHIFT    &kp Q          &kp S          &kp E          &kp N      &kp F                                                                                     &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark   &kp V      &kp B                                                                                     &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
+                                 &magic 3 0     &kp N5         &kp MINUS                                                                                                        &symbol_nav_td  &kp LBKT   &kp RBKT
+                                                                                     &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
             >;
         };
 
