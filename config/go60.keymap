@@ -10,7 +10,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/modifiers.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -91,7 +90,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_5 &kp PERCENT>;
+            bindings = <&kp KP_N5 &kp PERCENT>;
         };
 
         lhr1c1_altgr_shift: lhr1c1_altgr_shift {
@@ -116,7 +115,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_4 &kp DOLLAR>;
+            bindings = <&kp KP_N4 &kp DOLLAR>;
         };
 
         lhr1c2_altgr_shift: lhr1c2_altgr_shift {
@@ -141,7 +140,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_3 &guillemotright_compose>;
+            bindings = <&kp KP_N3 &guillemotright_compose>;
         };
 
         lhr1c3_altgr_shift: lhr1c3_altgr_shift {
@@ -166,7 +165,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_2 &guillemotleft_compose>;
+            bindings = <&kp KP_N2 &guillemotleft_compose>;
         };
 
         lhr1c4_altgr_shift: lhr1c4_altgr_shift {
@@ -191,7 +190,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_1 &euro_compose>;
+            bindings = <&kp KP_N1 &euro_compose>;
         };
 
         lhr1c5_altgr_shift: lhr1c5_altgr_shift {
