@@ -1212,7 +1212,7 @@
 
         layer_Base {
             bindings = <
-&kp ESC           &lhr1c1        &lhr1c2        &lhr1c3        &lhr1c4        &lhr1c5                                                                                     &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
+&kp ESC           &lhr1c5        &lhr1c4        &lhr1c3        &lhr1c2        &lhr1c1                                                                                       &kp KP_N6   &kp KP_N7       &kp KP_N8  &kp KP_N9    &kp KP_N0  &kp BACKSPACE
 &kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &lhr2c3_altgr  &lhr2c2_altgr  &lhr2c1_altgr                                                                                 &kp J       &kp SEMI        &kp D      &sl 5        &kp Y      &kp DELETE
 &kp LEFT_SHIFT    &kp Q          &kp S          &kp E          &kp N          &kp F                                                                                         &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark   &kp V          &kp B                                                                                         &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
