@@ -82,6 +82,21 @@
             bindings = <&bt_select_3>, <&bt BT_DISC 3>;
         };
 
+        /* LHR2C5
+             * Base        : q
+             * Shift       : Q
+             * AltGr       : ^
+             * Shift+AltGr : ^
+             */
+
+        lhr2c5_altgr: lhr2c5_altgr {
+              compatible = "zmk,behavior-mod-morph";
+              #binding-cells = <0>;
+              mods = <(MOD_RALT)>;
+              bindings = <&kp A &kp CARET>;
+            };
+
+
         minus_qmark: minus_qmark {
             compatible = "zmk,behavior-mod-morph";
             label = "- / ?";
