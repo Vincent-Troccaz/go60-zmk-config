@@ -83,17 +83,17 @@
         };
 
         /* LHR2C5
-             * Base        : q
-             * Shift       : Q
-             * AltGr       : ^
-             * Shift+AltGr : ^
-             */
-
-        lhr2c5_altgr: lhr2c5_altgr {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
-            bindings = <&kp A &kp CARET>;
+         * Base        : q
+         * Shift       : Q
+         * AltGr       : ^ (affiché immédiatement)
+         * Shift+AltGr : ^ (affiché immédiatement)
+         */
+        
+         lhr2c5_altgr: lhr2c5_altgr {
+             compatible = "zmk,behavior-mod-morph";
+             #binding-cells = <0>;
+             mods = <(MOD_RALT)>;
+             bindings = <&kp A &caret_literal>;
         };
 
         minus_qmark: minus_qmark {
@@ -199,6 +199,16 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
+        };
+
+
+        // LHR2C5
+        caret_literal: caret_literal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp LBKT &kp SPACE>;
         };
 
         // Accent circonflexe : â (^ + a)
