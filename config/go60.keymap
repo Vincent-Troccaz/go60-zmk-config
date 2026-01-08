@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N5 &kp PERCENT>;
+            bindings = <&kp KP_N5 &kp SQT>;
         };
 
         lhr1c1_altgr_shift: lhr1c1_altgr_shift {
@@ -115,7 +115,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N4 &kp DOLLAR>;
+            bindings = <&kp KP_N4 &kp RBKT>;
         };
 
         lhr1c2_altgr_shift: lhr1c2_altgr_shift {
