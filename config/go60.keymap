@@ -345,7 +345,7 @@
          * Base        : q
          * Shift       : Q
          * AltGr       : ^ (affiché immédiatement)
-         * Shift+AltGr : ^ (affiché immédiatement)
+         * Shift+AltGr : none
          */
         
         // NIVEAU 1 : Détecte AltGr
@@ -353,7 +353,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&kp A &lhr2c5__shift_altgr>;
+            bindings = <&kp A &lhr2c5_shift_altgr>;
         };
         
         // NIVEAU 2 : Avec AltGr (détecte Shift)
@@ -361,7 +361,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RA(N9)> <&none>;    // AltGr = ^, Shift+AltGr = RIEN
+            bindings = <&kp RA(N9) &none>;    // AltGr = ^, Shift+AltGr = RIEN
         };
 
         /* LH R2 C4
