@@ -425,7 +425,7 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp RBKT  &none>;    // AltGr = $, Shift+AltGr = RIEN
-        
+        };
 
         /* LH R2 C1 — AltGr niveau
          * sans Shift : %
