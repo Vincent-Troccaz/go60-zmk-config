@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N5 &kp SQT>;
+            bindings = <&kp KP_N5 &kp SEMI>;
         };
 
         lhr1c1_altgr_shift: lhr1c1_altgr_shift {
