@@ -82,6 +82,11 @@
             bindings = <&bt_select_3>, <&bt BT_DISC 3>;
         };
 
+
+        /* ========================================================= *
+         * MOD-MORPHS pour LH et RH R1 (touches 1-2-3-4-5-6-7-8-9-0) *
+         * ========================================================= */
+
         /* =========
          * LH R1 C1 : 5 / % / ₅ / ⁵
          * ========= */
@@ -207,6 +212,131 @@
             bindings = <&lhr1c5_shift &lhr1c5_altgr_shift>;
         };
 
+        /* =========
+         * RH R1 C1 : 6 / ^ / ₆ / ⁶
+         * ========= */
+        
+        rhr1c1_shift: rhr1c1_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_N6 &kp LBKT>;       // ^ = LBKT en FR
+        };
+        
+        rhr1c1_altgr_shift: rhr1c1_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_6 &sup_6>;
+        };
+        
+        rhr1c1: rhr1c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr1c1_shift &rhr1c1_altgr_shift>;
+        };
+        
+        /* =========
+         * RH R1 C2 : 7 / & / ₇ / ⁷
+         * ========= */
+        
+        rhr1c2_shift: rhr1c2_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_N7 &kp N1>;         // & = N1 en FR
+        };
+        
+        rhr1c2_altgr_shift: rhr1c2_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_7 &sup_7>;
+        };
+        
+        rhr1c2: rhr1c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr1c2_shift &rhr1c2_altgr_shift>;
+        };
+        
+        /* =========
+         * RH R1 C3 : 8 / * / ₈ / ⁸
+         * ========= */
+        
+        rhr1c3_shift: rhr1c3_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_N8 &kp RBKT>;       // * = RBKT en FR
+        };
+        
+        rhr1c3_altgr_shift: rhr1c3_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_8 &sup_8>;
+        };
+        
+        rhr1c3: rhr1c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr1c3_shift &rhr1c3_altgr_shift>;
+        };
+        
+        /* =========
+         * RH R1 C4 : 9 / # / ₉ / ⁹
+         * ========= */
+        
+        rhr1c4_shift: rhr1c4_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_N9 &kp RA(N3)>;     // # = AltGr+3 en FR
+        };
+        
+        rhr1c4_altgr_shift: rhr1c4_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_9 &sup_9>;
+        };
+        
+        rhr1c4: rhr1c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr1c4_shift &rhr1c4_altgr_shift>;
+        };
+        
+        /* =========
+         * RH R1 C5 : 0 / @ / ₀ / ⁰
+         * ========= */
+        
+        rhr1c5_shift: rhr1c5_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp KP_N0 &kp RA(N0)>;     // @ = AltGr+0 en FR
+        };
+        
+        rhr1c5_altgr_shift: rhr1c5_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sub_0 &sup_0>;
+        };
+        
+        rhr1c5: rhr1c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr1c5_shift &rhr1c5_altgr_shift>;
+        };
+
         /* LH R2 C5
          * Base        : q
          * Shift       : Q
@@ -245,6 +375,9 @@
             bindings = <&kp C &lhr2c4_altgr_shift>;
         };
 
+        /* ========================================================= *
+         * MOD-MORPHS pour ...                                       *
+         * ========================================================= */
         
         /* LH R2 C3 — AltGr niveau
          * sans Shift : >
@@ -425,6 +558,10 @@
                 <&macro_release &kp RSHFT>;
         };
 
+        /* ======================================================= *
+         * MACROS pour INDICES et EXPOSANTS de 1-2-3-4-5-6-7-8-9-0 *
+         * ======================================================= */
+
         /* Subscripts: Compose + _ + digit => ₁..₅ */
         sub_1: sub_1 {
             compatible = "zmk,behavior-macro";
@@ -496,7 +633,81 @@
                 <&macro_tap &kp KP_N5>;
         };
 
-        /* Superscripts */
+        sub_6: sub_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,         /* neutralise AltGr */
+                <&macro_release &kp LSHFT>,        /* neutralise Shift */
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp N8>,               // FR N8 -> _ under
+                <&macro_tap &kp KP_N6>;
+            label = "₆";
+        };
+        
+        sub_7: sub_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp N8>,
+                <&macro_tap &kp KP_N7>;
+            label = "₇";
+        };
+        
+        sub_8: sub_8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp N8>,
+                <&macro_tap &kp KP_N8>;
+            label = "₈";
+        };
+        
+        sub_9: sub_9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp N8>,
+                <&macro_tap &kp KP_N9>;
+            label = "₉";
+        };
+        
+        sub_0: sub_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp N8>,
+                <&macro_tap &kp KP_N0>;
+            label = "₀";
+        };
+
         sup_1: sup_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -566,6 +777,86 @@
                 <&macro_tap &kp RA(N9)>,
                 <&macro_tap &kp KP_N5>;
         };
+
+        sup_6: sup_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp RA(N9)>,           // ^ en FR = AltGr+9
+                <&macro_tap &kp KP_N6>;
+            label = "⁶";
+        };
+        
+        sup_7: sup_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp RA(N9)>,
+                <&macro_tap &kp KP_N7>;
+            label = "⁷";
+        };
+        
+        sup_8: sup_8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp RA(N9)>,
+                <&macro_tap &kp KP_N8>;
+            label = "⁸";
+        };
+        
+        sup_9: sup_9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp RA(N9)>,
+                <&macro_tap &kp KP_N9>;
+            label = "⁹";
+        };
+        
+        sup_0: sup_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp RA(N9)>,
+                <&macro_tap &kp KP_N0>;
+            label = "⁰";
+        };
+
+
+        /* ======================================================= *
+         * MACROS pour ...                                         *
+         * ======================================================= */
 
         // LH R2 C5
         caret_literal: caret_literal {
