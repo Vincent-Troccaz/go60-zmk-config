@@ -539,7 +539,8 @@
                 <&macro_release &kp LSHFT>,        /* neutralise Shift */
                 <&macro_release &kp RSHFT>,
                 <&macro_tap &kp RCTRL>,
-                <&macro_tap &kp LBKT>,
+                <&macro_tap &kp RALT>,
+                <&macro_tap &kp N9>,
                 <&macro_tap &kp KP_N5>;
         };
 
