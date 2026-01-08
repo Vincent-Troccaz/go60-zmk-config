@@ -165,7 +165,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N2 &kp RA(W)>;
+            bindings = <&kp KP_N2 &kp RA(Z)>;
         };
 
         lhr1c4_altgr_shift: lhr1c4_altgr_shift {
