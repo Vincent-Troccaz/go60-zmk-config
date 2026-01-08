@@ -410,14 +410,22 @@
          * Base        : p
          * Shift       : P
          * AltGr       : $
-         * Shift+AltGr : $
+         * Shift+AltGr : none
          */
         lhr2c2_altgr: lhr2c2_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&kp P &kp DLLR>;
+            bindings = <&kp P &lhr2c2_shift_altgr>;
         };
+
+        // NIVEAU 2 : Avec AltGr (détecte Shift)
+        lhr2c2_shift_altgr: lhr2c2_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RBKT  &none>;    // AltGr = $, Shift+AltGr = RIEN
+        
 
         /* LH R2 C1 — AltGr niveau
          * sans Shift : %
