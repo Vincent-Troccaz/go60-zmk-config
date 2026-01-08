@@ -337,6 +337,10 @@
             bindings = <&rhr1c5_shift &rhr1c5_altgr_shift>;
         };
 
+        /* ========================================================= *
+         * MOD-MORPHS pour LH et RH R2 (touches q-c-o-p-w-j-m-d-*-y) *
+         * ========================================================= */
+
         /* LH R2 C5
          * Base        : q
          * Shift       : Q
@@ -348,18 +352,7 @@
              compatible = "zmk,behavior-mod-morph";
              #binding-cells = <0>;
              mods = <(MOD_RALT)>;
-             bindings = <&kp A &caret_literal>;
-        };
-
-        /* LH R2 C4 — AltGr niveau 2
-         * sans Shift : <
-         * avec Shift : ≤
-         */
-        lhr2c4_altgr_shift: lhr2c4_altgr_shift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp NON_US_BSLH &leq_compose>;
+             bindings = <&kp A &kp RA(N9)>;
         };
 
         /* LH R2 C4
@@ -368,26 +361,19 @@
          * AltGr       : <
          * Shift+AltGr : ≤
          */
+
+        lhr2c4_altgr_shift: lhr2c4_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp NON_US_BSLH &kp RA(NON_US_BSLH)>;
+        };
+
         lhr2c4_altgr: lhr2c4_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
             bindings = <&kp C &lhr2c4_altgr_shift>;
-        };
-
-        /* ========================================================= *
-         * MOD-MORPHS pour ...                                       *
-         * ========================================================= */
-        
-        /* LH R2 C3 — AltGr niveau
-         * sans Shift : >
-         * avec Shift : ≥
-         */
-        lhr2c3_altgr_shift: lhr2c3_altgr_shift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&gt_literal &geq_compose>;
         };
     
         /* LH R2 C3
@@ -396,6 +382,14 @@
          * AltGr       : >
          * Shift+AltGr : ≥
          */
+
+        lhr2c3_altgr_shift: lhr2c3_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(NON_US_BSLH) &kp LS(RA(NON_US_BSLH))>;
+        };
+
         lhr2c3_altgr: lhr2c3_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
