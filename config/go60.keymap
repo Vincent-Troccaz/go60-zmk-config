@@ -270,7 +270,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp KP_N8 &kp RBKT>;       // * = RBKT en FR
+            bindings = <&kp KP_N8 &kp BSLH>;       // * = BSLH en FR
         };
         
         rhr1c3_altgr_shift: rhr1c3_altgr_shift {
