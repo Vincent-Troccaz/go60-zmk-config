@@ -484,7 +484,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RBKT &kp RA(COMMA)>;  // * = RBKT, × = AltGr+; (COMMA en FR)
+            bindings = <&kp BSLH &kp RA(COMMA)>;  // * = BSLH, × = AltGr+; (COMMA en FR)
         };
         
         /* =========
@@ -509,7 +509,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp APOS &none>;              // ' = APOS en FR, Shift+AltGr = rien
+            bindings = <&kp SQT &none>;              // ' = SQT en FR, Shift+AltGr = rien
         };
         
         /* =========
