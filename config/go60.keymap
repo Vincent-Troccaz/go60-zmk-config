@@ -535,7 +535,193 @@
          * MOD-MORPHS pour LH et RH R3 (touches a-s-e-n-f-l-r-t-i-u  *
          * ========================================================= */
 
+        /* ==========================================
+         * MOD-MORPHS pour LH R3
+         * ========================================== */
         
+        /* =========
+         * LH R3 C1 : f / F / = / ≠
+         * ========= */
+        
+        lhr3c1: lhr3c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp F &lhr3c1_shift_altgr>;
+        };
+        
+        lhr3c1_shift_altgr: lhr3c1_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp EQUAL &kp LS(RA(MINUS))>;   // = / ≠
+        };
+        
+        /* =========
+         * LH R3 C2 : n / N / } / rien
+         * ========= */
+        
+        lhr3c2: lhr3c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp N &lhr3c2_shift_altgr>;
+        };
+        
+        lhr3c2_shift_altgr: lhr3c2_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(EQUAL) &none>;           // } / rien
+        };
+        
+        /* =========
+         * LH R3 C3 : e / E / ) / rien
+         * ========= */
+        
+        lhr3c3: lhr3c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp E &lhr3c3_shift_altgr>;
+        };
+        
+        lhr3c3_shift_altgr: lhr3c3_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp MINUS &none>;               // ) / rien
+        };
+        
+        /* =========
+         * LH R3 C4 : s / S / ( / rien
+         * ========= */
+        
+        lhr3c4: lhr3c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp S &lhr3c4_shift_altgr>;
+        };
+        
+        lhr3c4_shift_altgr: lhr3c4_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N5 &none>;                  // ( / rien
+        };
+        
+        /* =========
+         * LH R3 C5 : a / A / { / rien
+         * ========= */
+        
+        lhr3c5: lhr3c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp Q &lhr3c5_shift_altgr>;     // A en mapping inversé = Q
+        };
+        
+        lhr3c5_shift_altgr: lhr3c5_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N4) &none>;              // { / rien
+        };
+        
+        /* ==========================================
+         * MOD-MORPHS pour RH R3
+         * ========================================== */
+        
+        /* =========
+         * RH R3 C1 : l / L / \ / rien
+         * ========= */
+        
+        rhr3c1: rhr3c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp L &rhr3c1_shift_altgr>;
+        };
+        
+        rhr3c1_shift_altgr: rhr3c1_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N8) &none>;              // \ / rien
+        };
+        
+        /* =========
+         * RH R3 C2 : r / R / + / ±
+         * ========= */
+        
+        rhr3c2: rhr3c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp R &rhr3c2_shift_altgr>;
+        };
+        
+        rhr3c2_shift_altgr: rhr3c2_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(EQUAL) &kp LS(RA(EQUAL))>;  // + / ±
+        };
+        
+        /* =========
+         * RH R3 C3 : t / T / - / rien
+         * ========= */
+        
+        rhr3c3: rhr3c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp T &rhr3c3_shift_altgr>;
+        };
+        
+        rhr3c3_shift_altgr: rhr3c3_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N6 &none>;                  // - / rien
+        };
+        
+        /* =========
+         * RH R3 C4 : i / I / / / ÷
+         * ========= */
+        
+        rhr3c4: rhr3c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp I &rhr3c4_shift_altgr>;
+        };
+        
+        rhr3c4_shift_altgr: rhr3c4_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(DOT) &kp RA(DOT)>;       // / / ÷
+        };
+        
+        /* =========
+         * RH R3 C5 : u / U / " / rien
+         * ========= */
+        
+        rhr3c5: rhr3c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp U &rhr3c5_shift_altgr>;
+        };
+        
+        rhr3c5_shift_altgr: rhr3c5_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N3 &none>;                  // " / rien
+        };
 
         /* ========================================================= *
          * MOD-MORPHS pour ...                                       *
