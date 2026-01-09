@@ -1755,7 +1755,7 @@
             bindings = <
 &kp ESC           &lhr1c5        &lhr1c4        &lhr1c3        &lhr1c2        &lhr1c1                                                                                       &rhr1c1     &rhr1c2         &rhr1c3    &rhr1c4      &rhr1c5    &kp BACKSPACE
 &kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &lhr2c3_altgr  &lhr2c2_altgr  &lhr2c1_altgr                                                                                 &rhr2c1     &rhr2c2         &rhr2c3    &rhr2c4      &rhr2c5    &kp DELETE
-&kp LEFT_SHIFT    &kp Q          &kp S          &kp E          &kp N          &kp F                                                                                         &kp L       &kp R           &kp T      &kp I        &kp U      &kp RIGHT_SHIFT
+&kp LEFT_SHIFT    &lhr3c5        &lhr3c4        &lhr3c3        &lhr3c2        &lhr3c1                                                                                       &rhr3c1     &rhr3c2         &rhr3c3    &rhr3c4      &rhr3c5    &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark   &kp V          &kp B                                                                                         &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
                                  &magic 3 0     &kp N5         &kp MINUS                                                                                                                &symbol_nav_td  &kp LBKT   &kp RBKT
                                                                                              &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
