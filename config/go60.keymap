@@ -724,6 +724,219 @@
         };
 
         /* ========================================================= *
+         * MOD-MORPHS pour LH et RH R4 (touches z-x---v-b-.-h-g-.-k  *
+         * ========================================================= */
+        
+        /* ==========================================
+         * MOD-MORPHS pour LH R4
+         * ========================================== */
+        
+        /* =========
+         * LH R4 C1 : b / B / # / rien
+         * ========= */
+        
+        lhr4c1: lhr4c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp B &lhr4c1_shift_altgr>;
+        };
+        
+        lhr4c1_shift_altgr: lhr4c1_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N3) &none>;             // # / rien
+        };
+        
+        /* =========
+         * LH R4 C2 : v / V / _ / –
+         * ========= */
+        
+        lhr4c2: lhr4c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp V &lhr4c2_shift_altgr>;
+        };
+        
+        lhr4c2_shift_altgr: lhr4c2_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N8 &kp LS(RA(N5))>;        // _ / –
+        };
+        
+        /* =========
+         * LH R4 C3 : - / ? / ] / rien
+         * ========= */
+        
+        lhr4c3: lhr4c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr4c3_no_altgr &lhr4c3_shift_altgr>;
+        };
+        
+        lhr4c3_no_altgr: lhr4c3_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N6 &kp LS(M)>;             // - / ?
+        };
+        
+        lhr4c3_shift_altgr: lhr4c3_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(MINUS) &none>;          // ] / rien
+        };
+        
+        /* =========
+         * LH R4 C4 : x / X / [ / rien
+         * ========= */
+        
+        lhr4c4: lhr4c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp X &lhr4c4_shift_altgr>;
+        };
+        
+        lhr4c4_shift_altgr: lhr4c4_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N5) &none>;             // [ / rien
+        };
+        
+        /* =========
+         * LH R4 C5 : z / Z / ~ / rien
+         * ========= */
+        
+        lhr4c5: lhr4c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp W &lhr4c5_shift_altgr>;    // Z en mapping inversé = W
+        };
+        
+        lhr4c5_shift_altgr: lhr4c5_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N2) &none>;             // ~ / rien
+        };
+        
+        /* ==========================================
+         * MOD-MORPHS pour RH R4
+         * ========================================== */
+        
+        /* =========
+         * RH R4 C1 : . / : / | / ¦
+         * ========= */
+        
+        rhr4c1: rhr4c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr4c1_no_altgr &rhr4c1_shift_altgr>;
+        };
+        
+        rhr4c1_no_altgr: rhr4c1_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(COMMA) &kp DOT>;        // . / :
+        };
+        
+        rhr4c1_shift_altgr: rhr4c1_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N6) &broken_bar_compose>;  // | / ¦
+        };
+        
+        /* =========
+         * RH R4 C2 : h / H / ! / ¬
+         * ========= */
+        
+        rhr4c2: rhr4c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp H &rhr4c2_shift_altgr>;
+        };
+        
+        rhr4c2_shift_altgr: rhr4c2_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp FSLH &kp RA(N)>;           // ! / ¬
+        };
+        
+        /* =========
+         * RH R4 C3 : g / G / ; / rien
+         * ========= */
+        
+        rhr4c3: rhr4c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp G &rhr4c3_shift_altgr>;
+        };
+        
+        rhr4c3_shift_altgr: rhr4c3_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp COMMA &none>;              // ; / rien
+        };
+        
+        /* =========
+         * RH R4 C4 : , / ; / : / rien
+         * ========= */
+        
+        rhr4c4: rhr4c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr4c4_no_altgr &rhr4c4_shift_altgr>;
+        };
+        
+        rhr4c4_no_altgr: rhr4c4_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp M &kp COMMA>;              // , / ;
+        };
+        
+        rhr4c4_shift_altgr: rhr4c4_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp DOT &none>;                // : / rien
+        };
+        
+        /* =========
+         * RH R4 C5 : k / K / ? / rien
+         * ========= */
+        
+        rhr4c5: rhr4c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp K &rhr4c5_shift_altgr>;
+        };
+        
+        rhr4c5_shift_altgr: rhr4c5_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(M) &none>;              // ? / rien
+        };
+
+        /* ========================================================= *
          * MOD-MORPHS pour ...                                       *
          * ========================================================= */
 
@@ -804,6 +1017,26 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
+        };
+
+         /* ==========================================
+         * MACROS pour R4
+         * ========================================== */
+        
+        // ¦ (broken bar) U+00A6 - Compose : Compose + ! + ^
+        broken_bar_compose: broken_bar_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap>, <&kp RCTRL>,         /* Compose */
+                <&macro_tap>, <&kp FSLH>,          /* ! en FR */
+                <&macro_tap>, <&kp RA(N9)>;        /* ^ en FR */
+            label = "¦";
         };
 
         /* -----------------------------
@@ -1756,7 +1989,7 @@
 &kp ESC           &lhr1c5        &lhr1c4        &lhr1c3        &lhr1c2        &lhr1c1                                                                                       &rhr1c1     &rhr1c2         &rhr1c3    &rhr1c4      &rhr1c5    &kp BACKSPACE
 &kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &lhr2c3_altgr  &lhr2c2_altgr  &lhr2c1_altgr                                                                                 &rhr2c1     &rhr2c2         &rhr2c3    &rhr2c4      &rhr2c5    &kp DELETE
 &kp LEFT_SHIFT    &lhr3c5        &lhr3c4        &lhr3c3        &lhr3c2        &lhr3c1                                                                                       &rhr3c1     &rhr3c2         &rhr3c3    &rhr3c4      &rhr3c5    &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp W          &kp X          &minus_qmark   &kp V          &kp B                                                                                         &dot_colon  &kp H           &kp G      &comma_semi  &kp K      &keypad_td
+&kp LEFT_CONTROL  &lhr4c5        &lhr4c4        &lhr4c3        &lhr4c2        &lhr4c1                                                                                       &rhr4c1     &rhr4c2         &rhr4c3    &rhr4c4      &rhr4c5    &keypad_td
                                  &magic 3 0     &kp N5         &kp MINUS                                                                                                                &symbol_nav_td  &kp LBKT   &kp RBKT
                                                                                              &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
             >;
