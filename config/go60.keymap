@@ -502,7 +502,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&sl layer_Accented &kp LS(SLASH)>;   // layer accents / ! (Shift+SLASH en FR)
+            bindings = <&sl 5 &kp LS(SLASH)>;   // layer accents / ! (Shift+SLASH en FR)
         };
         
         rhr2c4_shift_altgr: rhr2c4_shift_altgr {
