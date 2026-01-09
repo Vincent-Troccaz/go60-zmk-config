@@ -344,13 +344,6 @@
         /* =========
          * LH R2 C5 : q / Q / ^ / none
          * ========= */
-
-        /* LH R2 C5
-         * Base        : q
-         * Shift       : Q
-         * AltGr       : ^ (affiché immédiatement)
-         * Shift+AltGr : none
-         */
         
         // NIVEAU 1 : Détecte AltGr
         lhr2c5_altgr: lhr2c5_altgr {
@@ -448,14 +441,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&kp J> <&rhr2c1_shift_altgr>;
+            bindings = <&kp J &rhr2c1_shift_altgr>;
         };
         
         rhr2c1_shift_altgr: rhr2c1_shift_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RA(N0)> <&none>;       // @ = AltGr+0 en FR, Shift+AltGr = rien
+            bindings = <&kp RA(N0) &none>;       // @ = AltGr+0 en FR, Shift+AltGr = rien
         };
         
         /* =========
@@ -466,14 +459,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&kp SEMICOLON> <&rhr2c2_shift_altgr>;  // M en mapping inversé = SEMICOLON
+            bindings = <&kp SEMICOLON &rhr2c2_shift_altgr>;  // M en mapping inversé = SEMICOLON
         };
         
         rhr2c2_shift_altgr: rhr2c2_shift_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N1> <&none>;           // & = N1 en FR, Shift+AltGr = rien
+            bindings = <&kp N1 &none>;           // & = N1 en FR, Shift+AltGr = rien
         };
         
         /* =========
@@ -484,14 +477,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&kp D> <&rhr2c3_shift_altgr>;
+            bindings = <&kp D &rhr2c3_shift_altgr>;
         };
         
         rhr2c3_shift_altgr: rhr2c3_shift_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RBKT> <&kp RA(COMMA)>;  // * = RBKT, × = AltGr+; (COMMA en FR)
+            bindings = <&kp RBKT &kp RA(COMMA)>;  // * = RBKT, × = AltGr+; (COMMA en FR)
         };
         
         /* =========
@@ -502,21 +495,21 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&rhr2c4_no_altgr> <&rhr2c4_shift_altgr>;
+            bindings = <&rhr2c4_no_altgr &rhr2c4_shift_altgr>;
         };
         
         rhr2c4_no_altgr: rhr2c4_no_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&sl LAYER_Accented> <&kp LS(SLASH)>;   // layer accents / ! (Shift+SLASH en FR)
+            bindings = <&sl LAYER_Accented &kp LS(SLASH)>;   // layer accents / ! (Shift+SLASH en FR)
         };
         
         rhr2c4_shift_altgr: rhr2c4_shift_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp APOS> <&none>;              // ' = APOS en FR, Shift+AltGr = rien
+            bindings = <&kp APOS &none>;              // ' = APOS en FR, Shift+AltGr = rien
         };
         
         /* =========
@@ -527,14 +520,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            bindings = <&kp Y> <&rhr2c5_shift_altgr>;
+            bindings = <&kp Y &rhr2c5_shift_altgr>;
         };
         
         rhr2c5_shift_altgr: rhr2c5_shift_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RA(N7)> <&none>;            // ` = AltGr+7 en FR, Shift+AltGr = rien
+            bindings = <&kp RA(N7) &none>;            // ` = AltGr+7 en FR, Shift+AltGr = rien
         };
 
 
