@@ -509,7 +509,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp SQT &none>;              // ' = SQT en FR, Shift+AltGr = rien
+            bindings = <&kp N4 &none>;              // ' = N4 en FR, Shift+AltGr = rien
         };
         
         /* =========
