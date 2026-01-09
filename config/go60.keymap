@@ -341,6 +341,10 @@
          * MOD-MORPHS pour LH et RH R2 (touches q-c-o-p-w-j-m-d-*-y) *
          * ========================================================= */
 
+        /* =========
+         * LH R2 C5 : q / Q / ^ / none
+         * ========= */
+
         /* LH R2 C5
          * Base        : q
          * Shift       : Q
@@ -364,12 +368,9 @@
             bindings = <&kp RA(N9) &none>;    // AltGr = ^, Shift+AltGr = RIEN
         };
 
-        /* LH R2 C4
-         * Base        : c
-         * Shift       : C
-         * AltGr       : <
-         * Shift+AltGr : ≤
-         */
+        /* =========
+         * LH R2 C4 : c / C / < / ≤
+         * ========= */
 
         lhr2c4_altgr_shift: lhr2c4_altgr_shift {
             compatible = "zmk,behavior-mod-morph";
@@ -384,13 +385,10 @@
             mods = <(MOD_RALT)>;
             bindings = <&kp C &lhr2c4_altgr_shift>;
         };
-    
-        /* LH R2 C3
-         * Base        : o
-         * Shift       : O
-         * AltGr       : >
-         * Shift+AltGr : ≥
-         */
+
+        /* =========
+         * LH R2 C3 : o / O / > / ≥
+         * ========= */
 
         lhr2c3_altgr_shift: lhr2c3_altgr_shift {
             compatible = "zmk,behavior-mod-morph";
@@ -406,12 +404,10 @@
             bindings = <&kp O &lhr2c3_altgr_shift>;
         };
 
-        /* LH R2 C2
-         * Base        : p
-         * Shift       : P
-         * AltGr       : $
-         * Shift+AltGr : none
-         */
+        /* =========
+         * LH R2 C2 : p / P / $ / none
+         * ========= */
+
         lhr2c2_altgr: lhr2c2_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -419,38 +415,139 @@
             bindings = <&kp P &lhr2c2_shift_altgr>;
         };
 
-        // NIVEAU 2 : Avec AltGr (détecte Shift)
         lhr2c2_shift_altgr: lhr2c2_shift_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp RBKT  &none>;    // AltGr = $, Shift+AltGr = RIEN
         };
-
-        /* LH R2 C1 — AltGr niveau
-         * sans Shift : %
-         * avec Shift : ‰
-         */
-        lhr2c1_altgr_shift: lhr2c1_altgr_shift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&percent_literal &permille_compose>;
-        };
     
-        /* LH R2 C1
-         * Base        : w   (OS FR => envoyer Z)
-         * Shift       : W
-         * AltGr       : %
-         * Shift+AltGr : ‰
-         */
+        /* =========
+         * LH R2 C1 : w / W / % / ‰
+         * ========= */
+
         lhr2c1_altgr: lhr2c1_altgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
             bindings = <&kp Z &lhr2c1_altgr_shift>;
         };
+
+        lhr2c1_altgr_shift: lhr2c1_altgr_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(SQT) &permille_compose>;
+        };
+
+        /* =========
+         * RH R2 C1 : j / J / @ / rien
+         * ========= */
         
+        rhr2c1: rhr2c1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp J> <&rhr2c1_shift_altgr>;
+        };
+        
+        rhr2c1_shift_altgr: rhr2c1_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N0)> <&none>;       // @ = AltGr+0 en FR, Shift+AltGr = rien
+        };
+        
+        /* =========
+         * RH R2 C2 : m / M / & / rien
+         * ========= */
+        
+        rhr2c2: rhr2c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp SEMICOLON> <&rhr2c2_shift_altgr>;  // M en mapping inversé = SEMICOLON
+        };
+        
+        rhr2c2_shift_altgr: rhr2c2_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N1> <&none>;           // & = N1 en FR, Shift+AltGr = rien
+        };
+        
+        /* =========
+         * RH R2 C3 : d / D / * / ×
+         * ========= */
+        
+        rhr2c3: rhr2c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp D> <&rhr2c3_shift_altgr>;
+        };
+        
+        rhr2c3_shift_altgr: rhr2c3_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RBKT> <&kp RA(COMMA)>;  // * = RBKT, × = AltGr+; (COMMA en FR)
+        };
+        
+        /* =========
+         * RH R2 C4 : layer_accented / ! / ' / rien
+         * ========= */
+        
+        rhr2c4: rhr2c4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&rhr2c4_no_altgr> <&rhr2c4_shift_altgr>;
+        };
+        
+        rhr2c4_no_altgr: rhr2c4_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&sl LAYER_Accented> <&kp LS(SLASH)>;   // layer accents / ! (Shift+SLASH en FR)
+        };
+        
+        rhr2c4_shift_altgr: rhr2c4_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp APOS> <&none>;              // ' = APOS en FR, Shift+AltGr = rien
+        };
+        
+        /* =========
+         * RH R2 C5 : y / Y / ` / rien
+         * ========= */
+        
+        rhr2c5: rhr2c5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&kp Y> <&rhr2c5_shift_altgr>;
+        };
+        
+        rhr2c5_shift_altgr: rhr2c5_shift_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N7)> <&none>;            // ` = AltGr+7 en FR, Shift+AltGr = rien
+        };
+
+
+        /* ========================================================= *
+         * MOD-MORPHS pour LH et RH R3 (touches a-s-e-n-f-l-r-t-i-u  *
+         * ========================================================= */
+
+        
+
+        /* ========================================================= *
+         * MOD-MORPHS pour ...                                       *
+         * ========================================================= */
+
         minus_qmark: minus_qmark {
             compatible = "zmk,behavior-mod-morph";
             label = "- / ?";
