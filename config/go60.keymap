@@ -1352,7 +1352,7 @@
                 <&macro_release &kp LSHFT>,
                 <&macro_release &kp RSHFT>,
                 <&macro_tap     &kp RCTRL>,    /* Compose */
-                <&macro_press   &kp P>,        /* P */
+                <&macro_tap     &kp P>,        /* P */
                 <&macro_tap     &kp FSLH>;     /* ! => ¶ */
             label = "¶";
         };
@@ -1364,8 +1364,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
-                <&kp RA(LBKT)>,  / * ~  en FR */
-                <&kp N>;     / * N => ñ */
+                <&macro_tap &kp RA(LBKT)>,  / * ~  en FR */
+                <&macro_tap &kp N>;     / * N => ñ */
             label = "ñ";
         };
 
