@@ -1340,6 +1340,24 @@
          * MACROS pour la couche layer_accented                    *
          * ======================================================= */
 
+        /* LH R2 C1 — '‰' via Compose : Compose + % + o */
+        permille_compose: permille_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_release &kp RALT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap     &kp RCTRL>,    /* Compose */
+                <&macro_press   &kp RSHFT>,    /* % */
+                <&macro_tap     &kp SQT>,
+                <&macro_release &kp RSHFT>,
+                <&macro_tap     &kp O>;        /* o => ‰ */
+            label = "‰";
+        };
+
         // Pilcrow : ¶ (Compose + P + !)
 
         pilcrow_compose: pilcrow_compose {
@@ -1369,9 +1387,24 @@
             label = "ñ";
         };
 
-        /* ======================================================= *
-         * MACROS INUTILES                                         *
-         * ======================================================= */
+        // • (bullet) U+2022
+        // Bullet : • (Compose + . + =)
+
+        bullet_compose: bullet_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&kp RCTRL>,            // Compose
+                <&kp KP LS(COMMA)>,     // ; en FR
+                <&kp KP_EQUAL>;         // =
+            label = "•";
+        };
+
+        /* =========================================================== *
+         * MACROS dont il faut vérifier si elles sont encore utilisées *
+         * =========================================================== */
 
         /* -----------------------------
          *  Compose helpers (RCTRL = Compose)
@@ -1488,23 +1521,7 @@
           label = "%";
         };
 
-        /* LH R2 C1 — '‰' via Compose : Compose + % + o */
-        permille_compose: permille_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_release &kp RALT>,
-                <&macro_release &kp LSHFT>,
-                <&macro_release &kp RSHFT>,
-                <&macro_tap     &kp RCTRL>,    /* Compose */
-                <&macro_press   &kp RSHFT>,    /* % */
-                <&macro_tap     &kp SQT>,
-                <&macro_release &kp RSHFT>,
-                <&macro_tap     &kp O>;        /* o => ‰ */
-            label = "‰";
-        };
+        
 
         // Accent circonflexe : â (^ + a)
 
@@ -1733,15 +1750,10 @@
             label = "—";
         };
 
-        // • (bullet) U+2022
-        // Bullet : • (Compose + . + =)
 
-        bullet_compose: bullet_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp DOT &kp EQUAL>;
-            label = "•";
-        };
+
+
+
 
         // · (middle dot) U+00B7
         // Middle dot : · (Compose + . + ^)
