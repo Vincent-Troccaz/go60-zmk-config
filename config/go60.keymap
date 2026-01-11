@@ -1396,9 +1396,9 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&kp RCTRL>,            // Compose
-                <&kp KP LS(COMMA)>,     // ; en FR
-                <&kp KP_EQUAL>;         // =
+                <&macro_tap &kp RCTRL>, /* Compose */
+                <&macro_tap &kp LS(COMMA)>,     /* ; en FR */
+                <&macro_tap &kp KP_EQUAL>;         /* => •    */
             label = "•";
         };
 
