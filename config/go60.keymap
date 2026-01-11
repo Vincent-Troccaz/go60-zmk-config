@@ -1039,44 +1039,7 @@
             label = "¦";
         };
 
-        /* -----------------------------
-         *  Compose helpers (RCTRL = Compose)
-         * ----------------------------- */
-
-        euro_compose: euro_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_tap &kp RCTRL>,
-                <&macro_tap &kp E>,
-                <&macro_tap &kp EQUAL>;
-        };
-
-        guillemotleft_compose: guillemotleft_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_tap &kp RCTRL>,
-                <&macro_tap &kp NON_US_BSLH>,
-                <&macro_tap &kp NON_US_BSLH>;
-        };
-
-        guillemotright_compose: guillemotright_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_tap &kp RCTRL>,
-                <&macro_press &kp RSHFT>,
-                <&macro_tap &kp NON_US_BSLH>,
-                <&macro_tap &kp NON_US_BSLH>,
-                <&macro_release &kp RSHFT>;
-        };
+        
 
         /* ======================================================= *
          * MACROS pour INDICES et EXPOSANTS de 1-2-3-4-5-6-7-8-9-0 *
@@ -1394,9 +1357,59 @@
             label = "¶";
         };
 
+        // ñ (n tilde) U+00F1
+        // N tilde : ñ (~ + n)
+
+        n_tilde: n_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>;  / * ~  en FR */
+            bindings = <&kp N>;     / * N => ñ */
+            label = "ñ";
+        };
+
         /* ======================================================= *
          * MACROS INUTILES                                         *
          * ======================================================= */
+
+        /* -----------------------------
+         *  Compose helpers (RCTRL = Compose)
+         * ----------------------------- */
+
+        euro_compose: euro_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp E>,
+                <&macro_tap &kp EQUAL>;
+        };
+
+        guillemotleft_compose: guillemotleft_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_tap &kp NON_US_BSLH>,
+                <&macro_tap &kp NON_US_BSLH>;
+        };
+
+        guillemotright_compose: guillemotright_compose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp RCTRL>,
+                <&macro_press &kp RSHFT>,
+                <&macro_tap &kp NON_US_BSLH>,
+                <&macro_tap &kp NON_US_BSLH>,
+                <&macro_release &kp RSHFT>;
+        };
 
         // LH R2 C5
         caret_literal: caret_literal {
@@ -1763,15 +1776,7 @@
             label = "»";
         };
 
-        // ñ (n tilde) U+00F1
-        // N tilde : ñ (Compose + ~ + n)
 
-        n_tilde_compose: n_tilde_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RCTRL &kp RA(N2) &kp N>;  // ~ = AltGr+2 en FR
-            label = "ñ";
-        };
 
         // Alpha : α (Compose + * + a)
 
@@ -1872,7 +1877,7 @@
             label = "λ";
         };
 
-        // Mu : μ (Compose + * + m)
+        // Mu : μ (Compose + m + u)
 
         mu_greek: mu_greek {
             compatible = "zmk,behavior-macro";
@@ -2050,11 +2055,11 @@
 
         layer_Accented {
             bindings = <
-&trans  &trans    &trans     &trans                &trans            &trans                                                            &none              &none      &kp LS(FSLH)  &pilcrow_compose  &trans   &trans
-&trans  &a_circ   &kp N9     &oe_liga              &o_circ           &none                                                             &none              &mu        &kp N8        &sl 6             &u_circ  &trans
-&trans  &kp N0    &kp N2     &kp N7                &e_circ           &n_tilde_compose                                                  &kp N5             &kp MINUS  &i_circ       &i_diae           &kp SQT  &trans
-&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen_compose  &en_dash_compose  &em_dash_compose                                                  &ellipsis_compose  &none      &sl 7         &bullet_compose   &none    &trans
-                  &trans     &trans                &trans                                                                                                 &trans     &trans        &trans
+&trans  &trans    &trans     &trans                &trans            &trans                                                            &none              &none        &kp LS(FSLH)  &pilcrow_compose  &kp LS(MINUS)   &trans
+&trans  &kp RA(W) &kp N9     &kp RA(O)             &kp RA(P)         &none                                                             &none              &kp LS(BSLH) &kp N8        &sl 6             &u_circ         &trans
+&trans  &kp N0    &kp N2     &kp N7                &e_circ           &n_tilde                                                          &kp N5             &kp MINUS    &i_circ       &i_diae           &kp SQT         &trans
+&trans  &ae_liga  &kp RA(S)  &nbsp_hyphen_compose  &en_dash_compose  &em_dash_compose                                                  &ellipsis_compose  &none        &sl 7         &bullet_compose   &none           &trans
+                  &trans     &trans                &trans                                                                                                 &trans       &trans        &trans
                                                                                        &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -2072,11 +2077,11 @@
 
         layer_Greek_symbols {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &omega                                                  &trans  &mu     &mu_greek  &trans  &psi    &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans     &trans  &trans  &trans
-                &trans  &trans  &trans                                                                  &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans        &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &omega                                                  &trans  &kp LS(BSLH)  &mu_greek  &trans  &psi    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans        &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans        &trans     &trans  &trans  &trans
+                &trans  &trans  &trans                                                                  &trans        &trans     &trans
                                                 &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
