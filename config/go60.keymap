@@ -985,15 +985,19 @@
             tapping-term-ms = <400>;
         };
 
-        /* =========
-         * Layer Accented - LH R1 C5 : „ / ‚
-         * ========= */
+        /* ========================================================= *
+         * Layer_accented pour LH et RH R1                           *
+         * ========================================================= */
+        
+         /* ==================*
+          * LH R1 C5 : „ et , *
+          * ================= */
 
         lhr1c5_accented: lhr1c5_accented {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp LS(RA(S))>, <&kp M>;  // „ / ‚
+            bindings = <&kp LS(RA(S)) <&kp M>;  // „ / ‚
         };
     };
 
@@ -1964,12 +1968,12 @@
 
         layer_Accented {
             bindings = <
-&trans  &lhr1c5_accented    &trans     &trans     &kp LS(RA(E))     &permille_compose                                                 &none              &none        &kp LS(FSLH)  &pilcrow_compose  &kp LS(MINUS)   &trans
-&trans  &kp RA(W) &kp N9     &kp RA(O)  &kp RA(P)         &none                                                             &none              &kp LS(BSLH) &kp N8        &sl 6             &kp RA(SQT)     &trans
-&trans  &kp N0    &kp N2     &kp N7     &kp RA(R)         &n_tilde                                                          &kp N5             &kp MINUS    &kp RA(I)     &kp RA(K)         &kp SQT         &trans
-&trans  &kp RA(A) &kp RA(S)  &kp N6     &kp LS(RA(N5))    &kp LS(RA(N4))                                                    &kp LS(RA(M))      &none        &sl 7         &kp LS(RA(COMMA)) &none           &trans
-                  &trans     &trans     &trans                                                                                                 &trans       &trans        &trans
-                                                                             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &lhr1c5_accented  &trans     &trans     &kp LS(RA(E))     &permille_compose                                                 &none              &none        &kp LS(FSLH)  &pilcrow_compose  &kp LS(MINUS)   &trans
+&trans  &kp RA(W)         &kp N9     &kp RA(O)  &kp RA(P)         &none                                                             &none              &kp LS(BSLH) &kp N8        &sl 6             &kp RA(SQT)     &trans
+&trans  &kp N0            &kp N2     &kp N7     &kp RA(R)         &n_tilde                                                          &kp N5             &kp MINUS    &kp RA(I)     &kp RA(K)         &kp SQT         &trans
+&trans  &kp RA(A)         &kp RA(S)  &kp N6     &kp LS(RA(N5))    &kp LS(RA(N4))                                                    &kp LS(RA(M))      &none        &sl 7         &kp LS(RA(COMMA)) &none           &trans
+                          &trans     &trans     &trans                                                                                                 &trans       &trans        &trans
+                                                                                    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
