@@ -1406,21 +1406,6 @@
          * MACROS dont il faut vérifier si elles sont encore utilisées *
          * =========================================================== */
 
-        /* -----------------------------
-         *  Compose helpers (RCTRL = Compose)
-         * ----------------------------- */
-
-        euro_compose: euro_compose {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_tap &kp RCTRL>,
-                <&macro_tap &kp E>,
-                <&macro_tap &kp EQUAL>;
-        };
-
         guillemotleft_compose: guillemotleft_compose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -1443,15 +1428,6 @@
                 <&macro_tap &kp NON_US_BSLH>,
                 <&macro_tap &kp NON_US_BSLH>,
                 <&macro_release &kp RSHFT>;
-        };
-
-        // LH R2 C5
-        caret_literal: caret_literal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings = <&kp LBKT &kp SPACE>;
         };
 
         // LH R2 C4
@@ -1505,23 +1481,6 @@
           label = "≥";
         };
 
-        /* LH R2 C1 — '%' (AZERTY FR: Shift + (key right of M) => keycode COMMA) */
-        percent_literal: percent_literal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_release &kp RALT>,     /* neutralise AltGr */
-                <&macro_release &kp LSHFT>,    /* neutralise Shift */
-                <&macro_release &kp RSHFT>,
-                <&macro_press   &kp RSHFT>,    /* % = Shift + COMMA (sur OS FR) */
-                <&macro_tap     &kp SQT>,
-                <&macro_release &kp RSHFT>;
-          label = "%";
-        };
-
-        
 
         // Tréma : ï (¨ + i)
 
