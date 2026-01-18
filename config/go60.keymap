@@ -1523,51 +1523,6 @@
 
         
 
-        // Accent circonflexe : â (^ + a)
-
-        a_circ: a_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp Q>;
-            label = "â";
-        };
-
-        // Accent circonflexe : ê (^ + e)
-
-        e_circ: e_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp E>;
-            label = "ê";
-        };
-
-        // Accent circonflexe : î (^ + i)
-
-        i_circ: i_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp I>;
-            label = "î";
-        };
-
-        // Accent circonflexe : ô (^ + o)
-
-        o_circ: o_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp O>;
-            label = "ô";
-        };
-
-        // Accent circonflexe : û (^ + u)
-
-        u_circ: u_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp U>;
-            label = "û";
-        };
-
         // Tréma : ï (¨ + i)
 
         i_diae: i_diae {
@@ -1666,33 +1621,6 @@
             bindings = <&kp LS(LBKT) &kp H>;
             label = "ḧ";
             wait-ms = <0>;
-        };
-
-        // Ligature : œ (AltGr + o)
-
-        oe_liga: oe_liga {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(O)>;
-            label = "œ";
-        };
-
-        // Ligature : æ (AltGr + a)
-
-        ae_liga: ae_liga {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(Q)>;
-            label = "æ";
-        };
-
-        // Cédille : ç (touche 9 en FR)
-
-        c_cedil: c_cedil {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp KP_N9>;
-            label = "ç";
         };
 
         // Caractère spécial : µ (micro/mu)
