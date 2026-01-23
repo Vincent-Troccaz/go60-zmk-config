@@ -999,6 +999,60 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&kp LS(RA(S)) &kp M>;  // „ / ‚
         };
+
+        /* ========================================================= *
+         * MOD-MORPHS pour LH R5 C3 et C2 (parenthèses/crochets/acc) *
+         * ========================================================= */
+
+        /* =========
+         * LH R5 C3 : ( / [ / {
+         * ========= */
+
+        lhr5c3: lhr5c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr5c3_no_altgr &lhr5c3_altgr>;
+        };
+
+        lhr5c3_no_altgr: lhr5c3_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N5 &kp RA(N5)>;              // ( / [
+        };
+
+        lhr5c3_altgr: lhr5c3_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N4) &kp RA(N4)>;          // { / {
+        };
+
+        /* =========
+         * LH R5 C2 : ) / ] / }
+         * ========= */
+
+        lhr5c2: lhr5c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr5c2_no_altgr &lhr5c2_altgr>;
+        };
+
+        lhr5c2_no_altgr: lhr5c2_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp MINUS &kp RA(MINUS)>;        // ) / ]
+        };
+
+        lhr5c2_altgr: lhr5c2_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(EQUAL) &kp RA(EQUAL)>;    // } / }
+        };
     };
 
     macros {
@@ -1917,8 +1971,8 @@
 &kp TAB           &lhr2c5_altgr  &lhr2c4_altgr  &lhr2c3_altgr  &lhr2c2_altgr  &lhr2c1_altgr                                                                                 &rhr2c1     &rhr2c2         &rhr2c3    &rhr2c4      &rhr2c5    &kp DELETE
 &kp LEFT_SHIFT    &lhr3c5        &lhr3c4        &lhr3c3        &lhr3c2        &lhr3c1                                                                                       &rhr3c1     &rhr3c2         &rhr3c3    &rhr3c4      &rhr3c5    &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &lhr4c5        &lhr4c4        &lhr4c3        &lhr4c2        &lhr4c1                                                                                       &rhr4c1     &rhr4c2         &rhr4c3    &rhr4c4      &rhr4c5    &keypad_td
-                                 &magic 3 0     &kp N5         &kp MINUS                                                                                                                &symbol_nav_td  &kp LBKT   &kp RBKT
-                                                                                             &kp LEFT_ALT  &kp SPACE  &kp RIGHT_GUI  &kp LEFT_GUI  &kp SPACE  &mt RALT RET
+                                 &magic 3 0     &lhr5c3        &lhr5c2                                                                                                                  &symbol_nav_td  &kp NON_US_BSLH  &kp LS(NON_US_BSLH)
+                                                                                             &kp LEFT_ALT  &kp SPACE  &kp LEFT_GUI  &kp RIGHT_GUI  &kp SPACE  &mt RALT RET
             >;
         };
 
