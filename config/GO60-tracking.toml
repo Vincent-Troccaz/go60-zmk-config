@@ -1,0 +1,929 @@
+# ╔═══════════════════════════════════════════════════════════════════════════════╗
+# ║                     GO60 Configuration Tracking                               ║
+# ║              Comparaison Spécification vs Implémentation                      ║
+# ╚═══════════════════════════════════════════════════════════════════════════════╝
+#
+# Ce fichier remplace GO60-Layers-Map-V10.json
+#
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                         DÉFINITION DES STATUTS                            │
+# ├─────────────┬─────────────────────────────────────────────────────────────┤
+# │ validated   │ Implémenté dans keymap ET testé avec succès sur le clavier  │
+# │             │ La touche fonctionne comme prévu dans toutes les conditions │
+# ├─────────────┼─────────────────────────────────────────────────────────────┤
+# │ implemented │ Implémenté dans keymap mais pas encore testé physiquement   │
+# │             │ Le code est présent, en attente de validation sur hardware  │
+# ├─────────────┼─────────────────────────────────────────────────────────────┤
+# │ pending     │ Non implémenté, reste à coder dans le keymap                │
+# │             │ La touche n'existe pas encore ou est vide (&none/&trans)    │
+# ├─────────────┼─────────────────────────────────────────────────────────────┤
+# │ mismatch    │ Différence entre la spécification (json) et l'implémentation│
+# │             │ Le keymap ne correspond pas au comportement attendu         │
+# └─────────────┴─────────────────────────────────────────────────────────────┘
+#
+# Note : Les layers Shift et AltGr sont gérés via mod-morph dans le keymap,
+#        pas comme des layers séparés. Ce fichier documente le comportement attendu.
+
+[metadata]
+keyboard = "MoErgo GO60"
+layout = "Ergo-L"
+firmware = "ZMK"
+os_layout = "FR-oss"
+total_keys = 60
+keymap_source = "config/go60.keymap"
+last_sync = "2026-01-23"
+
+[summary]
+total_layers = 8
+keys_validated = 0
+keys_implemented = 48
+keys_pending = 12
+keys_mismatch = 0
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 0 - BASE
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.base]
+name = "Base Layer"
+number = 0
+trigger = "Couche par défaut, toujours active"
+progress = "48/60"
+notes = """
+Couche principale avec lettres Ergo-L et chiffres.
+Les touches utilisent des mod-morphs pour gérer Shift et AltGr.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│Esc│ 1 │ 2 │ 3 │ 4 │ 5 │                    │ 6 │ 7 │ 8 │ 9 │ 0 │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Tab│ q │ c │ o │ p │ w │                    │ j │ m │ d │ ★ │ y │Del│ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Sft│ a │ s │ e │ n │ f │                    │ l │ r │ t │ i │ u │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Ctl│ z │ x │ - │ v │ b │                    │ . │ h │ g │ , │ k │Num│ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │Mag│ ( │ ) │Alt│Spc│Sup│    │Sup│Spc│Ent│Nav│ < │ > │         R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.base.left_hand.R1]
+  C6 = { key = "Esc",  json = "&kp ESC",     keymap = "&kp ESC",       status = "validated" }
+  C5 = { key = "1",    json = "&kp KP_N1",   keymap = "&lhr1c5",       status = "validated", notes = "mod-morph: 1/€/₁/¹" }
+  C4 = { key = "2",    json = "&kp KP_N2",   keymap = "&lhr1c4",       status = "validated", notes = "mod-morph: 2/«/₂/²" }
+  C3 = { key = "3",    json = "&kp KP_N3",   keymap = "&lhr1c3",       status = "validated", notes = "mod-morph: 3/»/₃/³" }
+  C2 = { key = "4",    json = "&kp KP_N4",   keymap = "&lhr1c2",       status = "validated", notes = "mod-morph: 4/$/₄/⁴" }
+  C1 = { key = "5",    json = "&kp KP_N5",   keymap = "&lhr1c1",       status = "validated", notes = "mod-morph: 5/%/₅/⁵" }
+
+  [layer.base.right_hand.R1]
+  C1 = { key = "6",    json = "&kp KP_N6",   keymap = "&rhr1c1",       status = "validated", notes = "mod-morph: 6/^/₆/⁶" }
+  C2 = { key = "7",    json = "&kp KP_N7",   keymap = "&rhr1c2",       status = "validated", notes = "mod-morph: 7/&/₇/⁷" }
+  C3 = { key = "8",    json = "&kp KP_N8",   keymap = "&rhr1c3",       status = "validated", notes = "mod-morph: 8/*/₈/⁸" }
+  C4 = { key = "9",    json = "&kp KP_N9",   keymap = "&rhr1c4",       status = "validated", notes = "mod-morph: 9/#/₉/⁹" }
+  C5 = { key = "0",    json = "&kp KP_N0",   keymap = "&rhr1c5",       status = "validated", notes = "mod-morph: 0/@/₀/⁰" }
+  C6 = { key = "Bksp", json = "&kp BSPC",    keymap = "&kp BACKSPACE", status = "validated" }
+
+  [layer.base.left_hand.R2]
+  C6 = { key = "Tab",  json = "&kp TAB",     keymap = "&kp TAB",       status = "validated" }
+  C5 = { key = "q",    json = "&kp A",       keymap = "&lhr2c5_altgr", status = "validated", notes = "mod-morph: q/Q/^/none" }
+  C4 = { key = "c",    json = "&kp C",       keymap = "&lhr2c4_altgr", status = "validated", notes = "mod-morph: c/C/</≤" }
+  C3 = { key = "o",    json = "&kp O",       keymap = "&lhr2c3_altgr", status = "validated", notes = "mod-morph: o/O/>/≥" }
+  C2 = { key = "p",    json = "&kp P",       keymap = "&lhr2c2_altgr", status = "validated", notes = "mod-morph: p/P/$/none" }
+  C1 = { key = "w",    json = "&kp Z",       keymap = "&lhr2c1_altgr", status = "validated", notes = "mod-morph: w/W/%/‰" }
+
+  [layer.base.right_hand.R2]
+  C1 = { key = "j",    json = "&kp J",            keymap = "&rhr2c1",  status = "validated", notes = "mod-morph: j/J/@/none" }
+  C2 = { key = "m",    json = "&kp SEMICOLON",    keymap = "&rhr2c2",  status = "validated", notes = "mod-morph: m/M/&/none" }
+  C3 = { key = "d",    json = "&kp D",            keymap = "&rhr2c3",  status = "validated", notes = "mod-morph: d/D/*/×" }
+  C4 = { key = "★",    json = "&sl LAYER_ACC",    keymap = "&rhr2c4",  status = "validated", notes = "mod-morph: layer_acc/!/'/none" }
+  C5 = { key = "y",    json = "&kp Y",            keymap = "&rhr2c5",  status = "validated", notes = "mod-morph: y/Y/`/none" }
+  C6 = { key = "Del",  json = "&kp DEL",          keymap = "&kp DELETE", status = "validated" }
+
+  [layer.base.left_hand.R3]
+  C6 = { key = "Shift", json = "&kp LSHIFT",  keymap = "&kp LEFT_SHIFT",  status = "validated" }
+  C5 = { key = "a",     json = "&kp Q",       keymap = "&lhr3c5",         status = "validated", notes = "mod-morph: a/A/{/none" }
+  C4 = { key = "s",     json = "&kp S",       keymap = "&lhr3c4",         status = "validated", notes = "mod-morph: s/S/(/none" }
+  C3 = { key = "e",     json = "&kp E",       keymap = "&lhr3c3",         status = "validated", notes = "mod-morph: e/E/)/none" }
+  C2 = { key = "n",     json = "&kp N",       keymap = "&lhr3c2",         status = "validated", notes = "mod-morph: n/N/}/none" }
+  C1 = { key = "f",     json = "&kp F",       keymap = "&lhr3c1",         status = "validated", notes = "mod-morph: f/F/=/≠" }
+
+  [layer.base.right_hand.R3]
+  C1 = { key = "l",     json = "&kp L",       keymap = "&rhr3c1",         status = "validated", notes = "mod-morph: l/L/\\/none" }
+  C2 = { key = "r",     json = "&kp R",       keymap = "&rhr3c2",         status = "validated", notes = "mod-morph: r/R/+/±" }
+  C3 = { key = "t",     json = "&kp T",       keymap = "&rhr3c3",         status = "validated", notes = "mod-morph: t/T/-/none" }
+  C4 = { key = "i",     json = "&kp I",       keymap = "&rhr3c4",         status = "validated", notes = "mod-morph: i/I///÷" }
+  C5 = { key = "u",     json = "&kp U",       keymap = "&rhr3c5",         status = "validated", notes = "mod-morph: u/U/\"/none" }
+  C6 = { key = "Shift", json = "&kp RSHIFT",  keymap = "&kp RIGHT_SHIFT", status = "validated" }
+
+  [layer.base.left_hand.R4]
+  C6 = { key = "Ctrl",  json = "&kp LCTRL",   keymap = "&kp LEFT_CONTROL", status = "validated" }
+  C5 = { key = "z",     json = "&kp W",       keymap = "&lhr4c5",          status = "validated", notes = "mod-morph: z/Z/~/none" }
+  C4 = { key = "x",     json = "&kp X",       keymap = "&lhr4c4",          status = "validated", notes = "mod-morph: x/X/[/none" }
+  C3 = { key = "-",     json = "&kp MINUS",   keymap = "&lhr4c3",          status = "validated", notes = "mod-morph: -/?/]/none" }
+  C2 = { key = "v",     json = "&kp V",       keymap = "&lhr4c2",          status = "validated", notes = "mod-morph: v/V/_/–" }
+  C1 = { key = "b",     json = "&kp B",       keymap = "&lhr4c1",          status = "validated", notes = "mod-morph: b/B/#/none" }
+
+  [layer.base.right_hand.R4]
+  C1 = { key = ".",     json = "&kp DOT",     keymap = "&rhr4c1",          status = "validated", notes = "mod-morph: ./:/|/¦" }
+  C2 = { key = "h",     json = "&kp H",       keymap = "&rhr4c2",          status = "validated", notes = "mod-morph: h/H/!/¬" }
+  C3 = { key = "g",     json = "&kp G",       keymap = "&rhr4c3",          status = "validated", notes = "mod-morph: g/G/;/none" }
+  C4 = { key = ",",     json = "&kp COMMA",   keymap = "&rhr4c4",          status = "validated", notes = "mod-morph: ,/;/:/none" }
+  C5 = { key = "k",     json = "&kp K",       keymap = "&rhr4c5",          status = "validated", notes = "mod-morph: k/K/?/none" }
+  C6 = { key = "Num",   json = "&tog LAYER_NUM", keymap = "&keypad_td",    status = "validated", notes = "tap-dance: mo/to LAYER_Keypad" }
+
+  [layer.base.left_hand.R5]
+  C4 = { key = "Magic", json = "&mo LAYER_MAGIC", keymap = "&magic 3 0",    status = "validated", notes = "hold-tap: mo/rgb_status" }
+  C3 = { key = "(",     json = "&kp LPAR",        keymap = "&lhr5c3",       status = "implemented", notes = "mod-morph: (/[/{" }
+  C2 = { key = ")",     json = "&kp RPAR",        keymap = "&lhr5c2",       status = "implemented", notes = "mod-morph: )/]/}" }
+  T1 = { key = "Alt",   json = "&kp LALT",        keymap = "&kp LEFT_ALT",  status = "validated" }
+  T2 = { key = "Space", json = "&kp SPACE",       keymap = "&kp SPACE",     status = "validated" }
+  T3 = { key = "Super", json = "&kp LGUI",        keymap = "&kp LEFT_GUI",  status = "validated" }
+
+  [layer.base.right_hand.R5]
+  T3 = { key = "Super",  json = "&kp RGUI",        keymap = "&kp RIGHT_GUI",   status = "validated" }
+  T2 = { key = "Space",  json = "&kp SPACE",       keymap = "&kp SPACE",       status = "validated" }
+  T1 = { key = "Enter",  json = "&kp ENTER",       keymap = "&mt RALT RET",    status = "validated",   notes = "mod-tap: hold=AltGr, tap=Enter" }
+  C2 = { key = "Nav",    json = "&mo LAYER_NAV",   keymap = "&symbol_nav_td",  status = "validated",   notes = "tap-dance: mo/to LAYER_SymbolNav" }
+  C3 = { key = "<",      json = "&kp LT",          keymap = "&kp NON_US_BSLH",      status = "implemented" }
+  C4 = { key = ">",      json = "&kp GT",          keymap = "&kp LS(NON_US_BSLH)", status = "implemented" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 1 - SHIFT (Virtuelle - gérée par mod-morph)
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.shift]
+name = "Shift Layer"
+number = 1
+trigger = "Maintenir Shift (LH C6R3 ou RH C6R3)"
+progress = "N/A"
+notes = """
+Cette couche est VIRTUELLE - elle est gérée par les mod-morphs de la couche Base.
+Chaque touche de la couche Base a un comportement Shift défini dans son mod-morph.
+Ce layer documente le comportement attendu pour référence.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐
+│Esc│ € │ « │ » │ $ │ % │                │ ^ │ & │ * │ # │ @ │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Tab│ Q │ C │ O │ P │ W │                │ J │ M │ D │ ! │ Y │Del│ R2
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Sft│ A │ S │ E │ N │ F │                │ L │ R │ T │ I │ U │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Ctl│ Z │ X │ ? │ V │ B │                │ : │ H │ G │ ; │ K │Num│ R4
+└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │Mag│ [ │ ] │Alt│Spc│Sup│    │Sup│Spc│Ent│Nav│   │   │     R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.shift.left_hand.R1]
+  C6 = { key = "Esc",  json = "&kp ESC",   keymap = "via mod-morph", status = "validated" }
+  C5 = { key = "€",    json = "&kp RA(E)", keymap = "via lhr1c5",    status = "validated" }
+  C4 = { key = "«",    json = "&kp RA(Z)", keymap = "via lhr1c4",    status = "validated" }
+  C3 = { key = "»",    json = "&kp RA(X)", keymap = "via lhr1c3",    status = "validated" }
+  C2 = { key = "$",    json = "&kp RBKT",  keymap = "via lhr1c2",    status = "validated" }
+  C1 = { key = "%",    json = "&kp LS(SQT)", keymap = "via lhr1c1",  status = "validated" }
+
+  [layer.shift.right_hand.R1]
+  C1 = { key = "^",    json = "&kp LBKT",    keymap = "via rhr1c1",  status = "validated" }
+  C2 = { key = "&",    json = "&kp N1",      keymap = "via rhr1c2",  status = "validated" }
+  C3 = { key = "*",    json = "&kp BSLH",    keymap = "via rhr1c3",  status = "validated" }
+  C4 = { key = "#",    json = "&kp RA(N3)",  keymap = "via rhr1c4",  status = "validated" }
+  C5 = { key = "@",    json = "&kp RA(N0)",  keymap = "via rhr1c5",  status = "validated" }
+  C6 = { key = "Bksp", json = "&kp BSPC",    keymap = "via mod-morph", status = "validated" }
+
+  [layer.shift.left_hand.R2]
+  C6 = { key = "Tab",  json = "&kp TAB",  keymap = "via mod-morph", status = "validated" }
+  C5 = { key = "Q",    json = "&kp LS(A)", keymap = "via lhr2c5",   status = "validated" }
+  C4 = { key = "C",    json = "&kp LS(C)", keymap = "via lhr2c4",   status = "validated" }
+  C3 = { key = "O",    json = "&kp LS(O)", keymap = "via lhr2c3",   status = "validated" }
+  C2 = { key = "P",    json = "&kp LS(P)", keymap = "via lhr2c2",   status = "validated" }
+  C1 = { key = "W",    json = "&kp LS(Z)", keymap = "via lhr2c1",   status = "validated" }
+
+  [layer.shift.right_hand.R2]
+  C1 = { key = "J",    json = "&kp LS(J)",    keymap = "via rhr2c1", status = "validated" }
+  C2 = { key = "M",    json = "&kp LS(SEMI)", keymap = "via rhr2c2", status = "validated" }
+  C3 = { key = "D",    json = "&kp LS(D)",    keymap = "via rhr2c3", status = "validated" }
+  C4 = { key = "!",    json = "&kp EXCL",     keymap = "via rhr2c4", status = "validated" }
+  C5 = { key = "Y",    json = "&kp LS(Y)",    keymap = "via rhr2c5", status = "validated" }
+  C6 = { key = "Del",  json = "&kp DEL",      keymap = "via mod-morph", status = "validated" }
+
+  [layer.shift.left_hand.R3]
+  C6 = { key = "Shift", json = "&kp LSHIFT", keymap = "via mod-morph", status = "validated" }
+  C5 = { key = "A",     json = "&kp LS(Q)",  keymap = "via lhr3c5",    status = "validated" }
+  C4 = { key = "S",     json = "&kp LS(S)",  keymap = "via lhr3c4",    status = "validated" }
+  C3 = { key = "E",     json = "&kp LS(E)",  keymap = "via lhr3c3",    status = "validated" }
+  C2 = { key = "N",     json = "&kp LS(N)",  keymap = "via lhr3c2",    status = "validated" }
+  C1 = { key = "F",     json = "&kp LS(F)",  keymap = "via lhr3c1",    status = "validated" }
+
+  [layer.shift.right_hand.R3]
+  C1 = { key = "L",     json = "&kp LS(L)",  keymap = "via rhr3c1",    status = "validated" }
+  C2 = { key = "R",     json = "&kp LS(R)",  keymap = "via rhr3c2",    status = "validated" }
+  C3 = { key = "T",     json = "&kp LS(T)",  keymap = "via rhr3c3",    status = "validated" }
+  C4 = { key = "I",     json = "&kp LS(I)",  keymap = "via rhr3c4",    status = "validated" }
+  C5 = { key = "U",     json = "&kp LS(U)",  keymap = "via rhr3c5",    status = "validated" }
+  C6 = { key = "Shift", json = "&kp RSHIFT", keymap = "via mod-morph", status = "validated" }
+
+  [layer.shift.left_hand.R4]
+  C6 = { key = "Ctrl", json = "&kp LCTRL",  keymap = "via mod-morph", status = "validated" }
+  C5 = { key = "Z",    json = "&kp LS(W)",  keymap = "via lhr4c5",    status = "validated" }
+  C4 = { key = "X",    json = "&kp LS(X)",  keymap = "via lhr4c4",    status = "validated" }
+  C3 = { key = "?",    json = "&kp QMARK",  keymap = "via lhr4c3",    status = "validated" }
+  C2 = { key = "V",    json = "&kp LS(V)",  keymap = "via lhr4c2",    status = "validated" }
+  C1 = { key = "B",    json = "&kp LS(B)",  keymap = "via lhr4c1",    status = "validated" }
+
+  [layer.shift.right_hand.R4]
+  C1 = { key = ":",    json = "&kp COLON",   keymap = "via rhr4c1",    status = "validated" }
+  C2 = { key = "H",    json = "&kp LS(H)",   keymap = "via rhr4c2",    status = "validated" }
+  C3 = { key = "G",    json = "&kp LS(G)",   keymap = "via rhr4c3",    status = "validated" }
+  C4 = { key = ";",    json = "&kp SEMI",    keymap = "via rhr4c4",    status = "validated" }
+  C5 = { key = "K",    json = "&kp LS(K)",   keymap = "via rhr4c5",    status = "validated" }
+  C6 = { key = "Num",  json = "&tog LAYER_NUM", keymap = "via keypad_td", status = "validated" }
+
+  [layer.shift.left_hand.R5]
+  C4 = { key = "Magic", json = "&mo LAYER_MAGIC", keymap = "via magic",     status = "validated" }
+  C3 = { key = "[",     json = "&kp LBKT",        keymap = "",              status = "pending" }
+  C2 = { key = "]",     json = "&kp RBKT",        keymap = "",              status = "pending" }
+  T1 = { key = "Alt",   json = "&kp LALT",        keymap = "via mod-morph", status = "validated" }
+  T2 = { key = "Space", json = "&kp SPACE",       keymap = "via mod-morph", status = "validated" }
+  T3 = { key = "Super", json = "&kp LGUI",        keymap = "via mod-morph", status = "implemented" }
+
+  [layer.shift.right_hand.R5]
+  T3 = { key = "Super",  json = "&kp RGUI",       keymap = "via mod-morph",   status = "implemented" }
+  T2 = { key = "Space",  json = "&kp SPACE",      keymap = "via mod-morph",   status = "validated" }
+  T1 = { key = "Enter",  json = "&kp ENTER",      keymap = "via mt RALT RET", status = "validated" }
+  C2 = { key = "Nav",    json = "&mo LAYER_NAV",  keymap = "via symbol_nav_td", status = "validated" }
+  C3 = { key = "",       json = "",               keymap = "",                status = "pending" }
+  C4 = { key = "",       json = "",               keymap = "",                status = "pending" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 2 - ALTGR (Virtuelle - gérée par mod-morph)
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.altgr]
+name = "AltGr Layer"
+number = 2
+trigger = "Maintenir AltGr (Right Alt)"
+progress = "N/A"
+notes = """
+Cette couche est VIRTUELLE - elle est gérée par les mod-morphs de la couche Base.
+Symboles de programmation et mathématiques accessibles via AltGr.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐
+│Esc│ ₁ │ ₂ │ ₃ │ ₄ │ ₅ │                │ ₆ │ ₇ │ ₈ │ ₉ │ ₀ │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Tab│ ^ │ < │ > │ $ │ % │                │ @ │ & │ * │ ' │ ` │Del│ R2
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Sft│ { │ ( │ ) │ } │ = │                │\\ │ + │ - │ / │ " │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Ctl│ ~ │ [ │ ] │ _ │ # │                │ | │ ! │ ; │ : │ ? │Num│ R4
+└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │Mag│ { │ } │Alt│Spc│Sup│    │Sup│Spc│AGr│Nav│   │   │     R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.altgr.left_hand.R1]
+  C6 = { key = "Esc", json = "&kp ESC",  keymap = "via mod-morph", status = "implemented" }
+  C5 = { key = "₁",   json = "&sub_1",   keymap = "via lhr1c5",    status = "implemented" }
+  C4 = { key = "₂",   json = "&sub_2",   keymap = "via lhr1c4",    status = "implemented" }
+  C3 = { key = "₃",   json = "&sub_3",   keymap = "via lhr1c3",    status = "implemented" }
+  C2 = { key = "₄",   json = "&sub_4",   keymap = "via lhr1c2",    status = "implemented" }
+  C1 = { key = "₅",   json = "&sub_5",   keymap = "via lhr1c1",    status = "implemented" }
+
+  [layer.altgr.right_hand.R1]
+  C1 = { key = "₆",   json = "&sub_6",   keymap = "via rhr1c1",    status = "implemented" }
+  C2 = { key = "₇",   json = "&sub_7",   keymap = "via rhr1c2",    status = "implemented" }
+  C3 = { key = "₈",   json = "&sub_8",   keymap = "via rhr1c3",    status = "implemented" }
+  C4 = { key = "₉",   json = "&sub_9",   keymap = "via rhr1c4",    status = "implemented" }
+  C5 = { key = "₀",   json = "&sub_0",   keymap = "via rhr1c5",    status = "implemented" }
+  C6 = { key = "Bksp", json = "&kp BSPC", keymap = "via mod-morph", status = "implemented" }
+
+  [layer.altgr.left_hand.R2]
+  C6 = { key = "Tab",  json = "&kp TAB",    keymap = "via mod-morph",   status = "implemented" }
+  C5 = { key = "^",    json = "&kp RA(N9)", keymap = "via lhr2c5_altgr", status = "implemented" }
+  C4 = { key = "<",    json = "&kp NON_US_BSLH", keymap = "via lhr2c4_altgr", status = "implemented" }
+  C3 = { key = ">",    json = "&kp LS(NON_US_BSLH)", keymap = "via lhr2c3_altgr", status = "implemented" }
+  C2 = { key = "$",    json = "&kp RBKT",   keymap = "via lhr2c2_altgr", status = "implemented" }
+  C1 = { key = "%",    json = "&kp LS(SQT)", keymap = "via lhr2c1_altgr", status = "implemented" }
+
+  [layer.altgr.right_hand.R2]
+  C1 = { key = "@",    json = "&kp RA(N0)", keymap = "via rhr2c1",    status = "implemented" }
+  C2 = { key = "&",    json = "&kp N1",     keymap = "via rhr2c2",    status = "implemented" }
+  C3 = { key = "*",    json = "&kp BSLH",   keymap = "via rhr2c3",    status = "implemented" }
+  C4 = { key = "'",    json = "&kp APOS",   keymap = "via rhr2c4",    status = "implemented" }
+  C5 = { key = "`",    json = "&kp GRAVE",  keymap = "via rhr2c5",    status = "implemented" }
+  C6 = { key = "Del",  json = "&kp DEL",    keymap = "via mod-morph", status = "implemented" }
+
+  [layer.altgr.left_hand.R3]
+  C6 = { key = "Shift", json = "&kp LSHIFT", keymap = "via mod-morph", status = "implemented" }
+  C5 = { key = "{",     json = "&kp LBRC",   keymap = "via lhr3c5",    status = "implemented" }
+  C4 = { key = "(",     json = "&kp LPAR",   keymap = "via lhr3c4",    status = "implemented" }
+  C3 = { key = ")",     json = "&kp RPAR",   keymap = "via lhr3c3",    status = "implemented" }
+  C2 = { key = "}",     json = "&kp RBRC",   keymap = "via lhr3c2",    status = "implemented" }
+  C1 = { key = "=",     json = "&kp EQUAL",  keymap = "via lhr3c1",    status = "implemented" }
+
+  [layer.altgr.right_hand.R3]
+  C1 = { key = "\\",    json = "&kp BSLH",   keymap = "via rhr3c1",    status = "implemented" }
+  C2 = { key = "+",     json = "&kp PLUS",   keymap = "via rhr3c2",    status = "implemented" }
+  C3 = { key = "-",     json = "&kp MINUS",  keymap = "via rhr3c3",    status = "implemented" }
+  C4 = { key = "/",     json = "&kp SLASH",  keymap = "via rhr3c4",    status = "implemented" }
+  C5 = { key = "\"",    json = "&kp DQT",    keymap = "via rhr3c5",    status = "implemented" }
+  C6 = { key = "Shift", json = "&kp RSHIFT", keymap = "via mod-morph", status = "implemented" }
+
+  [layer.altgr.left_hand.R4]
+  C6 = { key = "Ctrl", json = "&kp LCTRL", keymap = "via mod-morph", status = "implemented" }
+  C5 = { key = "~",    json = "&kp TILDE", keymap = "via lhr4c5",    status = "implemented" }
+  C4 = { key = "[",    json = "&kp LBKT",  keymap = "via lhr4c4",    status = "implemented" }
+  C3 = { key = "]",    json = "&kp RBKT",  keymap = "via lhr4c3",    status = "implemented" }
+  C2 = { key = "_",    json = "&kp UNDER", keymap = "via lhr4c2",    status = "implemented" }
+  C1 = { key = "#",    json = "&kp HASH",  keymap = "via lhr4c1",    status = "implemented" }
+
+  [layer.altgr.right_hand.R4]
+  C1 = { key = "|",    json = "&kp PIPE",  keymap = "via rhr4c1",    status = "implemented" }
+  C2 = { key = "!",    json = "&kp EXCL",  keymap = "via rhr4c2",    status = "implemented" }
+  C3 = { key = ";",    json = "&kp SEMI",  keymap = "via rhr4c3",    status = "implemented" }
+  C4 = { key = ":",    json = "&kp COLON", keymap = "via rhr4c4",    status = "implemented" }
+  C5 = { key = "?",    json = "&kp QMARK", keymap = "via rhr4c5",    status = "implemented" }
+  C6 = { key = "Num",  json = "&tog LAYER_NUM", keymap = "via keypad_td", status = "implemented" }
+
+  [layer.altgr.left_hand.R5]
+  C4 = { key = "Magic", json = "&mo LAYER_MAGIC", keymap = "via magic", status = "implemented" }
+  C3 = { key = "{",     json = "&kp LBRC",        keymap = "",          status = "pending" }
+  C2 = { key = "}",     json = "&kp RBRC",        keymap = "",          status = "pending" }
+  T1 = { key = "Alt",   json = "&kp LALT",        keymap = "via mod-morph", status = "implemented" }
+  T2 = { key = "Space", json = "&kp SPACE",       keymap = "via mod-morph", status = "implemented" }
+  T3 = { key = "Super", json = "&kp LGUI",        keymap = "via mod-morph", status = "implemented" }
+
+  [layer.altgr.right_hand.R5]
+  T3 = { key = "Super", json = "&kp RGUI",       keymap = "via mod-morph",   status = "implemented" }
+  T2 = { key = "Space", json = "&kp SPACE",      keymap = "via mod-morph",   status = "implemented" }
+  T1 = { key = "AltGr", json = "&kp RALT",       keymap = "via mt RALT RET", status = "implemented" }
+  C2 = { key = "Nav",   json = "&mo LAYER_NAV",  keymap = "via symbol_nav_td", status = "implemented" }
+  C3 = { key = "",      json = "",               keymap = "",                status = "pending" }
+  C4 = { key = "",      json = "",               keymap = "",                status = "pending" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 3 - SHIFT+ALTGR (Virtuelle - gérée par mod-morph)
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.shift_altgr]
+name = "Shift+AltGr Layer"
+number = 3
+trigger = "Maintenir Shift + AltGr"
+progress = "N/A"
+notes = """
+Cette couche est VIRTUELLE - elle est gérée par les mod-morphs de la couche Base.
+Symboles additionnels (exposants, symboles mathématiques avancés).
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐
+│Esc│ ¹ │ ² │ ³ │ ⁴ │ ⁵ │                │ ⁶ │ ⁷ │ ⁸ │ ⁹ │ ⁰ │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Tab│   │ ≤ │ ≥ │   │ ‰ │                │   │   │ × │   │   │Del│ R2
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Sft│   │   │   │   │ ≠ │                │   │ ± │   │ ÷ │   │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
+│Ctl│   │   │   │ – │   │                │ ¦ │ ¬ │   │   │   │Num│ R4
+└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │   │   │   │   │   │   │    │   │   │   │   │   │   │     R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.shift_altgr.left_hand.R1]
+  C6 = { key = "Esc", json = "&kp ESC",  keymap = "via mod-morph", status = "implemented" }
+  C5 = { key = "¹",   json = "&sup_1",   keymap = "via lhr1c5",    status = "implemented" }
+  C4 = { key = "²",   json = "&sup_2",   keymap = "via lhr1c4",    status = "implemented" }
+  C3 = { key = "³",   json = "&sup_3",   keymap = "via lhr1c3",    status = "implemented" }
+  C2 = { key = "⁴",   json = "&sup_4",   keymap = "via lhr1c2",    status = "implemented" }
+  C1 = { key = "⁵",   json = "&sup_5",   keymap = "via lhr1c1",    status = "implemented" }
+
+  [layer.shift_altgr.right_hand.R1]
+  C1 = { key = "⁶",   json = "&sup_6",   keymap = "via rhr1c1",    status = "implemented" }
+  C2 = { key = "⁷",   json = "&sup_7",   keymap = "via rhr1c2",    status = "implemented" }
+  C3 = { key = "⁸",   json = "&sup_8",   keymap = "via rhr1c3",    status = "implemented" }
+  C4 = { key = "⁹",   json = "&sup_9",   keymap = "via rhr1c4",    status = "implemented" }
+  C5 = { key = "⁰",   json = "&sup_0",   keymap = "via rhr1c5",    status = "implemented" }
+  C6 = { key = "Bksp", json = "&kp BSPC", keymap = "via mod-morph", status = "implemented" }
+
+  [layer.shift_altgr.left_hand.R2]
+  C6 = { key = "Tab", json = "&kp TAB",         keymap = "via mod-morph",   status = "implemented" }
+  C5 = { key = "",    json = "&none",           keymap = "via lhr2c5_altgr", status = "implemented" }
+  C4 = { key = "≤",   json = "&kp RA(NON_US_BSLH)", keymap = "via lhr2c4_altgr", status = "implemented" }
+  C3 = { key = "≥",   json = "&kp LS(RA(NON_US_BSLH))", keymap = "via lhr2c3_altgr", status = "implemented" }
+  C2 = { key = "",    json = "&none",           keymap = "via lhr2c2_altgr", status = "implemented" }
+  C1 = { key = "‰",   json = "&permille_compose", keymap = "via lhr2c1_altgr", status = "implemented" }
+
+  [layer.shift_altgr.right_hand.R2]
+  C1 = { key = "",    json = "&none",           keymap = "via rhr2c1",    status = "implemented" }
+  C2 = { key = "",    json = "&none",           keymap = "via rhr2c2",    status = "implemented" }
+  C3 = { key = "×",   json = "&kp RA(COMMA)",   keymap = "via rhr2c3",    status = "implemented" }
+  C4 = { key = "",    json = "&none",           keymap = "via rhr2c4",    status = "implemented" }
+  C5 = { key = "",    json = "&none",           keymap = "via rhr2c5",    status = "implemented" }
+  C6 = { key = "Del", json = "&kp DEL",         keymap = "via mod-morph", status = "implemented" }
+
+  [layer.shift_altgr.left_hand.R3]
+  C6 = { key = "Shift", json = "&kp LSHIFT", keymap = "via mod-morph", status = "implemented" }
+  C5 = { key = "",      json = "&none",      keymap = "via lhr3c5",    status = "implemented" }
+  C4 = { key = "",      json = "&none",      keymap = "via lhr3c4",    status = "implemented" }
+  C3 = { key = "",      json = "&none",      keymap = "via lhr3c3",    status = "implemented" }
+  C2 = { key = "",      json = "&none",      keymap = "via lhr3c2",    status = "implemented" }
+  C1 = { key = "≠",     json = "&neq_compose", keymap = "via lhr3c1",  status = "implemented" }
+
+  [layer.shift_altgr.right_hand.R3]
+  C1 = { key = "",      json = "&none",      keymap = "via rhr3c1",    status = "implemented" }
+  C2 = { key = "±",     json = "&plusminus_compose", keymap = "via rhr3c2", status = "implemented" }
+  C3 = { key = "",      json = "&none",      keymap = "via rhr3c3",    status = "implemented" }
+  C4 = { key = "÷",     json = "&div_compose", keymap = "via rhr3c4",  status = "implemented" }
+  C5 = { key = "",      json = "&none",      keymap = "via rhr3c5",    status = "implemented" }
+  C6 = { key = "Shift", json = "&kp RSHIFT", keymap = "via mod-morph", status = "implemented" }
+
+  [layer.shift_altgr.left_hand.R4]
+  C6 = { key = "Ctrl", json = "&kp LCTRL", keymap = "via mod-morph", status = "implemented" }
+  C5 = { key = "",     json = "&none",     keymap = "via lhr4c5",    status = "implemented" }
+  C4 = { key = "",     json = "&none",     keymap = "via lhr4c4",    status = "implemented" }
+  C3 = { key = "",     json = "&none",     keymap = "via lhr4c3",    status = "implemented" }
+  C2 = { key = "–",    json = "&endash_compose", keymap = "via lhr4c2", status = "implemented" }
+  C1 = { key = "",     json = "&none",     keymap = "via lhr4c1",    status = "implemented" }
+
+  [layer.shift_altgr.right_hand.R4]
+  C1 = { key = "¦",    json = "&brvbar_compose", keymap = "via rhr4c1", status = "implemented" }
+  C2 = { key = "¬",    json = "&not_compose",    keymap = "via rhr4c2", status = "implemented" }
+  C3 = { key = "",     json = "&none",     keymap = "via rhr4c3",    status = "implemented" }
+  C4 = { key = "",     json = "&none",     keymap = "via rhr4c4",    status = "implemented" }
+  C5 = { key = "",     json = "&none",     keymap = "via rhr4c5",    status = "implemented" }
+  C6 = { key = "Num",  json = "&tog LAYER_NUM", keymap = "via keypad_td", status = "implemented" }
+
+  [layer.shift_altgr.left_hand.R5]
+  C4 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  C3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  C2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  T1 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  T2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  T3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+
+  [layer.shift_altgr.right_hand.R5]
+  T3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  T2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  T1 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  C2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  C3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  C4 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 4 - ACCENTED (Sticky layer activé par ★)
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.accented]
+name = "Layer Accented"
+number = 4
+trigger = "Taper ★ (RH C4R2) - sticky layer"
+progress = "24/60"
+notes = """
+Couche d'accents activée en sticky (une seule touche).
+Permet l'accès aux caractères accentués français et symboles typographiques.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│   │ „ │ " │ " │ ¢ │ ‰ │                    │   │   │ § │ ¶ │ ° │   │ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │ â │ ç │ œ │ ô │   │                    │   │ µ │ _ │Dia│ û │   │ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │ à │ é │ è │ ê │ ñ │                    │ ( │ ) │ î │ ï │ ù │   │ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │ æ │ ß │ - │ – │ — │                    │ … │   │Grk│ ⋅ │   │   │ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │   │   │   │   │   │   │    │   │   │   │   │   │   │         R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.accented.left_hand.R1]
+  C6 = { key = "",    json = "&trans",        keymap = "&trans",            status = "implemented" }
+  C5 = { key = "„",   json = "&kp LS(RA(S))", keymap = "&lhr1c5_accented",  status = "implemented" }
+  C4 = { key = """,   json = "&kp LS(RA(W))", keymap = "&trans",            status = "pending" }
+  C3 = { key = """,   json = "&kp LS(RA(X))", keymap = "&trans",            status = "pending" }
+  C2 = { key = "¢",   json = "&kp LS(RA(E))", keymap = "&kp LS(RA(E))",     status = "implemented" }
+  C1 = { key = "‰",   json = "&permille",     keymap = "&permille_compose", status = "implemented" }
+
+  [layer.accented.right_hand.R1]
+  C1 = { key = "",    json = "&none",         keymap = "&none",             status = "implemented" }
+  C2 = { key = "",    json = "&none",         keymap = "&none",             status = "implemented" }
+  C3 = { key = "§",   json = "&kp LS(FSLH)",  keymap = "&kp LS(FSLH)",      status = "implemented" }
+  C4 = { key = "¶",   json = "&pilcrow",      keymap = "&pilcrow_compose",  status = "implemented" }
+  C5 = { key = "°",   json = "&kp LS(MINUS)", keymap = "&kp LS(MINUS)",     status = "implemented" }
+  C6 = { key = "",    json = "&trans",        keymap = "&trans",            status = "implemented" }
+
+  [layer.accented.left_hand.R2]
+  C6 = { key = "",    json = "&trans",    keymap = "&trans",    status = "implemented" }
+  C5 = { key = "â",   json = "&kp RA(W)", keymap = "&kp RA(W)", status = "implemented" }
+  C4 = { key = "ç",   json = "&kp N9",    keymap = "&kp N9",    status = "implemented" }
+  C3 = { key = "œ",   json = "&kp RA(O)", keymap = "&kp RA(O)", status = "implemented" }
+  C2 = { key = "ô",   json = "&kp RA(P)", keymap = "&kp RA(P)", status = "implemented" }
+  C1 = { key = "",    json = "&none",     keymap = "&none",     status = "implemented" }
+
+  [layer.accented.right_hand.R2]
+  C1 = { key = "",    json = "&none",      keymap = "&none",      status = "implemented" }
+  C2 = { key = "µ",   json = "&kp LS(BSLH)", keymap = "&kp LS(BSLH)", status = "implemented" }
+  C3 = { key = "_",   json = "&kp N8",     keymap = "&kp N8",     status = "implemented" }
+  C4 = { key = "Dia", json = "&sl 6",      keymap = "&sl 6",      status = "implemented", notes = "Accès layer Diaeresis" }
+  C5 = { key = "û",   json = "&kp RA(SQT)", keymap = "&kp RA(SQT)", status = "implemented" }
+  C6 = { key = "",    json = "&trans",     keymap = "&trans",     status = "implemented" }
+
+  [layer.accented.left_hand.R3]
+  C6 = { key = "",    json = "&trans",    keymap = "&trans",    status = "implemented" }
+  C5 = { key = "à",   json = "&kp N0",    keymap = "&kp N0",    status = "implemented" }
+  C4 = { key = "é",   json = "&kp N2",    keymap = "&kp N2",    status = "implemented" }
+  C3 = { key = "è",   json = "&kp N7",    keymap = "&kp N7",    status = "implemented" }
+  C2 = { key = "ê",   json = "&kp RA(R)", keymap = "&kp RA(R)", status = "implemented" }
+  C1 = { key = "ñ",   json = "&n_tilde",  keymap = "&n_tilde",  status = "implemented" }
+
+  [layer.accented.right_hand.R3]
+  C1 = { key = "(",   json = "&kp N5",    keymap = "&kp N5",    status = "implemented" }
+  C2 = { key = ")",   json = "&kp MINUS", keymap = "&kp MINUS", status = "implemented" }
+  C3 = { key = "î",   json = "&kp RA(I)", keymap = "&kp RA(I)", status = "implemented" }
+  C4 = { key = "ï",   json = "&kp RA(K)", keymap = "&kp RA(K)", status = "implemented" }
+  C5 = { key = "ù",   json = "&kp SQT",   keymap = "&kp SQT",   status = "implemented" }
+  C6 = { key = "",    json = "&trans",    keymap = "&trans",    status = "implemented" }
+
+  [layer.accented.left_hand.R4]
+  C6 = { key = "",    json = "&trans",        keymap = "&trans",        status = "implemented" }
+  C5 = { key = "æ",   json = "&kp RA(A)",     keymap = "&kp RA(A)",     status = "implemented" }
+  C4 = { key = "ß",   json = "&kp RA(S)",     keymap = "&kp RA(S)",     status = "implemented" }
+  C3 = { key = "-",   json = "&kp N6",        keymap = "&kp N6",        status = "implemented" }
+  C2 = { key = "–",   json = "&kp LS(RA(N5))", keymap = "&kp LS(RA(N5))", status = "implemented" }
+  C1 = { key = "—",   json = "&kp LS(RA(N4))", keymap = "&kp LS(RA(N4))", status = "implemented" }
+
+  [layer.accented.right_hand.R4]
+  C1 = { key = "…",   json = "&kp LS(RA(M))",     keymap = "&kp LS(RA(M))",     status = "implemented" }
+  C2 = { key = "",    json = "&none",             keymap = "&none",             status = "implemented" }
+  C3 = { key = "Grk", json = "&sl 7",             keymap = "&sl 7",             status = "implemented", notes = "Accès layer Greek" }
+  C4 = { key = "⋅",   json = "&kp LS(RA(COMMA))", keymap = "&kp LS(RA(COMMA))", status = "implemented" }
+  C5 = { key = "",    json = "&none",             keymap = "&none",             status = "implemented" }
+  C6 = { key = "",    json = "&trans",            keymap = "&trans",            status = "implemented" }
+
+  [layer.accented.left_hand.R5]
+  C4 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  T1 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  T2 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  T3 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.accented.right_hand.R5]
+  T3 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  T2 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  T1 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",    json = "&trans", keymap = "&trans", status = "implemented" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 5 - SHIFT+ACCENTED
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.shift_accented]
+name = "Layer Shift+Accented"
+number = 5
+trigger = "Maintenir Shift + taper ★"
+progress = "4/60"
+notes = """
+Couche pour symboles typographiques additionnels avec Shift.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│   │ , │ ' │ ' │   │   │                    │   │   │   │   │   │   │ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │                    │   │   │   │ ¡ │   │   │ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │                    │   │   │   │   │   │   │ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │ ¿ │   │   │                    │   │   │   │ • │   │   │ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │   │   │   │   │   │   │    │   │   │   │   │   │   │         R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.shift_accented.left_hand.R1]
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C5 = { key = ",",   json = "&kp M",     keymap = "",          status = "pending" }
+  C4 = { key = "'",   json = "&kp RA(F)", keymap = "",          status = "pending" }
+  C3 = { key = "'",   json = "&kp RA(G)", keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+
+  [layer.shift_accented.right_hand.R1]
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+
+  [layer.shift_accented.left_hand.R2]
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+
+  [layer.shift_accented.right_hand.R2]
+  C1 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
+  C4 = { key = "¡",   json = "&kp RA(FSLH)", keymap = "",        status = "pending" }
+  C5 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
+  C6 = { key = "",    json = "&trans",     keymap = "",          status = "pending" }
+
+  [layer.shift_accented.left_hand.R3]
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+
+  [layer.shift_accented.right_hand.R3]
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+
+  [layer.shift_accented.left_hand.R4]
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C3 = { key = "¿",   json = "&kp RA(M)", keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+
+  [layer.shift_accented.right_hand.R4]
+  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C4 = { key = "•",   json = "&bullet",   keymap = "",          status = "pending" }
+  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+
+  [layer.shift_accented.left_hand.R5]
+  C4 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  T1 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  T2 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  T3 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+
+  [layer.shift_accented.right_hand.R5]
+  T3 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  T2 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  T1 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C2 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C3 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C4 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 6 - DIAERESIS SUPPLEMENT (Accès via layer Accented)
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.diaeresis]
+name = "Layer Diaeresis Supplement"
+number = 6
+trigger = "Via layer Accented → touche Dia (RH C4R2)"
+progress = "10/60"
+notes = """
+Couche pour les trémas et autres diacritiques.
+Accessible depuis la couche Accented.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│   │   │   │   │   │   │                    │   │   │   │   │   │   │ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │ ö │   │ ẅ │                    │   │   │   │   │ ÿ │   │ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │ ä │   │ ë │   │   │                    │   │   │ ẗ │ ï │ ü │   │ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │ ẍ │   │   │   │                    │   │ ḧ │   │   │   │   │ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │   │   │   │   │   │   │    │   │   │   │   │   │   │         R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.diaeresis.left_hand.R1]
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.diaeresis.right_hand.R1]
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.diaeresis.left_hand.R2]
+  C6 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C5 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C4 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C3 = { key = "ö",  json = "&o_diae", keymap = "&o_diae", status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C1 = { key = "ẅ",  json = "&w_diae", keymap = "&w_diae", status = "implemented" }
+
+  [layer.diaeresis.right_hand.R2]
+  C1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C4 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C5 = { key = "ÿ",  json = "&y_diae", keymap = "&y_diae", status = "implemented" }
+  C6 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+  [layer.diaeresis.left_hand.R3]
+  C6 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C5 = { key = "ä",  json = "&a_diae", keymap = "&a_diae", status = "implemented" }
+  C4 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C3 = { key = "ë",  json = "&e_diae", keymap = "&e_diae", status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+  [layer.diaeresis.right_hand.R3]
+  C1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C3 = { key = "ẗ",  json = "&t_diae", keymap = "&t_diae", status = "implemented" }
+  C4 = { key = "ï",  json = "&i_diae", keymap = "&i_diae", status = "implemented" }
+  C5 = { key = "ü",  json = "&u_diae", keymap = "&u_diae", status = "implemented" }
+  C6 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+  [layer.diaeresis.left_hand.R4]
+  C6 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C5 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C4 = { key = "ẍ",  json = "&x_diae", keymap = "&x_diae", status = "implemented" }
+  C3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+  [layer.diaeresis.right_hand.R4]
+  C1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C2 = { key = "ḧ",  json = "&h_diae", keymap = "&h_diae", status = "implemented" }
+  C3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C4 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C5 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C6 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+  [layer.diaeresis.left_hand.R5]
+  C4 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  T1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  T2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  T3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+  [layer.diaeresis.right_hand.R5]
+  T3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  T2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  T1 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C2 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C3 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+  C4 = { key = "",   json = "&trans",  keymap = "&trans",  status = "implemented" }
+
+# ══════════════════════════════════════════════════════════════════════════════════
+# LAYER 7 - GREEK SYMBOLS (Accès via layer Accented)
+# ══════════════════════════════════════════════════════════════════════════════════
+[layer.greek]
+name = "Layer Greek Symbols"
+number = 7
+trigger = "Via layer Accented → touche Grk (RH C3R4)"
+progress = "4/60"
+notes = """
+Couche pour les symboles grecs (µ, ω, ψ, etc.).
+Accessible depuis la couche Accented.
+"""
+
+visual_layout = """
+ Left Hand (LH)                                Right Hand (RH)
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│   │   │   │   │   │   │                    │   │   │   │   │   │   │ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │ ω │                    │   │ µ │ µ │   │ ψ │   │ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │                    │   │   │   │   │   │   │ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │                    │   │   │   │   │   │   │ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
+        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
+        │   │   │   │   │   │   │    │   │   │   │   │   │   │         R5
+        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
+          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
+"""
+
+  [layer.greek.left_hand.R1]
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.right_hand.R1]
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.left_hand.R2]
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C1 = { key = "ω",  json = "&omega", keymap = "&omega", status = "implemented" }
+
+  [layer.greek.right_hand.R2]
+  C1 = { key = "",   json = "&trans",       keymap = "&trans",       status = "implemented" }
+  C2 = { key = "µ",  json = "&kp LS(BSLH)", keymap = "&kp LS(BSLH)", status = "implemented" }
+  C3 = { key = "µ",  json = "&mu_greek",    keymap = "&mu_greek",    status = "implemented" }
+  C4 = { key = "",   json = "&trans",       keymap = "&trans",       status = "implemented" }
+  C5 = { key = "ψ",  json = "&psi",         keymap = "&psi",         status = "implemented" }
+  C6 = { key = "",   json = "&trans",       keymap = "&trans",       status = "implemented" }
+
+  [layer.greek.left_hand.R3]
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.right_hand.R3]
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.left_hand.R4]
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.right_hand.R4]
+  C1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C5 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C6 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.left_hand.R5]
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  T1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  T2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  T3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+
+  [layer.greek.right_hand.R5]
+  T3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  T2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  T1 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C2 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C3 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }
+  C4 = { key = "",   json = "&trans", keymap = "&trans", status = "implemented" }

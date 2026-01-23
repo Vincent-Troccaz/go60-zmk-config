@@ -1,0 +1,811 @@
+{
+  "keyboard": {
+    "model": "MoErgo GO60",
+    "layout": "Ergo-L",
+    "firmware": "ZMK",
+    "os_layout": "FR-oss",
+    "grid": "6 colonnes × 4 rangées par main + 6 touches pouces (R5)",
+    "total_keys": 60
+  },
+  "layers": {
+    "layer_0_base": {
+      "name": "Base Layer",
+      "description": "Couche de base - lettres et chiffres sans modificateurs",
+      "layer_number": 0,
+      "trigger": "Couche par défaut, toujours active",
+      "grid": {
+        "R1": {
+          "left_hand": {
+            "C6": {"key": "Esc", "zmk": "&kp ESC", "mapping": "direct", "notes": "Echap", "status": "validated"},
+            "C5": {"key": "1", "zmk": "&kp KP_N1", "mapping": "direct", "notes": null, "status": "validated"},
+            "C4": {"key": "2", "zmk": "&kp KP_N2", "mapping": "direct", "notes": null, "status": "validated"},
+            "C3": {"key": "3", "zmk": "&kp KP_N3", "mapping": "direct", "notes": null, "status": "validated"},
+            "C2": {"key": "4", "zmk": "&kp KP_N4", "mapping": "direct", "notes": null, "status": "validated"},
+            "C1": {"key": "5", "zmk": "&kp KP_N5", "mapping": "direct", "notes": null, "status": "validated"}
+          },
+          "right_hand": {
+            "C1": {"key": "6", "zmk": "&kp KP_N6", "mapping": "direct", "notes": null, "status": "validated"},
+            "C2": {"key": "7", "zmk": "&kp KP_N7", "mapping": "direct", "notes": null, "status": "validated"},
+            "C3": {"key": "8", "zmk": "&kp KP_N8", "mapping": "direct", "notes": null, "status": "validated"},
+            "C4": {"key": "9", "zmk": "&kp KP_N9", "mapping": "direct", "notes": null, "status": "validated"},
+            "C5": {"key": "0", "zmk": "&kp KP_N0", "mapping": "direct", "notes": null, "status": "validated"},
+            "C6": {"key": "Bksp", "zmk": "&kp BACKSPACE", "mapping": "direct", "notes": "Backspace", "status": "validated"}
+          }
+        },
+        "R2": {
+          "left_hand": {
+            "C6": {"key": "Tab", "zmk": "&kp TAB", "mapping": "direct", "notes": "Tabulation", "status": "validated"},
+            "C5": {"key": "q", "zmk": "&kp A", "mapping": "inverse (Q→A)", "notes": null, "status": "validated"},
+            "C4": {"key": "c", "zmk": "&kp C", "mapping": "direct", "notes": null, "status": "pending"},
+            "C3": {"key": "o", "zmk": "&kp O", "mapping": "direct", "notes": null, "status": "pending"},
+            "C2": {"key": "p", "zmk": "&kp P", "mapping": "direct", "notes": null, "status": "pending"},
+            "C1": {"key": "w", "zmk": "&kp Z", "mapping": "inverse (W→Z)", "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "j", "zmk": "&kp J", "mapping": "direct", "notes": null, "status": "pending"},
+            "C2": {"key": "m", "zmk": "&kp SEMICOLON", "mapping": "inverse (M→;)", "notes": null, "status": "pending"},
+            "C3": {"key": "d", "zmk": "&kp D", "mapping": "direct", "notes": null, "status": "pending"},
+            "C4": {"key": "★", "zmk": "&sl LAYER_ACCENTED", "mapping": "sticky_layer", "notes": "Accents (sticky, 1 touche)", "status": "pending"},
+            "C5": {"key": "y", "zmk": "&kp Y", "mapping": "direct", "notes": null, "status": "pending"},
+            "C6": {"key": "Del", "zmk": "&kp DEL", "mapping": "direct", "notes": "Delete", "status": "pending"}
+          }
+        },
+        "R3": {
+          "left_hand": {
+            "C6": {"key": "Shift", "zmk": "&kp LSHIFT", "mapping": "direct", "notes": "Shift", "status": "pending"},
+            "C5": {"key": "a", "zmk": "&kp Q", "mapping": "inverse (A→Q)", "notes": null, "status": "pending"},
+            "C4": {"key": "s", "zmk": "&kp S", "mapping": "direct", "notes": null, "status": "pending"},
+            "C3": {"key": "e", "zmk": "&kp E", "mapping": "direct", "notes": null, "status": "pending"},
+            "C2": {"key": "n", "zmk": "&kp N", "mapping": "direct", "notes": null, "status": "pending"},
+            "C1": {"key": "f", "zmk": "&kp F", "mapping": "direct", "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "l", "zmk": "&kp L", "mapping": "direct", "notes": null, "status": "pending"},
+            "C2": {"key": "r", "zmk": "&kp R", "mapping": "direct", "notes": null, "status": "pending"},
+            "C3": {"key": "t", "zmk": "&kp T", "mapping": "direct", "notes": null, "status": "pending"},
+            "C4": {"key": "i", "zmk": "&kp I", "mapping": "direct", "notes": null, "status": "pending"},
+            "C5": {"key": "u", "zmk": "&kp U", "mapping": "direct", "notes": null, "status": "pending"},
+            "C6": {"key": "Shift", "zmk": "&kp RSHIFT", "mapping": "direct", "notes": "Shift", "status": "pending"}
+          }
+        },
+        "R4": {
+          "left_hand": {
+            "C6": {"key": "Ctrl", "zmk": "&kp LCTRL", "mapping": "direct", "notes": "Control", "status": "pending"},
+            "C5": {"key": "z", "zmk": "&kp W", "mapping": "inverse (Z→W)", "notes": null, "status": "pending"},
+            "C4": {"key": "x", "zmk": "&kp X", "mapping": "direct", "notes": null, "status": "pending"},
+            "C3": {"key": "-", "zmk": "&kp MINUS", "mapping": "special", "notes": null, "status": "pending"},
+            "C2": {"key": "v", "zmk": "&kp V", "mapping": "direct", "notes": null, "status": "pending"},
+            "C1": {"key": "b", "zmk": "&kp B", "mapping": "direct", "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": ".", "zmk": "&kp DOT", "mapping": "special", "notes": null, "status": "pending"},
+            "C2": {"key": "h", "zmk": "&kp H", "mapping": "direct", "notes": null, "status": "pending"},
+            "C3": {"key": "g", "zmk": "&kp G", "mapping": "direct", "notes": null, "status": "pending"},
+            "C4": {"key": ",", "zmk": "&kp COMMA", "mapping": "special", "notes": null, "status": "pending"},
+            "C5": {"key": "k", "zmk": "&kp K", "mapping": "direct", "notes": null, "status": "pending"},
+            "C6": {"key": "Layer_Num", "zmk": "&tog LAYER_NUM", "mapping": "layer_toggle", "notes": "Numpad (toggle)", "status": "pending"}
+          }
+        },
+        "R5": {
+          "left_hand": {
+            "C4": {"key": "layer_magic", "zmk": "&mo LAYER_MAGIC", "mapping": "layer_toggle", "notes": "Magic (momentary)", "status": "pending"},
+            "C3": {"key": "(", "zmk": "&kp LPAR", "mapping": "direct", "notes": null, "status": "pending"},
+            "C2": {"key": ")", "zmk": "&kp RPAR", "mapping": "direct", "notes": null, "status": "pending"},
+            "T1": {"key": "Alt", "zmk": "&kp LALT", "mapping": "direct", "notes": null, "status": "pending"},
+            "T2": {"key": "Space", "zmk": "&kp SPACE", "mapping": "direct", "notes": null, "status": "pending"},
+            "T3": {"key": "Super", "zmk": "&kp LGUI", "mapping": "direct", "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "T3": {"key": "Super", "zmk": "&kp RGUI", "mapping": "direct", "notes": null, "status": "pending"},
+            "T2": {"key": "Space", "zmk": "&kp SPACE", "mapping": "direct", "notes": null, "status": "pending"},
+            "T1": {"key": "Enter/AltGr", "zmk": "&kp ENTER", "mapping": "special", "notes": null, "status": "pending"},
+            "C2": {"key": "layer_nav", "zmk": "&mo LAYER_NAV", "mapping": "layer_toggle", "notes": "Navigation (momentary)", "status": "pending"},
+            "C3": {"key": "<", "zmk": "&kp LT", "mapping": "direct", "notes": null, "status": "pending"},
+            "C4": {"key": ">", "zmk": "&kp GT", "mapping": "direct", "notes": null, "status": "pending"}
+          }
+        }
+      },
+      "visual_layout": [
+        " Left Hand (LH)                                Right Hand (RH)",
+        " C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6",
+        "┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐",
+        "│Esc│ 1 │ 2 │ 3 │ 4 │ 5 │                    │ 6 │ 7 │ 8 │ 9 │ 0 │Bks│ R1",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│Tab│ q │ c │ o │ p │ w │                    │ j │ m │ d │ ★ │ y │Del│ R2",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│Sft│ a │ s │ e │ n │ f │                    │ l │ r │ t │ i │ u │Sft│ R3",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│Ctl│ z │ x │ - │ v │ b │                    │ . │ h │ g │ , │ k │Num│ R4",
+        "└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘",
+        "        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐        ",
+        "        │Mag│ ( │ ) │Alt│Spc│Sup│    │Sup│Spc│Ent│Nav│ < │ > │         R5",
+        "        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘        ",
+        "          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4          "
+      ],
+      "key_count": {
+        "left_hand": 30,
+        "right_hand": 30,
+        "total": 60,
+        "note": "6×4 main grid + 6 thumb keys par main"
+      },
+      "thumb_cluster": {
+        "description": "Rangée R5 - Cluster de pouces avec 6 touches par main",
+        "left": {
+          "C4": {
+            "key": "layer_magic",
+            "function": "Accès layer magic/fonction"
+          },
+          "C3": {
+            "key": "(",
+            "function": "Parenthèse ouvrante"
+          },
+          "C2": {
+            "key": ")",
+            "function": "Parenthèse fermante"
+          },
+          "T1": {
+            "key": "Alt",
+            "function": "Modificateur Alt"
+          },
+          "T2": {
+            "key": "Space",
+            "function": "Espace"
+          },
+          "T3": {
+            "key": "Super",
+            "function": "Touche Super/Windows/Meta"
+          }
+        },
+        "right": {
+          "T3": {
+            "key": "Super",
+            "function": "Touche Super/Windows/Meta"
+          },
+          "T2": {
+            "key": "Space",
+            "function": "Espace"
+          },
+          "T1": {
+            "key": "Enter/AltGr",
+            "function": "Entrée ou AltGr selon layer"
+          },
+          "C2": {
+            "key": "layer_nav",
+            "function": "Accès layer navigation"
+          },
+          "C3": {
+            "key": "<",
+            "function": "Inférieur"
+          },
+          "C4": {
+            "key": ">",
+            "function": "Supérieur"
+          }
+        }
+      },
+      "inverse_mappings": [
+        {
+          "zmk": "&kp A",
+          "ergo_l": "q",
+          "physical": "a",
+          "reason": "Q→A en layout FR"
+        },
+        {
+          "zmk": "&kp Q",
+          "ergo_l": "a",
+          "physical": "q",
+          "reason": "A→Q en layout FR"
+        },
+        {
+          "zmk": "&kp W",
+          "ergo_l": "z",
+          "physical": "w",
+          "reason": "Z→W en layout FR"
+        },
+        {
+          "zmk": "&kp Z",
+          "ergo_l": "w",
+          "physical": "z",
+          "reason": "W→Z en layout FR"
+        },
+        {
+          "zmk": "&kp SEMICOLON",
+          "ergo_l": "m",
+          "physical": ";",
+          "reason": "M→; en layout FR"
+        }
+      ]
+    },
+    "layer_1_shift": {
+      "name": "Shift Layer",
+      "description": "Couche activée par Shift - majuscules et symboles primaires",
+      "layer_number": 1,
+      "trigger": "Maintenir Shift (LH C6R3 ou RH C6R3)",
+      "grid": {
+        "R1": {
+          "left_hand": {
+            "C6": {"key": "Esc", "zmk": "&kp ESC", "mapping": "direct", "notes": "Echap", "status": "pending"},
+            "C5": {"key": "€", "zmk": null, "mapping": null, "notes": "Euro", "status": "pending"},
+            "C4": {"key": "«", "zmk": null, "mapping": null, "notes": "Guillemet ouvrant FR", "status": "pending"},
+            "C3": {"key": "»", "zmk": null, "mapping": null, "notes": "Guillemet fermant FR", "status": "pending"},
+            "C2": {"key": "$", "zmk": "&kp DLLR", "mapping": "direct", "notes": "Dollar", "status": "pending"},
+            "C1": {"key": "%", "zmk": "&kp PRCNT", "mapping": "direct", "notes": "Pour cent", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "^", "zmk": "&kp CARET", "mapping": "direct", "notes": "Circonflexe (dead key)", "status": "pending"},
+            "C2": {"key": "&", "zmk": "&kp AMPS", "mapping": "direct", "notes": "Esperluette", "status": "pending"},
+            "C3": {"key": "*", "zmk": "&kp ASTRK", "mapping": "direct", "notes": "Astérisque", "status": "pending"},
+            "C4": {"key": "#", "zmk": "&kp HASH", "mapping": "direct", "notes": "Hash", "status": "pending"},
+            "C5": {"key": "@", "zmk": "&kp AT", "mapping": "direct", "notes": "Arobase", "status": "pending"},
+            "C6": {"key": "Bksp", "zmk": "&kp BSPC", "mapping": "direct", "notes": "Backspace", "status": "pending"}
+          }
+        },
+        "R2": {
+          "left_hand": {
+            "C6": {"key": "Tab", "zmk": "&kp TAB", "mapping": "direct", "notes": "Tabulation", "status": "pending"},
+            "C5": {"key": "Q", "zmk": "&kp Q", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C4": {"key": "C", "zmk": "&kp C", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C3": {"key": "O", "zmk": "&kp O", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C2": {"key": "P", "zmk": "&kp P", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C1": {"key": "W", "zmk": "&kp W", "mapping": "direct", "notes": "Majuscule", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "J", "zmk": "&kp J", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C2": {"key": "M", "zmk": "&kp M", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C3": {"key": "D", "zmk": "&kp D", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C4": {"key": "!", "zmk": "&kp EXCL", "mapping": "direct", "notes": "Point d'exclamation", "status": "pending"},
+            "C5": {"key": "Y", "zmk": "&kp Y", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C6": {"key": "Del", "zmk": "&kp DEL", "mapping": "direct", "notes": "Delete", "status": "pending"}
+          }
+        },
+        "R3": {
+          "left_hand": {
+            "C6": {"key": "Shift", "zmk": null, "mapping": null, "notes": "Shift", "status": "pending"},
+            "C5": {"key": "A", "zmk": "&kp A", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C4": {"key": "S", "zmk": "&kp S", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C3": {"key": "E", "zmk": "&kp E", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C2": {"key": "N", "zmk": "&kp N", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C1": {"key": "F", "zmk": "&kp F", "mapping": "direct", "notes": "Majuscule", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "L", "zmk": "&kp L", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C2": {"key": "R", "zmk": "&kp R", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C3": {"key": "T", "zmk": "&kp T", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C4": {"key": "I", "zmk": "&kp I", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C5": {"key": "U", "zmk": "&kp U", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C6": {"key": "Shift", "zmk": null, "mapping": null, "notes": "Shift", "status": "pending"}
+          }
+        },
+        "R4": {
+          "left_hand": {
+            "C6": {"key": "Ctrl", "zmk": "&kp LCTRL", "mapping": "direct", "notes": "Control", "status": "pending"},
+            "C5": {"key": "Z", "zmk": "&kp Z", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C4": {"key": "X", "zmk": "&kp X", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C3": {"key": "?", "zmk": "&kp QMARK", "mapping": "direct", "notes": "Point d'interrogation", "status": "pending"},
+            "C2": {"key": "V", "zmk": "&kp V", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C1": {"key": "B", "zmk": "&kp B", "mapping": "direct", "notes": "Majuscule", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": ":", "zmk": "&kp COLON", "mapping": "direct", "notes": "Deux-points", "status": "pending"},
+            "C2": {"key": "H", "zmk": "&kp H", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C3": {"key": "G", "zmk": "&kp G", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C4": {"key": ";", "zmk": "&kp SEMI", "mapping": "direct", "notes": "Point-virgule", "status": "pending"},
+            "C5": {"key": "K", "zmk": "&kp K", "mapping": "direct", "notes": "Majuscule", "status": "pending"},
+            "C6": {"key": "Layer_Num", "zmk": "&tog LAYER_NUM", "mapping": "toggle", "notes": "Numpad (toggle)", "status": "pending"}
+          }
+        },
+        "R5": {
+          "left_hand": {
+            "C4": {"key": "layer_magic", "zmk": "&mo LAYER_MAGIC", "mapping": "momentary", "notes": "Magic (momentary)", "status": "pending"},
+            "C3": {"key": "[", "zmk": "&kp LBKT", "mapping": "direct", "notes": "", "status": "pending"},
+            "C2": {"key": "]", "zmk": "&kp RBKT", "mapping": "direct", "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C2": {"key": "layer_nav", "zmk": "&mo LAYER_NAV", "mapping": "momentary", "notes": "Navigation (momentary)", "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"}
+          }
+        }
+      },
+      "visual_layout": [
+        " Left Hand (LH)                                Right Hand (RH)",
+        " C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6",
+        "┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐",
+        "│Esc│ € │ « │ » │ $ │ % │                │ ^ │ & │ * │ # │ @ │Bks│ R1",
+        "├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤",
+        "│Tab│ Q │ C │ O │ P │ W │                │ J │ M │ D │ ! │ Y │Del│ R2",
+        "├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤",
+        "│Sft│ A │ S │ E │ N │ F │                │ L │ R │ T │ I │ U │Sft│ R3",
+        "├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤",
+        "│Ctl│ Z │ X │ ? │ V │ B │                │ : │ H │ G │ ; │ K │Num│ R4",
+        "└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘",
+        "        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐    ",
+        "        │Mag│ [ │ ] │Alt│Spc│Sup│    │Sup│Spc│Ent│Nav│   │   │     R5",
+        "        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘    ",
+        "          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4     "
+      ]
+    },
+    "layer_2_altgr": {
+      "name": "AltGr Layer",
+      "description": "Couche activée par AltGr - symboles de programmation et mathématiques",
+      "layer_number": 2,
+      "trigger": "Maintenir AltGr (Right Alt)",
+      "grid": {
+        "R1": {
+          "left_hand": {
+            "C6": {"key": "Esc", "zmk": "&kp ESC", "mapping": "direct", "notes": "Echap", "status": "pending"},
+            "C5": {"key": "₁", "zmk": null, "mapping": null, "notes": "Indice 1", "status": "pending"},
+            "C4": {"key": "₂", "zmk": null, "mapping": null, "notes": "Indice 2", "status": "pending"},
+            "C3": {"key": "₃", "zmk": null, "mapping": null, "notes": "Indice 3", "status": "pending"},
+            "C2": {"key": "₄", "zmk": null, "mapping": null, "notes": "Indice 4", "status": "pending"},
+            "C1": {"key": "₅", "zmk": null, "mapping": null, "notes": "Indice 5", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "₆", "zmk": null, "mapping": null, "notes": "Indice 6", "status": "pending"},
+            "C2": {"key": "₇", "zmk": null, "mapping": null, "notes": "Indice 7", "status": "pending"},
+            "C3": {"key": "₈", "zmk": null, "mapping": null, "notes": "Indice 8", "status": "pending"},
+            "C4": {"key": "₉", "zmk": null, "mapping": null, "notes": "Indice 9", "status": "pending"},
+            "C5": {"key": "₀", "zmk": null, "mapping": null, "notes": "Indice 0", "status": "pending"},
+            "C6": {"key": "Bksp", "zmk": "&kp BSPC", "mapping": "direct", "notes": "Backspace", "status": "pending"}
+          }
+        },
+        "R2": {
+          "left_hand": {
+            "C6": {"key": "Tab", "zmk": "&kp TAB", "mapping": "direct", "notes": "Tabulation", "status": "pending"},
+            "C5": {"key": "^", "zmk": "&kp CARET", "mapping": "direct", "notes": "Circonflexe", "status": "pending"},
+            "C4": {"key": "<", "zmk": "&kp LT", "mapping": "direct", "notes": "Inférieur", "status": "pending"},
+            "C3": {"key": ">", "zmk": "&kp GT", "mapping": "direct", "notes": "Supérieur", "status": "pending"},
+            "C2": {"key": "$", "zmk": "&kp DLLR", "mapping": "direct", "notes": "Dollar", "status": "pending"},
+            "C1": {"key": "%", "zmk": "&kp PRCNT", "mapping": "direct", "notes": "Pour cent", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "@", "zmk": "&kp AT", "mapping": "direct", "notes": "Arobase", "status": "pending"},
+            "C2": {"key": "&", "zmk": "&kp AMPS", "mapping": "direct", "notes": "Esperluette", "status": "pending"},
+            "C3": {"key": "*", "zmk": "&kp ASTRK", "mapping": "direct", "notes": "Astérisque", "status": "pending"},
+            "C4": {"key": "'", "zmk": "&kp APOS", "mapping": "direct", "notes": "Apostrophe", "status": "pending"},
+            "C5": {"key": "`", "zmk": "&kp GRAVE", "mapping": "direct", "notes": "Accent grave", "status": "pending"},
+            "C6": {"key": "Del", "zmk": "&kp DEL", "mapping": "direct", "notes": "Delete", "status": "pending"}
+          }
+        },
+        "R3": {
+          "left_hand": {
+            "C6": {"key": "Shift", "zmk": null, "mapping": null, "notes": "Shift", "status": "pending"},
+            "C5": {"key": "{", "zmk": "&kp LBRC", "mapping": "direct", "notes": "", "status": "pending"},
+            "C4": {"key": "(", "zmk": "&kp LPAR", "mapping": "direct", "notes": "", "status": "pending"},
+            "C3": {"key": ")", "zmk": "&kp RPAR", "mapping": "direct", "notes": "", "status": "pending"},
+            "C2": {"key": "}", "zmk": "&kp RBRC", "mapping": "direct", "notes": "", "status": "pending"},
+            "C1": {"key": "=", "zmk": "&kp EQUAL", "mapping": "direct", "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "\\", "zmk": "&kp BSLH", "mapping": "direct", "notes": "", "status": "pending"},
+            "C2": {"key": "+", "zmk": "&kp PLUS", "mapping": "direct", "notes": "", "status": "pending"},
+            "C3": {"key": "-", "zmk": "&kp MINUS", "mapping": "direct", "notes": "", "status": "pending"},
+            "C4": {"key": "/", "zmk": "&kp SLASH", "mapping": "direct", "notes": "", "status": "pending"},
+            "C5": {"key": "\"", "zmk": "&kp DQT", "mapping": "direct", "notes": "", "status": "pending"},
+            "C6": {"key": "Shift", "zmk": null, "mapping": null, "notes": "Shift", "status": "pending"}
+          }
+        },
+        "R4": {
+          "left_hand": {
+            "C6": {"key": "Ctrl", "zmk": "&kp LCTRL", "mapping": "direct", "notes": "Control", "status": "pending"},
+            "C5": {"key": "~", "zmk": "&kp TILDE", "mapping": "direct", "notes": "", "status": "pending"},
+            "C4": {"key": "[", "zmk": "&kp LBKT", "mapping": "direct", "notes": "", "status": "pending"},
+            "C3": {"key": "]", "zmk": "&kp RBKT", "mapping": "direct", "notes": "", "status": "pending"},
+            "C2": {"key": "_", "zmk": "&kp UNDER", "mapping": "direct", "notes": "", "status": "pending"},
+            "C1": {"key": "#", "zmk": "&kp HASH", "mapping": "direct", "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "|", "zmk": "&kp PIPE", "mapping": "direct", "notes": "", "status": "pending"},
+            "C2": {"key": "!", "zmk": "&kp EXCL", "mapping": "direct", "notes": "Point d'exclamation", "status": "pending"},
+            "C3": {"key": ";", "zmk": "&kp SEMI", "mapping": "direct", "notes": "", "status": "pending"},
+            "C4": {"key": ":", "zmk": "&kp COLON", "mapping": "direct", "notes": "", "status": "pending"},
+            "C5": {"key": "?", "zmk": "&kp QMARK", "mapping": "direct", "notes": "Point d'interrogation", "status": "pending"},
+            "C6": {"key": "Layer_Num", "zmk": "&tog LAYER_NUM", "mapping": "toggle", "notes": "Numpad (toggle)", "status": "pending"}
+          }
+        },
+        "R5": {
+          "left_hand": {
+            "C4": {"key": "layer_magic", "zmk": "&mo LAYER_MAGIC", "mapping": "momentary", "notes": "Magic (momentary)", "status": "pending"},
+            "C3": {"key": "{", "zmk": "&kp LBRC", "mapping": "direct", "notes": "", "status": "pending"},
+            "C2": {"key": "}", "zmk": "&kp RBRC", "mapping": "direct", "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C2": {"key": "layer_nav", "zmk": "&mo LAYER_NAV", "mapping": "momentary", "notes": "Navigation (momentary)", "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"}
+          }
+        }
+      },
+      "visual_layout": [
+        " Left Hand (LH)                                Right Hand (RH)",
+        " C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6",
+        "┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐",
+        "│Esc│ ₁ │ ₂ │ ₃ │ ₄ │ ₅ │                │ ₆ │ ₇ │ ₈ │ ₉ │ ₀ │Bks│ R1",
+        "├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤",
+        "│Tab│ ^ │ < │ > │ $ │ % │                │ @ │ & │ * │ ' │ ` │Del│ R2",
+        "├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤",
+        "│Sft│ { │ ( │ ) │ } │ = │                │ / │ + │ - │ / │\" │Sft│ R3",
+        "├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤",
+        "│Ctl│ ~ │ [ │ ] │ _ │ # │                │ | │ ! │ ; │ : │ ? │Num│ R4",
+        "└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘",
+        "        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐    ",
+        "        │Mag│ { │ } │Alt│Spc│Sup│    │Sup│Spc│AGr│Nav│   │   │     R5",
+        "        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘    ",
+        "          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4     "
+      ]
+    },
+    "layer_3_shift_altgr": {
+      "name": "Shift+AltGr Layer",
+      "description": "Couche activée par Shift+AltGr - symboles additionnels",
+      "layer_number": 3,
+      "trigger": "Maintenir Shift + AltGr",
+      "grid": {
+        "R1": {
+          "left_hand": {
+            "C6": {"key": "Esc", "zmk": "&kp ESC", "mapping": null, "notes": "Échap", "status": "pending"},
+            "C5": {"key": "¹", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C4": {"key": "²", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C3": {"key": "³", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C2": {"key": "⁴", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C1": {"key": "⁵", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "⁶", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C2": {"key": "⁷", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C3": {"key": "⁸", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C4": {"key": "⁹", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C5": {"key": "⁰", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C6": {"key": "Bksp", "zmk": "&kp BSPC", "mapping": null, "notes": "Retour arrière (Backspace)", "status": "pending"}
+          }
+        },
+        "R2": {
+          "left_hand": {
+            "C6": {"key": "Tab", "zmk": "&kp TAB", "mapping": null, "notes": "Tabulation", "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": "≤", "zmk": null, "mapping": null, "notes": "≤ (U+2264) — séquence Compose: compose < =", "status": "pending"},
+            "C3": {"key": "≥", "zmk": null, "mapping": null, "notes": "≥ (U+2265) — séquence Compose: compose > =", "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C1": {"key": "‰", "zmk": null, "mapping": null, "notes": "‰ (U+2030) — séquence Compose: compose % o", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": "×", "zmk": null, "mapping": null, "notes": "× (U+00D7) — séquence Compose: compose x x", "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": "Del", "zmk": "&kp DEL", "mapping": null, "notes": "Suppr (Delete)", "status": "pending"}
+          }
+        },
+        "R3": {
+          "left_hand": {
+            "C6": {"key": "Shift", "zmk": "&kp LSHIFT", "mapping": null, "notes": "Majuscule (Shift)", "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C1": {"key": "≠", "zmk": null, "mapping": null, "notes": "≠ (U+2260) — séquence Compose: compose / =", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": "±", "zmk": null, "mapping": null, "notes": "± (U+00B1) — séquence Compose: compose + -", "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": "÷", "zmk": null, "mapping": null, "notes": "À compléter (pas de correspondance ZMK simple identifiée)", "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": "Shift", "zmk": "&kp RSHIFT", "mapping": null, "notes": "Majuscule (Shift)", "status": "pending"}
+          }
+        },
+        "R4": {
+          "left_hand": {
+            "C6": {"key": "Ctrl", "zmk": "&kp LCTRL", "mapping": null, "notes": "Contrôle", "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": "–", "zmk": null, "mapping": null, "notes": "– (U+2013) — séquence Compose: compose - - .", "status": "pending"},
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "¦", "zmk": null, "mapping": null, "notes": "¦ (U+00A6) — séquence Compose: compose ! ^", "status": "pending"},
+            "C2": {"key": "¬", "zmk": null, "mapping": null, "notes": "¬ (U+00AC) — séquence Compose: compose - ,", "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": "Layer_Num", "zmk": "&tog LAYER_NUM", "mapping": null, "notes": "Active/désactive la couche NUM", "status": "pending"}
+          }
+        },
+        "R5": {
+          "left_hand": {
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "T3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          }
+        }
+      },
+      "visual_layout": []
+    },
+    "layer_accented": {
+      "name": "Layer Accented",
+      "description": "Couche d'accents activée par ★ (RH C4R2) en sticky layer",
+      "layer_number": 4,
+      "trigger": "Taper ★ (RH C4R2)",
+      "grid": {
+        "R1": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": "&trans", "mapping": "transparent", "notes": "", "status": "pending"},
+            "C5": {"key": "„", "zmk": "&kp LS(RA(S))", "mapping": "special", "notes": "", "status": "pending"},
+            "C4": {"key": "“", "zmk": "&kp LS(RA(W))", "mapping": "special", "notes": "", "status": "pending"},
+            "C3": {"key": "”", "zmk": "&kp LS(RA(X))", "mapping": "special", "notes": "", "status": "pending"},
+            "C2": {"key": "¢", "zmk": "&kp LS(RA(E))", "mapping": "special", "notes": "", "status": "pending"},
+            "C1": {"key": "‰", "zmk": null, "mapping": "compose", "notes": "compose + % + o", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": "&none", "mapping": "none", "notes": "", "status": "pending"},
+            "C2": {"key": null, "zmk": "&none", "mapping": "none", "notes": "", "status": "pending"},
+            "C3": {"key": "§", "zmk": "&kp LS(FSLH)", "mapping": "special", "notes": "", "status": "pending"},
+            "C4": {"key": "¶", "zmk": null, "mapping": "compose", "notes": "compose + P + !", "status": "pending"},
+            "C5": {"key": "°", "zmk": "&kp LS(MINUS)", "mapping": "special", "notes": "", "status": "pending"},
+            "C6": {"key": null, "zmk": "&trans", "mapping": "transparent", "notes": "", "status": "pending"}
+          }
+        },
+        "R2": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C5": {"key": "â", "zmk": "&kp RA(W)", "mapping": "direct", "notes": "a accent circonflexe", "status": "pending"},
+            "C4": {"key": "ç", "zmk": "&kp N9", "mapping": "direct", "notes": "c cédille", "status": "pending"},
+            "C3": {"key": "œ", "zmk": "&kp RA(O)", "mapping": "direct", "notes": "Ligature oe", "status": "pending"},
+            "C2": {"key": "ô", "zmk": "&kp RA(P)", "mapping": "direct", "notes": "o accent circonflexe", "status": "pending"},
+            "C1": {"key": null, "zmk": "&none", "mapping": null, "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": "&none", "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": "µ", "zmk": "&kp LS(BSLH)", "mapping": "direct", "notes": "Symbole mu", "status": "pending"},
+            "C3": {"key": "_", "zmk": "&kp N8", "mapping": "direct", "notes": "Underscore", "status": "pending"},
+            "C4": {"key": "layer_Diae_Supplement", "zmk": "&sl 6", "mapping": null, "notes": "", "status": "pending"},
+            "C5": {"key": "û", "zmk": "&kp RA(SQT)", "mapping": "direct", "notes": "u accent circonflexe", "status": "pending"},
+            "C6": {"key": null, "zmk": "&trans", "mapping": null, "notes": "", "status": "pending"}
+          }
+        },
+        "R3": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": "&trans", "mapping": null, "notes": "", "status": "pending"},
+            "C5": {"key": "à", "zmk": "&kp N0", "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": "é", "zmk": "&kp N2", "mapping": null, "notes": "", "status": "pending"},
+            "C3": {"key": "è", "zmk": "&kp N7", "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": "ê", "zmk": "&kp RA(R)", "mapping": null, "notes": "", "status": "pending"},
+            "C1": {"key": "ñ", "zmk": "&kp RA(LBKT) + &kp N", "mapping": null, "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "(", "zmk": "&kp N5", "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": ")", "zmk": "&kp MINUS", "mapping": null, "notes": "", "status": "pending"},
+            "C3": {"key": "î", "zmk": "&kp RA(I)", "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": "ï", "zmk": "&kp RA(K) ", "mapping": null, "notes": "", "status": "pending"},
+            "C5": {"key": "ù", "zmk": "&kp SQT", "mapping": null, "notes": "", "status": "pending"},
+            "C6": {"key": null, "zmk": "&trans", "mapping": null, "notes": "", "status": "pending"}
+          }
+        },
+        "R4": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C5": {"key": "æ", "zmk": "&kp RA(A)", "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": "ß", "zmk": "&kp RA(S)", "mapping": null, "notes": "", "status": "pending"},
+            "C3": {"key": "-", "zmk": "&kp N6", "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": "–", "zmk": "&kp LS(RA(N5))", "mapping": null, "notes": "", "status": "pending"},
+            "C1": {"key": "—", "zmk": "&kp LS(RA(N4))", "mapping": null, "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": "…", "zmk": "&kp LS(RA(M))", "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": null, "zmk": "&none", "mapping": null, "notes": "", "status": "pending"},
+            "C3": {"key": "layer_Greek_Symbols", "zmk": "&sl 7", "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": "⋅", "zmk": "&kp LS(RA(COMMA))", "mapping": null, "notes": "", "status": "pending"},
+            "C5": {"key": null, "zmk": "&none", "mapping": null, "notes": "", "status": "pending"},
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"}
+          }
+        },
+        "R5": {
+          "left_hand": {
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "T1": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "T2": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "T3": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"}
+          },
+          "right_hand": {
+            "T3": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "T2": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "T1": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": "", "status": "pending"}
+          }
+        }
+      },
+      "visual": [
+        "Taper ★ (RH C4R2) + touche :",
+        "├─ LH C5R2 → â",
+        "├─ LH C4R2 → ç",
+        "├─ LH C3R2 → œ",
+        "├─ LH C2R2 → ô",
+        "├─ RH C2R2 → µ",
+        "├─ RH C3R2 → _",
+        "└─ RH C5R2 → û"
+      ],
+      "visual_layout": [
+        " Left Hand (LH)                                Right Hand (RH)",
+        " C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6",
+        "┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐",
+        "│   │ „ │ " │ " │ ¢ │ ‰ │                    │   │   │ § │ ¶ │ ° │   │ R1",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│   │ â │ ç │ œ │ ô │   │                    │   │ µ │ _ │Dia│ û │   │ R2",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│   │ à │ é │ è │ ê │ ñ │                    │ ( │ ) │ î │ ï │ ù │   │ R3",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│   │ æ │ ß │ - │ – │ — │                    │ … │   │Grk│ ⋅ │   │   │ R4",
+        "└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘",
+        "        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐        ",
+        "        │   │   │   │   │   │   │    │   │   │   │   │   │   │         R5",
+        "        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘        ",
+        "          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4         "
+      ]
+    },
+    "layer_shift_accented": {
+      "name": "Layer Shift+Accented",
+      "description": "Couche activée par Shift + ★ (layer accented)",
+      "layer_number": 5,
+      "trigger": "Maintenir Shift + taper ★ (RH C4R2)",
+      "grid": {
+        "R1": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": "&trans", "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": ",", "zmk": "&kp M", "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": "‘", "zmk": "&kp RA(F)", "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": "’", "zmk": "&kp RA(G)", "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"},
+            "C1": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": "&none", "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": null, "zmk": "&trans", "mapping": null, "notes": null, "status": "pending"}
+          }
+        },
+        "R2": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": "¡", "zmk": "&kp RA(FSLH)", "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          }
+        },
+        "R3": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          }
+        },
+        "R4": {
+          "left_hand": {
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": "¿", "zmk": "&kp RA(M)", "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "C1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": "•", "zmk": null, "mapping": "compose LS(COMMA) + KP_EQUAL", "notes": null, "status": "pending"},
+            "C5": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C6": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          }
+        },
+        "R5": {
+          "left_hand": {
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          },
+          "right_hand": {
+            "T3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "T1": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C2": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C3": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"},
+            "C4": {"key": null, "zmk": null, "mapping": null, "notes": null, "status": "pending"}
+          }
+        }
+      },
+      "visual_layout": [
+        " Left Hand (LH)                                Right Hand (RH)",
+        " C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6",
+        "┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐",
+        "│   │ , │ ' │ ' │   │   │                    │   │   │   │   │   │   │ R1",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│   │   │   │   │   │   │                    │   │   │   │ ¡ │   │   │ R2",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│   │   │   │   │   │   │                    │   │   │   │   │   │   │ R3",
+        "├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤",
+        "│   │   │   │ ¿ │   │   │                    │   │   │   │ • │   │   │ R4",
+        "└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘",
+        "        ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐        ",
+        "        │   │   │   │   │   │   │    │   │   │   │   │   │   │         R5",
+        "        └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘        ",
+        "          C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4         "
+      ]
+    }
+  },
+  "summary": {
+    "total_layers": 5,
+    "layers_configured": [
+      "base",
+      "shift",
+      "altgr",
+      "shift_altgr",
+      "accented"
+    ],
+    "layers_planned": [
+      "navigation",
+      "magic",
+      "numpad",
+      "function_keys"
+    ],
+    "keys_per_hand": 30,
+    "main_grid_per_hand": "6 columns × 4 rows = 24 keys",
+    "thumb_keys_per_hand": 6,
+    "total_keys": 60,
+    "special_keys": {
+      "layer_toggles": [
+        "RH C4R2 (★ - layer_accented)",
+        "RH C6R4 (Layer_Num)",
+        "LH C4R5 (layer_magic)",
+        "RH C2R5 (layer_nav)"
+      ],
+      "modifiers": [
+        "LH C6R3 (Shift)",
+        "RH C6R3 (Shift)",
+        "LH C6R4 (Ctrl)",
+        "AltGr"
+      ]
+    }
+  }
+}
