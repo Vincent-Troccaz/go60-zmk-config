@@ -167,16 +167,16 @@ Ce layer documente le comportement attendu pour référence.
 
 visual_layout = """
  Left Hand (LH)                                Right Hand (RH)
- C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6
-┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐
-│Esc│ € │ « │ » │ $ │ % │                │ ^ │ & │ * │ # │ @ │Bks│ R1
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Tab│ Q │ C │ O │ P │ W │                │ J │ M │ D │ ! │ Y │Del│ R2
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Sft│ A │ S │ E │ N │ F │                │ L │ R │ T │ I │ U │Sft│ R3
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Ctl│ Z │ X │ ? │ V │ B │                │ : │ H │ G │ ; │ K │Num│ R4
-└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘
+ C6  C5  C4  C3  C2  C1                       C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│Esc│ € │ « │ » │ $ │ % │                    │ ^ │ & │ * │ # │ @ │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Tab│ Q │ C │ O │ P │ W │                    │ J │ M │ D │ ! │ Y │Del│ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Sft│ A │ S │ E │ N │ F │                    │ L │ R │ T │ I │ U │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Ctl│ Z │ X │ ? │ V │ B │                    │ : │ H │ G │ ; │ K │Num│ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
         ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
         │Mag│ [ │ ] │Alt│Spc│Sup│    │Sup│Spc│Ent│Nav│   │   │     R5
         └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
@@ -278,16 +278,16 @@ Symboles de programmation et mathématiques accessibles via AltGr.
 
 visual_layout = """
  Left Hand (LH)                                Right Hand (RH)
- C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6
-┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐
-│Esc│ ₁ │ ₂ │ ₃ │ ₄ │ ₅ │                │ ₆ │ ₇ │ ₈ │ ₉ │ ₀ │Bks│ R1
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Tab│ ^ │ < │ > │ $ │ % │                │ @ │ & │ * │ ' │ ` │Del│ R2
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Sft│ { │ ( │ ) │ } │ = │                │\\ │ + │ - │ / │ " │Sft│ R3
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Ctl│ ~ │ [ │ ] │ _ │ # │                │ | │ ! │ ; │ : │ ? │Num│ R4
-└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│Esc│ ₁ │ ₂ │ ₃ │ ₄ │ ₅ │                    │ ₆ │ ₇ │ ₈ │ ₉ │ ₀ │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Tab│ ^ │ < │ > │ $ │ % │                    │ @ │ & │ * │ ' │ ` │Del│ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Sft│ { │ ( │ ) │ } │ = │                    │\\ │ + │ - │ / │ " │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Ctl│ ~ │ [ │ ] │ _ │ # │                    │ | │ ! │ ; │ : │ ? │Num│ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
         ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
         │Mag│ { │ } │Alt│Spc│Sup│    │Sup│Spc│AGr│Nav│   │   │     R5
         └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
@@ -389,18 +389,18 @@ Symboles additionnels (exposants, symboles mathématiques avancés).
 
 visual_layout = """
  Left Hand (LH)                                Right Hand (RH)
- C6  C5  C4  C3  C2  C1                    C1  C2  C3  C4  C5  C6
-┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐
-│Esc│ ¹ │ ² │ ³ │ ⁴ │ ⁵ │                │ ⁶ │ ⁷ │ ⁸ │ ⁹ │ ⁰ │Bks│ R1
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Tab│   │ ≤ │ ≥ │   │ ‰ │                │   │   │ × │   │   │Del│ R2
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Sft│   │   │   │   │ ≠ │                │   │ ± │   │ ÷ │   │Sft│ R3
-├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤
-│Ctl│   │   │   │ – │   │                │ ¦ │ ¬ │   │   │   │Num│ R4
-└───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘
+ C6  C5  C4  C3  C2  C1                        C1  C2  C3  C4  C5  C6
+┌───┬───┬───┬───┬───┬───┐                    ┌───┬───┬───┬───┬───┬───┐
+│Esc│ ¹ │ ² │ ³ │ ⁴ │ ⁵ │                    │ ⁶ │ ⁷ │ ⁸ │ ⁹ │ ⁰ │Bks│ R1
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Tab│   │ ≤ │ ≥ │   │ ‰ │                    │   │   │ × │   │   │Del│ R2
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Sft│   │   │   │   │ ≠ │                    │   │ ± │   │ ÷ │   │Sft│ R3
+├───┼───┼───┼───┼───┼───┤                    ├───┼───┼───┼───┼───┼───┤
+│Ctl│   │   │   │ – │   │                    │ ¦ │ ¬ │   │   │   │Num│ R4
+└───┴───┴───┴───┴───┴───┘                    └───┴───┴───┴───┴───┴───┘
         ┌───┬───┬───┬───┬───┬───┐    ┌───┬───┬───┬───┬───┬───┐
-        │   │   │   │   │   │   │    │   │   │   │   │   │   │     R5
+        │Mag│ { │ } │Alt│Spc│Sup│    │Sup│Spc│AGr│Nav│   │   │     R5
         └───┴───┴───┴───┴───┴───┘    └───┴───┴───┴───┴───┴───┘
           C4  C3  C2  T1  T2  T3       T3  T2  T1  C2  C3  C4
 """
@@ -470,20 +470,20 @@ visual_layout = """
   C6 = { key = "Num",  json = "&tog LAYER_NUM",      keymap = "via keypad_td", status = "validated" }
 
   [layer.shift_altgr.left_hand.R5]
-  C4 = { key = "",     json = "&none",     keymap = "",              status = "pending" }  // TO DO
-  C3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  C2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  T1 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  T2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  T3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  C4 = { key = "Magic", json = "&mo LAYER_MAGIC",  keymap = "via magic",     status = "validated" }
+  C3 = { key = "",      json = "&none",            keymap = "",              status = "pending" }
+  C2 = { key = "",      json = "&none",            keymap = "",              status = "pending" }
+  T1 = { key = "Alt",   json = "&kp LALT",         keymap = "via mod-morph", status = "validated" }
+  T2 = { key = "Space", json = "&kp SPACE",        keymap = "via mod-morph", status = "validated" }
+  T3 = { key = "Super", json = "&kp LGUI",         keymap = "via mod-morph", status = "validated" }
 
   [layer.shift_altgr.right_hand.R5]
-  T3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  T2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  T1 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  C2 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  C3 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
-  C4 = { key = "",     json = "&none",     keymap = "",              status = "pending" }
+  T3 = { key = "Super", json = "&kp RGUI",       keymap = "via mod-morph",     status = "validated" }
+  T2 = { key = "Space", json = "&kp SPACE",      keymap = "via mod-morph",     status = "validated" }
+  T1 = { key = "AltGr", json = "&kp RALT",       keymap = "via mt RALT RET",   status = "validated" }
+  C2 = { key = "Nav",   json = "&mo LAYER_NAV",  keymap = "via symbol_nav_td", status = "validated" }
+  C3 = { key = "",      json = "",               keymap = "",                  status = "pending" }
+  C4 = { key = "",      json = "&none",          keymap = "",                  status = "pending" }
 
 # ══════════════════════════════════════════════════════════════════════════════════
 # LAYER 4 - ACCENTED (Sticky layer activé par ★)
@@ -519,17 +519,17 @@ visual_layout = """
   [layer.accented.left_hand.R1]
   C6 = { key = "",    json = "&trans",        keymap = "&trans",            status = "implemented" }
   C5 = { key = "„",   json = "&kp LS(RA(S))", keymap = "&lhr1c5_accented",  status = "implemented" }
-  C4 = { key = """,   json = "&kp LS(RA(W))", keymap = "&trans",            status = "pending" }
-  C3 = { key = """,   json = "&kp LS(RA(X))", keymap = "&trans",            status = "pending" }
-  C2 = { key = "¢",   json = "&kp LS(RA(E))", keymap = "&kp LS(RA(E))",     status = "implemented" }
-  C1 = { key = "‰",   json = "&permille",     keymap = "&permille_compose", status = "implemented" }
+  C4 = { key = """,   json = "&kp LS(RA(Z))", keymap = "&lhr1c4_accented",  status = "implemented" }
+  C3 = { key = """,   json = "&kp LS(RA(X))", keymap = "&lhr1c3_accented",  status = "implemented" }
+  C2 = { key = "¢",   json = "&kp LS(RA(E))", keymap = "&lhr1c2_accented",  status = "implemented" }
+  C1 = { key = "‰",   json = "&permille",     keymap = "&lhr1c1_accented",  status = "implemented" }
 
   [layer.accented.right_hand.R1]
   C1 = { key = "",    json = "&none",         keymap = "&none",             status = "implemented" }
   C2 = { key = "",    json = "&none",         keymap = "&none",             status = "implemented" }
-  C3 = { key = "§",   json = "&kp LS(FSLH)",  keymap = "&kp LS(FSLH)",      status = "implemented" }
-  C4 = { key = "¶",   json = "&pilcrow",      keymap = "&pilcrow_compose",  status = "implemented" }
-  C5 = { key = "°",   json = "&kp LS(MINUS)", keymap = "&kp LS(MINUS)",     status = "implemented" }
+  C3 = { key = "§",   json = "&kp LS(FSLH)",  keymap = "&rhr1c3_accented",  status = "implemented" }
+  C4 = { key = "¶",   json = "&pilcrow",      keymap = "&rhr1c4_accented",  status = "implemented" }
+  C5 = { key = "°",   json = "&kp LS(MINUS)", keymap = "&rhr1c5_accented",  status = "implemented" }
   C6 = { key = "",    json = "&trans",        keymap = "&trans",            status = "implemented" }
 
   [layer.accented.left_hand.R2]
@@ -544,7 +544,7 @@ visual_layout = """
   C1 = { key = "",    json = "&none",      keymap = "&none",      status = "implemented" }
   C2 = { key = "µ",   json = "&kp LS(BSLH)", keymap = "&kp LS(BSLH)", status = "implemented" }
   C3 = { key = "_",   json = "&kp N8",     keymap = "&kp N8",     status = "implemented" }
-  C4 = { key = "Dia", json = "&sl 6",      keymap = "&sl 6",      status = "implemented", notes = "Accès layer Diaeresis" }
+  C4 = { key = "Dia", json = "&sl 6",      keymap = "&rhr2c4_accented", status = "implemented", notes = "Accès layer Diaeresis / ¡" }
   C5 = { key = "û",   json = "&kp RA(SQT)", keymap = "&kp RA(SQT)", status = "implemented" }
   C6 = { key = "",    json = "&trans",     keymap = "&trans",     status = "implemented" }
 
@@ -568,7 +568,7 @@ visual_layout = """
   C6 = { key = "",    json = "&trans",        keymap = "&trans",        status = "implemented" }
   C5 = { key = "æ",   json = "&kp RA(A)",     keymap = "&kp RA(A)",     status = "implemented" }
   C4 = { key = "ß",   json = "&kp RA(S)",     keymap = "&kp RA(S)",     status = "implemented" }
-  C3 = { key = "-",   json = "&kp N6",        keymap = "&kp N6",        status = "implemented" }
+  C3 = { key = "-",   json = "&kp N6",        keymap = "&lhr4c3_accented", status = "implemented" }
   C2 = { key = "–",   json = "&kp LS(RA(N5))", keymap = "&kp LS(RA(N5))", status = "implemented" }
   C1 = { key = "—",   json = "&kp LS(RA(N4))", keymap = "&kp LS(RA(N4))", status = "implemented" }
 
@@ -576,7 +576,7 @@ visual_layout = """
   C1 = { key = "…",   json = "&kp LS(RA(M))",     keymap = "&kp LS(RA(M))",     status = "implemented" }
   C2 = { key = "",    json = "&none",             keymap = "&none",             status = "implemented" }
   C3 = { key = "Grk", json = "&sl 7",             keymap = "&sl 7",             status = "implemented", notes = "Accès layer Greek" }
-  C4 = { key = "⋅",   json = "&kp LS(RA(COMMA))", keymap = "&kp LS(RA(COMMA))", status = "implemented" }
+  C4 = { key = "·",   json = "&kp LS(RA(COMMA))", keymap = "&rhr4c4_accented",  status = "implemented" }
   C5 = { key = "",    json = "&none",             keymap = "&none",             status = "implemented" }
   C6 = { key = "",    json = "&trans",            keymap = "&trans",            status = "implemented" }
 
@@ -627,20 +627,20 @@ visual_layout = """
 """
 
   [layer.shift_accented.left_hand.R1]
-  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
-  C5 = { key = ",",   json = "&kp M",     keymap = "",          status = "pending" }
-  C4 = { key = "'",   json = "&kp RA(F)", keymap = "",          status = "pending" }
-  C3 = { key = "'",   json = "&kp RA(G)", keymap = "",          status = "pending" }
-  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
+  C6 = { key = "",    json = "&trans",    keymap = "&trans",           status = "implemented" }
+  C5 = { key = "‚",   json = "&kp M",     keymap = "&lhr1c5_accented", status = "implemented" }
+  C4 = { key = "'",   json = "&kp RA(F)", keymap = "&lhr1c4_accented", status = "implemented" }
+  C3 = { key = "'",   json = "&kp RA(G)", keymap = "&lhr1c3_accented", status = "implemented" }
+  C2 = { key = "",    json = "&none",     keymap = "&lhr1c2_accented", status = "implemented" }
+  C1 = { key = "",    json = "&none",     keymap = "&lhr1c1_accented", status = "implemented" }
 
   [layer.shift_accented.right_hand.R1]
-  C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
+  C1 = { key = "",    json = "&none",     keymap = "&none",            status = "implemented" }
+  C2 = { key = "",    json = "&none",     keymap = "&none",            status = "implemented" }
+  C3 = { key = "",    json = "&none",     keymap = "&rhr1c3_accented", status = "implemented" }
+  C4 = { key = "",    json = "&none",     keymap = "&rhr1c4_accented", status = "implemented" }
+  C5 = { key = "",    json = "&none",     keymap = "&rhr1c5_accented", status = "implemented" }
+  C6 = { key = "",    json = "&trans",    keymap = "&trans",           status = "implemented" }
 
   [layer.shift_accented.left_hand.R2]
   C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
@@ -651,12 +651,12 @@ visual_layout = """
   C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
 
   [layer.shift_accented.right_hand.R2]
-  C1 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
-  C2 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
-  C3 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
-  C4 = { key = "¡",   json = "&kp RA(FSLH)", keymap = "",        status = "pending" }
-  C5 = { key = "",    json = "&none",      keymap = "",          status = "pending" }
-  C6 = { key = "",    json = "&trans",     keymap = "",          status = "pending" }
+  C1 = { key = "",    json = "&none",        keymap = "",                 status = "pending" }
+  C2 = { key = "",    json = "&none",        keymap = "",                 status = "pending" }
+  C3 = { key = "",    json = "&none",        keymap = "",                 status = "pending" }
+  C4 = { key = "¡",   json = "&kp RA(FSLH)", keymap = "&rhr2c4_accented", status = "implemented" }
+  C5 = { key = "",    json = "&none",        keymap = "",                 status = "pending" }
+  C6 = { key = "",    json = "&trans",       keymap = "",                 status = "pending" }
 
   [layer.shift_accented.left_hand.R3]
   C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
@@ -678,7 +678,7 @@ visual_layout = """
   C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
   C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
   C4 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C3 = { key = "¿",   json = "&kp RA(M)", keymap = "",          status = "pending" }
+  C3 = { key = "¿",   json = "&kp RA(M)", keymap = "&lhr4c3_accented", status = "implemented" }
   C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
   C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
 
@@ -686,7 +686,7 @@ visual_layout = """
   C1 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
   C2 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
   C3 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
-  C4 = { key = "•",   json = "&bullet",   keymap = "",          status = "pending" }
+  C4 = { key = "•",   json = "&bullet_compose", keymap = "&rhr4c4_accented", status = "implemented" }
   C5 = { key = "",    json = "&none",     keymap = "",          status = "pending" }
   C6 = { key = "",    json = "&trans",    keymap = "",          status = "pending" }
 
