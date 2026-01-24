@@ -936,8 +936,65 @@
             bindings = <&kp LS(M) &none>;              // ? / rien
         };
 
+
         /* ========================================================= *
-         * MOD-MORPHS pour ...                                       *
+         * LH R5 C3 et C2 (parenthèses/crochets/acc) *
+         * ========================================================= */
+
+        /* =========
+         * LH R5 C3 : ( / [ / {
+         * ========= */
+
+        lhr5c3: lhr5c3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr5c3_no_altgr &lhr5c3_altgr>;
+        };
+
+        lhr5c3_no_altgr: lhr5c3_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N5 &kp RA(N5)>;              // ( ou [
+        };
+
+        lhr5c3_altgr: lhr5c3_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(N4) &none>;          // { / {
+        };
+
+
+        /* =========
+         * LH R5 C2 : ) / ] / }
+         * ========= */
+
+        lhr5c2: lhr5c2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            bindings = <&lhr5c2_no_altgr &lhr5c2_altgr>;
+        };
+
+        lhr5c2_no_altgr: lhr5c2_no_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp MINUS &kp RA(MINUS)>;        // ) / ]
+        };
+
+        lhr5c2_altgr: lhr5c2_altgr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp RA(EQUAL) &none>;    // } / }
+
+        };
+
+        /* ========================================================= *
+         * je pense que les 5 fonctions suivantes sont inutiles                                     *
          * ========================================================= */
 
         minus_qmark: minus_qmark {
@@ -1000,59 +1057,83 @@
             bindings = <&kp LS(RA(S)) &kp M>;  // „ / ‚
         };
 
-        /* ========================================================= *
-         * MOD-MORPHS pour LH R5 C3 et C2 (parenthèses/crochets/acc) *
-         * ========================================================= */
+        /* ==================*
+         * LH R1 C4 : " / '  *
+         * ================= */
 
-        /* =========
-         * LH R5 C3 : ( / [ / {
-         * ========= */
-
-        lhr5c3: lhr5c3 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
-            bindings = <&lhr5c3_no_altgr &lhr5c3_altgr>;
-        };
-
-        lhr5c3_no_altgr: lhr5c3_no_altgr {
+        lhr1c4_accented: lhr1c4_accented {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N5 &kp RA(N5)>;              // ( / [
+            bindings = <&kp LS(RA(Z)) &kp RA(F)>;  // " / '
         };
 
-        lhr5c3_altgr: lhr5c3_altgr {
+        /* ==================*
+         * LH R1 C3 : " / '  *
+         * ================= */
+
+        lhr1c3_accented: lhr1c3_accented {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RA(N4) &kp RA(N4)>;          // { / {
+            bindings = <&kp LS(RA(X)) &kp RA(G)>;  // " / '
         };
 
-        /* =========
-         * LH R5 C2 : ) / ] / }
-         * ========= */
+        /* ==================*
+         * LH R1 C2 : ¢      *
+         * ================= */
 
-        lhr5c2: lhr5c2 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
-            bindings = <&lhr5c2_no_altgr &lhr5c2_altgr>;
-        };
-
-        lhr5c2_no_altgr: lhr5c2_no_altgr {
+        lhr1c2_accented: lhr1c2_accented {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp MINUS &kp RA(MINUS)>;        // ) / ]
+            bindings = <&kp LS(RA(E)) &none>;  // ¢ / none
         };
 
-        lhr5c2_altgr: lhr5c2_altgr {
+        /* ==================*
+         * LH R1 C1 : ‰      *
+         * ================= */
+
+        lhr1c1_accented: lhr1c1_accented {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp RA(EQUAL) &kp RA(EQUAL)>;    // } / }
+            bindings = <&permille_compose &none>;  // ‰ / none
         };
+
+        /* ==================*
+         * RH R1 C3 : §      *
+         * ================= */
+
+        rhr1c3_accented: rhr1c3_accented {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(FSLH) &none>;  // § / none
+        };
+
+        /* ==================*
+         * RH R1 C4 : ¶      *
+         * ================= */
+
+        rhr1c4_accented: rhr1c4_accented {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&pilcrow_compose &none>;  // ¶ / none
+        };
+
+        /* ==================*
+         * RH R1 C5 : °      *
+         * ================= */
+
+        rhr1c5_accented: rhr1c5_accented {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LS(MINUS) &none>;  // ° / none
+        };
+
     };
 
     macros {
@@ -2022,7 +2103,7 @@
 
         layer_Accented {
             bindings = <
-&trans  &lhr1c5_accented  &trans     &trans     &kp LS(RA(E))     &permille_compose                                                 &none              &none        &kp LS(FSLH)  &pilcrow_compose  &kp LS(MINUS)   &trans
+&trans  &lhr1c5_accented  &lhr1c4_accented  &lhr1c3_accented  &lhr1c2_accented  &lhr1c1_accented                                      &none              &none        &rhr1c3_accented  &rhr1c4_accented  &rhr1c5_accented  &trans
 &trans  &kp RA(W)         &kp N9     &kp RA(O)  &kp RA(P)         &none                                                             &none              &kp LS(BSLH) &kp N8        &sl 6             &kp RA(SQT)     &trans
 &trans  &kp N0            &kp N2     &kp N7     &kp RA(R)         &n_tilde                                                          &kp N5             &kp MINUS    &kp RA(I)     &kp RA(K)         &kp SQT         &trans
 &trans  &kp RA(A)         &kp RA(S)  &kp N6     &kp LS(RA(N5))    &kp LS(RA(N4))                                                    &kp LS(RA(M))      &none        &sl 7         &kp LS(RA(COMMA)) &none           &trans
